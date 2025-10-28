@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سحب الأرباح - IDARTI Live Academy</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <div id="sidebar-container"></div>
+        <div class="content-wrapper">
+            <div id="navbar-container"></div>
+
+            <div class="container-fluid px-4 py-4">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/teacher.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/billing/list-teacher.html">الإيرادات</a></li>
+                        <li class="breadcrumb-item active">سحب الأرباح</li>
+                    </ol>
+                </nav>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">سحب الأرباح</h4>
+                        <p class="text-muted mb-0">طلب سحب وسجل المدفوعات</p>
+                    </div>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#withdrawModal">
+                        <i class="bi bi-cash-coin me-2"></i>طلب سحب جديد
+                    </button>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">الرصيد المتاح</p>
+                                        <h3 class="mb-0 fw-bold">8,500 ريال</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-arrow-up me-1"></i>قابل للسحب
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-wallet2 text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">تحت المعالجة</p>
+                                        <h3 class="mb-0 fw-bold">2,200 ريال</h3>
+                                        <small class="text-warning">
+                                            <i class="bi bi-clock me-1"></i>بانتظار التحويل
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light">
+                                        <i class="bi bi-hourglass-split text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">إجمالي المسحوب</p>
+                                        <h3 class="mb-0 fw-bold">34,800 ريال</h3>
+                                        <small class="text-primary">
+                                            <i class="bi bi-cash-stack me-1"></i>هذا العام
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-cash-stack text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">طلبات السحب</p>
+                                        <h3 class="mb-0 fw-bold">12</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-receipt me-1"></i>هذا العام
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-receipt text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-3">معلومات الحساب البنكي</h6>
+                                <div class="mb-3">
+                                    <label class="text-muted small">اسم البنك</label>
+                                    <p class="mb-0 fw-semibold">البنك الأهلي السعودي</p>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="text-muted small">رقم الحساب (IBAN)</label>
+                                    <p class="mb-0 fw-semibold">SA03 8000 0000 6080 1016 7519</p>
+                                </div>
+                                <div class="mb-0">
+                                    <label class="text-muted small">اسم صاحب الحساب</label>
+                                    <p class="mb-0 fw-semibold">أحمد محمد العلي</p>
+                                </div>
+                                <hr>
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-pencil me-2"></i>تعديل معلومات الحساب
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-3">سياسة السحب</h6>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <span>الحد الأدنى للسحب: 500 ريال</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <span>فترة المعالجة: 3-5 أيام عمل</span>
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <span>عدد مرات السحب: مرتين شهرياً</span>
+                                    </li>
+                                    <li class="mb-0">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        <span>رسوم التحويل: مجاني</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">سجل طلبات السحب</h6>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>رقم الطلب</th>
+                                        <th class="text-center">المبلغ</th>
+                                        <th class="text-center">تاريخ الطلب</th>
+                                        <th class="text-center">تاريخ التحويل</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-warning">
+                                        <td><span class="fw-semibold">WTH-2025-008</span></td>
+                                        <td class="text-center">
+                                            <span class="fw-bold">2,200 ريال</span>
+                                        </td>
+                                        <td class="text-center">20 مارس 2025</td>
+                                        <td class="text-center">-</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">قيد المعالجة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-light">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="table-success">
+                                        <td><span class="fw-semibold">WTH-2025-007</span></td>
+                                        <td class="text-center">
+                                            <span class="fw-bold text-success">3,500 ريال</span>
+                                        </td>
+                                        <td class="text-center">10 مارس 2025</td>
+                                        <td class="text-center">12 مارس 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">مكتمل</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-light">
+                                                <i class="bi bi-download"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="table-success">
+                                        <td><span class="fw-semibold">WTH-2025-006</span></td>
+                                        <td class="text-center">
+                                            <span class="fw-bold text-success">2,800 ريال</span>
+                                        </td>
+                                        <td class="text-center">25 فبراير 2025</td>
+                                        <td class="text-center">28 فبراير 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">مكتمل</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-light">
+                                                <i class="bi bi-download"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Withdraw Modal -->
+    <div class="modal fade" id="withdrawModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">طلب سحب جديد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        الرصيد المتاح للسحب: <strong>8,500 ريال</strong>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">المبلغ المطلوب</label>
+                            <input type="number" class="form-control" placeholder="0.00" min="500" max="8500" required>
+                            <small class="text-muted">الحد الأدنى: 500 ريال</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">الحساب البنكي</label>
+                            <select class="form-select" required>
+                                <option selected>البنك الأهلي - SA03 8000 0000 6080 1016 7519</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ملاحظات (اختياري)</label>
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تقديم الطلب</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <script>
+        fetch('../partials/sidebar_teacher.html').then(r => r.text()).then(d => {
+            document.getElementById('sidebar-container').innerHTML = d;
+        });
+        fetch('../partials/navbar.html').then(r => r.text()).then(d => {
+            document.getElementById('navbar-container').innerHTML = d;
+        });
+    </script>
+</body>
+</html>

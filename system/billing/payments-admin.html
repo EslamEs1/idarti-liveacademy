@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة المدفوعات - IDARTI Live Academy</title>
+    
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <div id="sidebar-container"></div>
+
+        <div class="content-wrapper">
+            <div id="navbar-container"></div>
+
+            <div class="container-fluid px-4 py-4">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/billing/list-admin.html">الفواتير</a></li>
+                        <li class="breadcrumb-item active">إدارة المدفوعات</li>
+                    </ol>
+                </nav>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">إدارة المدفوعات</h4>
+                        <p class="text-muted mb-0">سجل وإدارة جميع المدفوعات والتحويلات</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#addPaymentModal">
+                            <i class="bi bi-plus-circle me-2"></i>تسجيل دفعة
+                        </button>
+                        <button class="btn btn-light">
+                            <i class="bi bi-file-earmark-excel me-2"></i>تصدير
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">إجمالي المدفوعات</p>
+                                        <h3 class="mb-0 fw-bold">185K ريال</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-arrow-up me-1"></i>+12% الشهر
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-cash-stack text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">عدد المدفوعات</p>
+                                        <h3 class="mb-0 fw-bold">342</h3>
+                                        <small class="text-primary">
+                                            <i class="bi bi-receipt me-1"></i>دفعة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-receipt text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">بطاقة ائتمان</p>
+                                        <h3 class="mb-0 fw-bold">68%</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-credit-card me-1"></i>232 دفعة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-credit-card text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">تحويل بنكي</p>
+                                        <h3 class="mb-0 fw-bold">32%</h3>
+                                        <small class="text-warning">
+                                            <i class="bi bi-bank me-1"></i>110 دفعة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light">
+                                        <i class="bi bi-bank text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">بحث</label>
+                                <input type="text" class="form-control" placeholder="رقم الدفعة، الطالب...">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">طريقة الدفع</label>
+                                <select class="form-select">
+                                    <option selected>الكل</option>
+                                    <option>بطاقة ائتمان</option>
+                                    <option>تحويل بنكي</option>
+                                    <option>نقداً</option>
+                                    <option>Apple Pay</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">الحالة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الحالات</option>
+                                    <option>مكتمل</option>
+                                    <option>قيد المعالجة</option>
+                                    <option>ملغي</option>
+                                    <option>مرتجع</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">الفترة</label>
+                                <select class="form-select">
+                                    <option selected>هذا الشهر</option>
+                                    <option>آخر 3 أشهر</option>
+                                    <option>هذا العام</option>
+                                    <option>مخصص</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-search me-2"></i>بحث
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">سجل المدفوعات</h6>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>رقم الدفعة</th>
+                                        <th>الفاتورة</th>
+                                        <th>الطالب</th>
+                                        <th class="text-center">المبلغ</th>
+                                        <th class="text-center">طريقة الدفع</th>
+                                        <th class="text-center">التاريخ</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-success">
+                                        <td><span class="fw-semibold">PAY-2025-00156</span></td>
+                                        <td>
+                                            <a href="/system/billing/detail-admin.html?id=2">INV-2025-002</a>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-avatar me-2">
+                                                    <i class="bi bi-person-fill"></i>
+                                                </div>
+                                                <span class="fw-semibold">فاطمة علي</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="fw-bold text-success">800 ريال</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-primary">
+                                                <i class="bi bi-credit-card me-1"></i>بطاقة ائتمان
+                                            </span>
+                                        </td>
+                                        <td class="text-center">25 يناير 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">مكتمل</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="طباعة">
+                                                    <i class="bi bi-printer"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="إرجاع">
+                                                    <i class="bi bi-arrow-counterclockwise"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="table-warning">
+                                        <td><span class="fw-semibold">PAY-2025-00155</span></td>
+                                        <td>
+                                            <a href="/system/billing/detail-admin.html?id=3">INV-2025-003</a>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-avatar me-2">
+                                                    <i class="bi bi-person-fill"></i>
+                                                </div>
+                                                <span class="fw-semibold">خالد حسن</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="fw-bold text-primary">600 ريال</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-warning">
+                                                <i class="bi bi-bank me-1"></i>تحويل بنكي
+                                            </span>
+                                        </td>
+                                        <td class="text-center">15 فبراير 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">قيد المعالجة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-success" title="تأكيد">
+                                                    <i class="bi bi-check-circle text-white"></i>
+                                                </button>
+                                                <button class="btn btn-danger" title="إلغاء">
+                                                    <i class="bi bi-x-circle text-white"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><span class="fw-semibold">PAY-2025-00154</span></td>
+                                        <td>
+                                            <a href="/system/billing/detail-admin.html?id=5">INV-2025-005</a>
+                                        </td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="user-avatar me-2">
+                                                    <i class="bi bi-person-fill"></i>
+                                                </div>
+                                                <span class="fw-semibold">نورة سعيد</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="fw-bold text-success">1,200 ريال</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-dark">
+                                                <i class="bi bi-apple me-1"></i>Apple Pay
+                                            </span>
+                                        </td>
+                                        <td class="text-center">10 فبراير 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">مكتمل</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="طباعة">
+                                                    <i class="bi bi-printer"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">عرض 3 من أصل 342 دفعة</small>
+                            <nav>
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">السابق</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">التالي</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Add Payment Modal -->
+    <div class="modal fade" id="addPaymentModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">تسجيل دفعة جديدة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">الفاتورة</label>
+                            <select class="form-select" required>
+                                <option value="">اختر الفاتورة</option>
+                                <option>INV-2025-001 - محمد أحمد (1,500 ريال)</option>
+                                <option>INV-2025-003 - خالد حسن (600 ريال)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">المبلغ</label>
+                            <input type="number" class="form-control" placeholder="0.00" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">طريقة الدفع</label>
+                            <select class="form-select" required>
+                                <option value="">اختر طريقة الدفع</option>
+                                <option>بطاقة ائتمان</option>
+                                <option>تحويل بنكي</option>
+                                <option>نقداً</option>
+                                <option>Apple Pay</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">رقم المعاملة (اختياري)</label>
+                            <input type="text" class="form-control" placeholder="رقم المرجع أو المعاملة">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ملاحظات</label>
+                            <textarea class="form-control" rows="2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تسجيل الدفعة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <script>
+        fetch('../partials/sidebar_admin.html').then(r => r.text()).then(d => {
+            document.getElementById('sidebar-container').innerHTML = d;
+        });
+        fetch('../partials/navbar.html').then(r => r.text()).then(d => {
+            document.getElementById('navbar-container').innerHTML = d;
+        });
+    </script>
+</body>
+</html>
+
