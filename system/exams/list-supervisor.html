@@ -220,9 +220,9 @@
                                                 <a href="/system/exams/detail-supervisor.html?id=1" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="تقرير جودة">
+                                                <a href="/system/exams/quality-report.pdf?id=1" class="btn btn-light" title="تقرير جودة" download>
                                                     <i class="bi bi-file-text"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -267,7 +267,7 @@
                                                 <a href="/system/exams/detail-supervisor.html?id=2" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-warning" title="مراجعة عاجلة">
+                                                <button class="btn btn-warning" title="مراجعة عاجلة" onclick="urgentReview(2)">
                                                     <i class="bi bi-exclamation-triangle text-white"></i>
                                                 </button>
                                             </div>
@@ -314,7 +314,7 @@
                                                 <a href="/system/exams/detail-supervisor.html?id=3" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-success" title="اعتماد">
+                                                <button class="btn btn-success" title="اعتماد" onclick="approveExam(3)">
                                                     <i class="bi bi-check-lg text-white"></i>
                                                 </button>
                                             </div>
@@ -361,9 +361,9 @@
                                                 <a href="/system/exams/detail-supervisor.html?id=4" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="تقرير جودة">
+                                                <a href="/system/exams/quality-report.pdf?id=1" class="btn btn-light" title="تقرير جودة" download>
                                                     <i class="bi bi-file-text"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -375,10 +375,10 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <small class="text-muted">عرض 4 من أصل 35 اختبار</small>
                             <div class="d-flex gap-2">
-                                <button class="btn btn-sm btn-light">
+                                <button class="btn btn-sm btn-light" onclick="exportToExcel()">
                                     <i class="bi bi-file-earmark-excel me-1"></i>تصدير Excel
                                 </button>
-                                <button class="btn btn-sm btn-light">
+                                <button class="btn btn-sm btn-light" onclick="printReport()">
                                     <i class="bi bi-printer me-1"></i>طباعة
                                 </button>
                             </div>
@@ -412,6 +412,36 @@
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             });
+    </script>
+
+    <!-- Action Handlers -->
+    <script>
+        function urgentReview(examId) {
+            if (confirm('هل تريد إرسال تنبيه للمعلم لمراجعة هذا الاختبار عاجلاً؟')) {
+                console.log('Sending urgent review notification for exam:', examId);
+                alert('تم إرسال التنبيه للمعلم بنجاح!');
+            }
+        }
+
+        function approveExam(examId) {
+            if (confirm('هل أنت متأكد من اعتماد هذا الاختبار؟')) {
+                console.log('Approving exam:', examId);
+                alert('تم اعتماد الاختبار بنجاح!');
+                window.location.reload();
+            }
+        }
+
+        function exportToExcel() {
+            console.log('Exporting to Excel...');
+            alert('جاري تحضير ملف Excel...');
+            // In real app, trigger download
+            window.open('/system/exams/export-quality-report.xlsx', '_blank');
+        }
+
+        function printReport() {
+            console.log('Printing report...');
+            window.print();
+        }
     </script>
 </body>
 </html>

@@ -188,7 +188,7 @@
                                                     <span class="badge badge-success">سهل</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <button class="btn btn-sm btn-light" title="التفاصيل">
+                                                    <button class="btn btn-sm btn-light" title="التفاصيل" onclick="viewQuestionDetails(1)">
                                                         <i class="bi bi-eye"></i>
                                                     </button>
                                                 </td>
@@ -211,7 +211,7 @@
                                                     <span class="badge badge-success">سهل</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <button class="btn btn-sm btn-light" title="التفاصيل">
+                                                    <button class="btn btn-sm btn-light" title="التفاصيل" onclick="viewQuestionDetails(1)">
                                                         <i class="bi bi-eye"></i>
                                                     </button>
                                                 </td>
@@ -234,7 +234,7 @@
                                                     <span class="badge badge-warning">متوسط</span>
                                                 </td>
                                                 <td class="text-center">
-                                                    <button class="btn btn-sm btn-light" title="التفاصيل">
+                                                    <button class="btn btn-sm btn-light" title="التفاصيل" onclick="viewQuestionDetails(1)">
                                                         <i class="bi bi-eye"></i>
                                                     </button>
                                                 </td>
@@ -285,10 +285,10 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm">
-                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                        <button class="btn btn-light" title="عرض التفاصيل" onclick="viewStudentDetails(1)">
                                                             <i class="bi bi-eye"></i>
                                                         </button>
-                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                        <button class="btn btn-light" title="مراجعة الإجابات" onclick="reviewAnswers(1)">
                                                             <i class="bi bi-file-text"></i>
                                                         </button>
                                                     </div>
@@ -316,10 +316,10 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm">
-                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                        <button class="btn btn-light" title="عرض التفاصيل" onclick="viewStudentDetails(1)">
                                                             <i class="bi bi-eye"></i>
                                                         </button>
-                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                        <button class="btn btn-light" title="مراجعة الإجابات" onclick="reviewAnswers(1)">
                                                             <i class="bi bi-file-text"></i>
                                                         </button>
                                                     </div>
@@ -347,10 +347,10 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm">
-                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                        <button class="btn btn-light" title="عرض التفاصيل" onclick="viewStudentDetails(1)">
                                                             <i class="bi bi-eye"></i>
                                                         </button>
-                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                        <button class="btn btn-light" title="مراجعة الإجابات" onclick="reviewAnswers(1)">
                                                             <i class="bi bi-file-text"></i>
                                                         </button>
                                                     </div>
@@ -378,10 +378,10 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <div class="btn-group btn-group-sm">
-                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                        <button class="btn btn-light" title="عرض التفاصيل" onclick="viewStudentDetails(1)">
                                                             <i class="bi bi-eye"></i>
                                                         </button>
-                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                        <button class="btn btn-light" title="مراجعة الإجابات" onclick="reviewAnswers(1)">
                                                             <i class="bi bi-file-text"></i>
                                                         </button>
                                                     </div>
@@ -473,10 +473,10 @@
                                     <a href="/system/exams/grading-admin.html?exam=1" class="btn btn-warning">
                                         <i class="bi bi-pencil-square me-2"></i>تصحيح الأسئلة المقالية
                                     </a>
-                                    <button class="btn btn-light">
+                                    <button class="btn btn-light" onclick="sendResults()">
                                         <i class="bi bi-envelope me-2"></i>إرسال النتائج
                                     </button>
-                                    <button class="btn btn-light">
+                                    <button class="btn btn-light" onclick="archiveExam()">
                                         <i class="bi bi-archive me-2"></i>أرشفة الاختبار
                                     </button>
                                 </div>
@@ -511,6 +511,39 @@
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             });
+    </script>
+
+    <!-- Action Handlers -->
+    <script>
+        function viewQuestionDetails(questionId) {
+            console.log('Viewing question details:', questionId);
+            window.open(`/system/exams/question-analysis.html?q=${questionId}`, '_blank');
+        }
+
+        function viewStudentDetails(studentId) {
+            console.log('Viewing student details:', studentId);
+            window.open(`/system/users/detail-student.html?id=${studentId}`, '_blank');
+        }
+
+        function reviewAnswers(attemptId) {
+            console.log('Reviewing answers for attempt:', attemptId);
+            window.open(`/system/exams/review-attempt.html?attempt=${attemptId}`, '_blank');
+        }
+
+        function sendResults() {
+            if (confirm('هل تريد إرسال النتائج لجميع الطلاب؟')) {
+                console.log('Sending results to all students...');
+                alert('تم إرسال النتائج بنجاح!');
+            }
+        }
+
+        function archiveExam() {
+            if (confirm('هل تريد أرشفة هذا الاختبار؟')) {
+                console.log('Archiving exam...');
+                alert('تم أرشفة الاختبار بنجاح!');
+                window.location.href = '/system/exams/list-admin.html';
+            }
+        }
     </script>
 
     <!-- Charts -->

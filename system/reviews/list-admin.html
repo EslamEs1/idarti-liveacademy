@@ -1,443 +1,852 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدارة المراجعات - IDARTI Live Academy</title>
-    
-    <!-- Bootstrap RTL CSS -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom System CSS -->
-    <link rel="stylesheet" href="../../assets/css/custom_system.css">
-</head>
-<body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div id="sidebar-container"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>إدارة المراجعات - IDARTI Live Academy</title>
 
-        <!-- Main Content -->
-        <div class="content-wrapper">
-            <!-- Navbar -->
-            <div id="navbar-container"></div>
+        <!-- Bootstrap RTL CSS -->
+        <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css" />
+        <!-- Bootstrap Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        />
+        <!-- Custom System CSS -->
+        <link rel="stylesheet" href="../../assets/css/custom_system.css" />
+    </head>
+    <body>
+        <div class="d-flex">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
 
-            <!-- Page Content -->
-            <div class="container-fluid px-4 py-4">
-                <!-- Breadcrumb -->
-                <nav aria-label="breadcrumb" class="mb-4">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
-                        <li class="breadcrumb-item active">إدارة المراجعات</li>
-                    </ol>
-                </nav>
+            <!-- Main Content -->
+            <div class="content-wrapper">
+                <!-- Navbar -->
+                <div id="navbar-container"></div>
 
-                <!-- Page Header -->
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div>
-                        <h4 class="mb-1 fw-bold">إدارة المراجعات</h4>
-                        <p class="text-muted mb-0">مراجعات وتقييمات الدورات</p>
+                <!-- Page Content -->
+                <div class="container-fluid px-4 py-4">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mb-4">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="../../system/dashboard/admin.html"
+                                    >لوحة التحكم</a
+                                >
+                            </li>
+                            <li class="breadcrumb-item active">
+                                إدارة المراجعات
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <!-- Page Header -->
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                        <div>
+                            <h4 class="mb-1 fw-bold">إدارة المراجعات</h4>
+                            <p class="text-muted mb-0">
+                                مراجعات وتقييمات الدورات
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Cards -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                إجمالي المراجعات
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">247</h3>
+                                            <small class="text-primary">
+                                                <i class="bi bi-star me-1"></i
+                                                >في النظام
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-primary-light">
+                                            <i
+                                                class="bi bi-star text-primary"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                بانتظار الموافقة
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">18</h3>
+                                            <small class="text-warning">
+                                                <i class="bi bi-clock me-1"></i
+                                                >مراجعات
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-warning-light">
+                                            <i
+                                                class="bi bi-hourglass text-warning"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                متوسط التقييم
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">4.3/5</h3>
+                                            <small class="text-success">
+                                                <i
+                                                    class="bi bi-graph-up me-1"
+                                                ></i
+                                                >ممتاز
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-success-light">
+                                            <i
+                                                class="bi bi-star text-success"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                معدل الرضا
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">89%</h3>
+                                            <small class="text-success">
+                                                <i class="bi bi-heart me-1"></i
+                                                >ممتاز
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-danger-light">
+                                            <i
+                                                class="bi bi-heart text-danger"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Filter Card -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <form class="row g-3">
+                                <div class="col-md-3">
+                                    <label class="form-label">بحث</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        placeholder="بحث في المراجعات..."
+                                    />
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">الدورة</label>
+                                    <select class="form-select">
+                                        <option selected>جميع الدورات</option>
+                                        <option>الرياضيات المتقدمة</option>
+                                        <option>اللغة العربية</option>
+                                        <option>الأحياء</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">التقييم</label>
+                                    <select class="form-select">
+                                        <option selected>جميع التقييمات</option>
+                                        <option>5 نجوم</option>
+                                        <option>4 نجوم</option>
+                                        <option>3 نجوم</option>
+                                        <option>2 نجوم</option>
+                                        <option>1 نجمة</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="form-label">الحالة</label>
+                                    <select class="form-select">
+                                        <option selected>جميع الحالات</option>
+                                        <option>موافق عليه</option>
+                                        <option>بانتظار الموافقة</option>
+                                        <option>مخفي</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">&nbsp;</label>
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary w-100"
+                                    >
+                                        <i class="bi bi-search me-2"></i>بحث
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Table -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h6 class="mb-0">جميع المراجعات</h6>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>الطالب</th>
+                                            <th>الدورة</th>
+                                            <th class="text-center">التقييم</th>
+                                            <th>المراجعة</th>
+                                            <th class="text-center">التاريخ</th>
+                                            <th class="text-center">الحالة</th>
+                                            <th class="text-center">
+                                                الإجراءات
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="table-warning">
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="user-avatar me-2"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill"
+                                                        ></i>
+                                                    </div>
+                                                    <span class="fw-semibold"
+                                                        >محمد أحمد</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="fw-semibold"
+                                                    >الرياضيات المتقدمة</span
+                                                >
+                                                <br />
+                                                <small class="text-muted"
+                                                    >د. أحمد محمد</small
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="d-flex align-items-center justify-content-center"
+                                                >
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <span class="ms-2 fw-bold"
+                                                        >5.0</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="review-text">
+                                                    دورة رائعة! المحتوى شامل
+                                                    والشرح واضح جداً. المعلم
+                                                    لديه خبرة واسعة
+                                                    <br />
+                                                    <small class="text-muted"
+                                                        >ويشرح الأمور المعقدة
+                                                        بطريقة بسيطة...</small
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <small>15 مارس 2025</small>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="badge badge-warning"
+                                                    >بانتظار الموافقة</span
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="btn-group btn-group-sm"
+                                                >
+                                                    <button
+                                                        class="btn btn-success"
+                                                        title="موافقة"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#approveReviewModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-check-lg"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-danger"
+                                                        title="رفض"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#rejectReviewModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-x-lg"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="عرض"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr class="table-success">
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="user-avatar me-2"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill"
+                                                        ></i>
+                                                    </div>
+                                                    <span class="fw-semibold"
+                                                        >فاطمة علي</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="fw-semibold"
+                                                    >اللغة العربية</span
+                                                >
+                                                <br />
+                                                <small class="text-muted"
+                                                    >أ. سارة محمد</small
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="d-flex align-items-center justify-content-center"
+                                                >
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star text-muted"
+                                                    ></i>
+                                                    <span class="ms-2 fw-bold"
+                                                        >4.0</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="review-text">
+                                                    دورة ممتازة تناسب المبتدئين.
+                                                    التمارين العملية مفيدة جداً
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <small>20 فبراير 2025</small>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="badge badge-success"
+                                                    >موافق عليه</span
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="btn-group btn-group-sm"
+                                                >
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="إخفاء"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye-slash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="حذف"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="عرض"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="user-avatar me-2"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill"
+                                                        ></i>
+                                                    </div>
+                                                    <span class="fw-semibold"
+                                                        >خالد حسن</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="fw-semibold"
+                                                    >الأحياء</span
+                                                >
+                                                <br />
+                                                <small class="text-muted"
+                                                    >د. محمد خالد</small
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="d-flex align-items-center justify-content-center"
+                                                >
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-half text-warning"
+                                                    ></i>
+                                                    <span class="ms-2 fw-bold"
+                                                        >4.5</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="review-text">
+                                                    شرح متعمق ومواد تعليمية
+                                                    ممتازة. فقط أتمنى أن تكون
+                                                    الجلسات أطول
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <small>10 فبراير 2025</small>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="badge badge-success"
+                                                    >موافق عليه</span
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="btn-group btn-group-sm"
+                                                >
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="إخفاء"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye-slash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="حذف"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="عرض"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="user-avatar me-2"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill"
+                                                        ></i>
+                                                    </div>
+                                                    <span class="fw-semibold"
+                                                        >سارة محمود</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="fw-semibold"
+                                                    >الرياضيات المتقدمة</span
+                                                >
+                                                <br />
+                                                <small class="text-muted"
+                                                    >د. أحمد محمد</small
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="d-flex align-items-center justify-content-center"
+                                                >
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star-fill text-warning"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star text-muted"
+                                                    ></i>
+                                                    <i
+                                                        class="bi bi-star text-muted"
+                                                    ></i>
+                                                    <span class="ms-2 fw-bold"
+                                                        >3.0</span
+                                                    >
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="review-text">
+                                                    الدورة جيدة لكن تحتاج بعض
+                                                    التحسينات في المحتوى
+                                                </div>
+                                            </td>
+                                            <td class="text-center">
+                                                <small>5 فبراير 2025</small>
+                                            </td>
+                                            <td class="text-center">
+                                                <span
+                                                    class="badge badge-success"
+                                                    >موافق عليه</span
+                                                >
+                                            </td>
+                                            <td class="text-center">
+                                                <div
+                                                    class="btn-group btn-group-sm"
+                                                >
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="إخفاء"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye-slash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="حذف"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash"
+                                                        ></i>
+                                                    </button>
+                                                    <button
+                                                        class="btn btn-light"
+                                                        title="عرض"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <small class="text-muted"
+                                    >عرض 4 من أصل 247 مراجعة</small
+                                >
+                                <nav>
+                                    <ul class="pagination pagination-sm mb-0">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#"
+                                                >السابق</a
+                                            >
+                                        </li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#"
+                                                >التالي</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Statistics Cards -->
-                <div class="row g-3 mb-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">إجمالي المراجعات</p>
-                                        <h3 class="mb-0 fw-bold">247</h3>
-                                        <small class="text-primary">
-                                            <i class="bi bi-star me-1"></i>في النظام
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-primary-light">
-                                        <i class="bi bi-star text-primary"></i>
-                                    </div>
-                                </div>
+                <!-- Approve Review Modal -->
+                <div
+                    class="modal fade"
+                    id="approveReviewModal"
+                    tabindex="-1"
+                    aria-labelledby="approveReviewModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5
+                                    class="modal-title fw-bold"
+                                    id="approveReviewModalLabel"
+                                >
+                                    تأكيد الموافقة على المراجعة
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">بانتظار الموافقة</p>
-                                        <h3 class="mb-0 fw-bold">18</h3>
-                                        <small class="text-warning">
-                                            <i class="bi bi-clock me-1"></i>مراجعات
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-warning-light">
-                                        <i class="bi bi-hourglass text-warning"></i>
-                                    </div>
-                                </div>
+                            <div class="modal-body">
+                                <p>
+                                    هل أنت متأكد من الموافقة على نشر هذه
+                                    المراجعة؟
+                                </p>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">متوسط التقييم</p>
-                                        <h3 class="mb-0 fw-bold">4.3/5</h3>
-                                        <small class="text-success">
-                                            <i class="bi bi-graph-up me-1"></i>ممتاز
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-success-light">
-                                        <i class="bi bi-star text-success"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">معدل الرضا</p>
-                                        <h3 class="mb-0 fw-bold">89%</h3>
-                                        <small class="text-success">
-                                            <i class="bi bi-heart me-1"></i>ممتاز
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-danger-light">
-                                        <i class="bi bi-heart text-danger"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Filter Card -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <form class="row g-3">
-                            <div class="col-md-3">
-                                <label class="form-label">بحث</label>
-                                <input type="text" class="form-control" placeholder="بحث في المراجعات...">
-                            </div>
-                            <div class="col-md-2">
-                                <label class="form-label">الدورة</label>
-                                <select class="form-select">
-                                    <option selected>جميع الدورات</option>
-                                    <option>الرياضيات المتقدمة</option>
-                                    <option>اللغة العربية</option>
-                                    <option>الأحياء</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="form-label">التقييم</label>
-                                <select class="form-select">
-                                    <option selected>جميع التقييمات</option>
-                                    <option>5 نجوم</option>
-                                    <option>4 نجوم</option>
-                                    <option>3 نجوم</option>
-                                    <option>2 نجوم</option>
-                                    <option>1 نجمة</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <label class="form-label">الحالة</label>
-                                <select class="form-select">
-                                    <option selected>جميع الحالات</option>
-                                    <option>موافق عليه</option>
-                                    <option>بانتظار الموافقة</option>
-                                    <option>مخفي</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3">
-                                <label class="form-label">&nbsp;</label>
-                                <button type="submit" class="btn btn-primary w-100">
-                                    <i class="bi bi-search me-2"></i>بحث
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-light"
+                                    data-bs-dismiss="modal"
+                                >
+                                    إلغاء
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    تأكيد الموافقة
                                 </button>
                             </div>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Reviews Table -->
-                <div class="card">
-                    <div class="card-header">
-                        <h6 class="mb-0">جميع المراجعات</h6>
-                    </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>الطالب</th>
-                                        <th>الدورة</th>
-                                        <th class="text-center">التقييم</th>
-                                        <th>المراجعة</th>
-                                        <th class="text-center">التاريخ</th>
-                                        <th class="text-center">الحالة</th>
-                                        <th class="text-center">الإجراءات</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="table-warning">
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="user-avatar me-2">
-                                                    <i class="bi bi-person-fill"></i>
-                                                </div>
-                                                <span class="fw-semibold">محمد أحمد</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="fw-semibold">الرياضيات المتقدمة</span>
-                                            <br>
-                                            <small class="text-muted">د. أحمد محمد</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <span class="ms-2 fw-bold">5.0</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="review-text">
-                                                دورة رائعة! المحتوى شامل والشرح واضح جداً. المعلم لديه خبرة واسعة
-                                                <br>
-                                                <small class="text-muted">ويشرح الأمور المعقدة بطريقة بسيطة...</small>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <small>15 مارس 2025</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="badge badge-warning">بانتظار الموافقة</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-success" title="موافقة">
-                                                    <i class="bi bi-check-lg text-white"></i>
-                                                </button>
-                                                <button class="btn btn-danger" title="رفض">
-                                                    <i class="bi bi-x-lg text-white"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="عرض">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr class="table-success">
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="user-avatar me-2">
-                                                    <i class="bi bi-person-fill"></i>
-                                                </div>
-                                                <span class="fw-semibold">فاطمة علي</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="fw-semibold">اللغة العربية</span>
-                                            <br>
-                                            <small class="text-muted">أ. سارة محمد</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star text-muted"></i>
-                                                <span class="ms-2 fw-bold">4.0</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="review-text">
-                                                دورة ممتازة تناسب المبتدئين. التمارين العملية مفيدة جداً
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <small>20 فبراير 2025</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="badge badge-success">موافق عليه</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="إخفاء">
-                                                    <i class="bi bi-eye-slash"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="حذف">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="عرض">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="user-avatar me-2">
-                                                    <i class="bi bi-person-fill"></i>
-                                                </div>
-                                                <span class="fw-semibold">خالد حسن</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="fw-semibold">الأحياء</span>
-                                            <br>
-                                            <small class="text-muted">د. محمد خالد</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-half text-warning"></i>
-                                                <span class="ms-2 fw-bold">4.5</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="review-text">
-                                                شرح متعمق ومواد تعليمية ممتازة. فقط أتمنى أن تكون الجلسات أطول
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <small>10 فبراير 2025</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="badge badge-success">موافق عليه</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="إخفاء">
-                                                    <i class="bi bi-eye-slash"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="حذف">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="عرض">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="user-avatar me-2">
-                                                    <i class="bi bi-person-fill"></i>
-                                                </div>
-                                                <span class="fw-semibold">سارة محمود</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <span class="fw-semibold">الرياضيات المتقدمة</span>
-                                            <br>
-                                            <small class="text-muted">د. أحمد محمد</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star-fill text-warning"></i>
-                                                <i class="bi bi-star text-muted"></i>
-                                                <i class="bi bi-star text-muted"></i>
-                                                <span class="ms-2 fw-bold">3.0</span>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="review-text">
-                                                الدورة جيدة لكن تحتاج بعض التحسينات في المحتوى
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <small>5 فبراير 2025</small>
-                                        </td>
-                                        <td class="text-center">
-                                            <span class="badge badge-success">موافق عليه</span>
-                                        </td>
-                                        <td class="text-center">
-                                            <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="إخفاء">
-                                                    <i class="bi bi-eye-slash"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="حذف">
-                                                    <i class="bi bi-trash"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="عرض">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer bg-white">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted">عرض 4 من أصل 247 مراجعة</small>
-                            <nav>
-                                <ul class="pagination pagination-sm mb-0">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#">السابق</a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">التالي</a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                 </div>
+
+                <!-- Reject Review Modal -->
+                <div
+                    class="modal fade"
+                    id="rejectReviewModal"
+                    tabindex="-1"
+                    aria-labelledby="rejectReviewModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5
+                                    class="modal-title fw-bold"
+                                    id="rejectReviewModalLabel"
+                                >
+                                    تأكيد رفض المراجعة
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>هل أنت متأكد من رفض نشر هذه المراجعة؟</p>
+                                <div class="mb-3">
+                                    <label class="form-label">سبب الرفض</label>
+                                    <textarea
+                                        class="form-control"
+                                        rows="3"
+                                        placeholder="اذكر سبب رفض المراجعة..."
+                                    ></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-light"
+                                    data-bs-dismiss="modal"
+                                >
+                                    إلغاء
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    تأكيد الرفض
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delete Review Modal -->
+                <div
+                    class="modal fade"
+                    id="deleteReviewModal"
+                    tabindex="-1"
+                    aria-labelledby="deleteReviewModalLabel"
+                    aria-hidden="true"
+                >
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5
+                                    class="modal-title fw-bold"
+                                    id="deleteReviewModalLabel"
+                                >
+                                    تأكيد حذف المراجعة
+                                </h5>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"
+                                ></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    هل أنت متأكد من حذف هذه المراجعة؟ لا يمكن
+                                    التراجع عن هذا الإجراء.
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-light"
+                                    data-bs-dismiss="modal"
+                                >
+                                    إلغاء
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    تأكيد الحذف
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="mt-auto py-3 text-center text-muted small">
+                    <p class="mb-0">
+                        &copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.
+                    </p>
+                </footer>
             </div>
-
-            <!-- Footer -->
-            <footer class="mt-auto py-3 text-center text-muted small">
-                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
-            </footer>
         </div>
-    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="../../assets/js/popper.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/custom.js"></script>
-    
-    <!-- Load Partials -->
-    <script>
-        fetch('../partials/sidebar_admin.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('sidebar-container').innerHTML = data;
-            });
+        <!-- Bootstrap JS -->
+        <script src="../../assets/js/popper.min.js"></script>
+        <script src="../../assets/js/bootstrap.min.js"></script>
+        <script src="../../assets/js/custom.js"></script>
 
-        fetch('../partials/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-            });
-    </script>
-</body>
+        <!-- Load Partials -->
+        <script>
+            fetch("../partials/sidebar_admin.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("sidebar-container").innerHTML =
+                        data;
+                });
+
+            fetch("../partials/navbar.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("navbar-container").innerHTML =
+                        data;
+                });
+        </script>
+    </body>
 </html>
-

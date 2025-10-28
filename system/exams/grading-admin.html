@@ -241,13 +241,13 @@ console.log(counter()); // 3</code></pre>
 
                                     <!-- Action Buttons -->
                                     <div class="d-flex justify-content-between gap-2">
-                                        <button class="btn btn-light">
+                                        <button class="btn btn-light" onclick="saveDraft()">
                                             <i class="bi bi-save me-2"></i>حفظ كمسودة
                                         </button>
                                         <div class="d-flex gap-2">
-                                            <button class="btn btn-danger">
-                                                <i class="bi bi-flag me-2"></i>إبلاغ عن غش
-                                            </button>
+                                        <button class="btn btn-danger" onclick="reportCheating()">
+                                            <i class="bi bi-flag me-2"></i>إبلاغ عن غش
+                                        </button>
                                             <button class="btn btn-success" onclick="submitGrading()">
                                                 <i class="bi bi-check-circle me-2"></i>حفظ التصحيح والمتابعة
                                             </button>
@@ -387,6 +387,18 @@ console.log(counter()); // 3</code></pre>
 
         function setScore2(score) {
             document.getElementById('score_q5').value = score;
+        }
+
+        function saveDraft() {
+            console.log('Saving grading as draft...');
+            alert('تم حفظ التصحيح كمسودة بنجاح!');
+        }
+
+        function reportCheating() {
+            if (confirm('هل تريد إبلاغ عن محاولة غش محتملة؟ سيتم إرسال التنبيه للمشرف.')) {
+                console.log('Reporting cheating attempt...');
+                alert('تم إرسال البلاغ للمشرف بنجاح!');
+            }
         }
 
         function submitGrading() {

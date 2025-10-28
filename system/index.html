@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDARTI Live Academy - الوصول السريع</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../assets/css/bootstrap.rtl.min.css">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/custom_system.css">
+    
+    <style>
+        .role-card {
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            height: 100%;
+            background: #f1f1f1;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        .role-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--card-shadow-lg);
+        }
+        .role-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));
+            color: white;
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-2xl);
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(30%, -30%);
+        }
+        .feature-card {
+            background: #f1f1f1;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: var(--transition-smooth);
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-5">
+        <div class="container">
+            <!-- Hero Section -->
+            <div class="hero-section text-center mb-5">
+                <div class="position-relative" style="z-index: 2;">
+                    <div class="mb-4">
+                        <img src="../assets/img/main_logo.png" alt="IDARTI Live Academy" class="mb-3" style="max-height: 80px;">
+                    </div>
+                    <h2 class="fw-bold mb-3">مرحباً بك في منصة IDARTI Live Academy</h2>
+                    <p class="lead mb-0">اختر دورك للوصول إلى لوحة التحكم الخاصة بك</p>
+                </div>
+            </div>
+
+            <!-- Role Cards -->
+            <div class="row g-4 justify-content-center">
+                <!-- Admin -->
+                <div class="col-lg-3 col-md-6" onclick="redirectTo('admin')">
+                    <div class="card role-card h-100">
+                        <div class="card-body text-center p-5">
+                            <div class="role-icon bg-danger-light text-danger mx-auto">
+                                <i class="bi bi-person-badge"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">مسؤول النظام</h4>
+                            <p class="text-muted mb-4">التحكم الكامل في المنصة وإدارة جميع المكونات</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <span class="badge badge-danger">إدارة شاملة</span>
+                                <span class="badge badge-secondary">تحكم كامل</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student -->
+                <div class="col-lg-3 col-md-6" onclick="redirectTo('student')">
+                    <div class="card role-card h-100">
+                        <div class="card-body text-center p-5">
+                            <div class="role-icon bg-primary-light text-primary mx-auto">
+                                <i class="bi bi-mortarboard"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">طالب</h4>
+                            <p class="text-muted mb-4">الوصول إلى الدورات والمواد التعليمية واختباراتك</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <span class="badge badge-primary">تعلم</span>
+                                <span class="badge badge-info">مسجل</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher -->
+                <div class="col-lg-3 col-md-6" onclick="redirectTo('teacher')">
+                    <div class="card role-card h-100">
+                        <div class="card-body text-center p-5">
+                            <div class="role-icon bg-success-light text-success mx-auto">
+                                <i class="bi bi-person-video"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">معلم</h4>
+                            <p class="text-muted mb-4">إدارة الدورات والجلسات والاختبارات والطلاب</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <span class="badge badge-success">تدريس</span>
+                                <span class="badge badge-warning">إدارة</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supervisor -->
+                <div class="col-lg-3 col-md-6" onclick="redirectTo('supervisor')">
+                    <div class="card role-card h-100">
+                        <div class="card-body text-center p-5">
+                            <div class="role-icon bg-warning-light text-warning mx-auto">
+                                <i class="bi bi-shield-check"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">مشرف</h4>
+                            <p class="text-muted mb-4">مراقبة الجودة والإشراف على الأداء والنزاهة</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <span class="badge badge-warning">إشراف</span>
+                                <span class="badge badge-info">نوعية</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Link -->
+            <div class="text-center mt-5">
+                <p class="text-muted mb-0">
+                    لديك حساب؟ 
+                    <a href="auth/login.html" class="btn btn-outline-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>تسجيل الدخول
+                    </a>
+                </p>
+            </div>
+
+            <!-- Info Section -->
+            <div class="row mt-5 g-4">
+                <div class="col-lg-4">
+                    <div class="card feature-card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="icon-circle icon-circle-lg bg-primary-light text-primary">
+                                    <i class="bi bi-lightning-charge-fill fs-3"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="fw-bold mb-1">جلسات مباشرة</h6>
+                                <p class="text-muted small mb-0">تفاعل مباشر مع المعلمين والطلاب</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card feature-card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="icon-circle icon-circle-lg bg-success-light text-success">
+                                    <i class="bi bi-book-fill fs-3"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="fw-bold mb-1">مواد تعليمية</h6>
+                                <p class="text-muted small mb-0">محتوى تعليمي متنوع وجذاب</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4">
+                    <div class="card feature-card p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0">
+                                <div class="icon-circle icon-circle-lg bg-info-light text-info">
+                                    <i class="bi bi-graph-up-arrow fs-3"></i>
+                                </div>
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6 class="fw-bold mb-1">متابعة التقدم</h6>
+                                <p class="text-muted small mb-0">تقارير تفصيلية عن الأداء</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-5">
+                <p class="text-muted small mb-0">
+                    &copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../assets/js/custom.js"></script>
+
+    <script>
+        function redirectTo(role) {
+            // Store the selected role (in real app, this would go through authentication)
+            sessionStorage.setItem('userRole', role);
+            
+            // Redirect to the appropriate dashboard
+            switch(role) {
+                case 'admin':
+                    window.location.href = 'dashboard/admin.html';
+                    break;
+                case 'student':
+                    window.location.href = 'dashboard/student.html';
+                    break;
+                case 'teacher':
+                    window.location.href = 'dashboard/teacher.html';
+                    break;
+                case 'supervisor':
+                    window.location.href = 'dashboard/supervisor.html';
+                    break;
+                default:
+                    window.location.href = 'auth/login.html';
+            }
+        }
+
+        // Check if user is already logged in
+        window.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+            const userRole = sessionStorage.getItem('userRole');
+            
+            // If logged in, redirect to dashboard based on role
+            if (isLoggedIn === 'true' && userRole) {
+                redirectTo(userRole);
+            }
+        });
+    </script>
+</body>
+</html>
+

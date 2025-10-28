@@ -1,592 +1,1119 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدارة المستخدمين - IDARTI Live Academy</title>
-    
-    <!-- Bootstrap RTL CSS -->
-    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Custom System CSS -->
-    <link rel="stylesheet" href="../../assets/css/custom_system.css">
-</head>
-<body>
-    <div class="d-flex">
-        <!-- Sidebar -->
-        <div id="sidebar-container"></div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>إدارة المستخدمين - IDARTI Live Academy</title>
 
-        <!-- Main Content -->
-        <div class="content-wrapper">
-            <!-- Navbar -->
-            <div id="navbar-container"></div>
+        <!-- Bootstrap RTL CSS -->
+        <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css" />
+        <!-- Bootstrap Icons -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        />
+        <!-- Custom System CSS -->
+        <link rel="stylesheet" href="../../assets/css/custom_system.css" />
+    </head>
+    <body>
+        <div class="d-flex">
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
 
-            <!-- Page Content -->
-            <div class="container-fluid px-4 py-4">
-                <!-- Page Header -->
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <div>
-                        <h4 class="mb-1 fw-bold">إدارة المستخدمين</h4>
-                        <p class="text-muted mb-0">عرض وإدارة جميع مستخدمي المنصة</p>
+            <!-- Main Content -->
+            <div class="content-wrapper">
+                <!-- Navbar -->
+                <div id="navbar-container"></div>
+
+                <!-- Page Content -->
+                <div class="container-fluid px-4 py-4">
+                    <!-- Page Header -->
+                    <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                    >
+                        <div>
+                            <h4 class="mb-1 fw-bold">إدارة المستخدمين</h4>
+                            <p class="text-muted mb-0">
+                                عرض وإدارة جميع مستخدمي المنصة
+                            </p>
+                        </div>
+                        <a
+                            href="../../system/users/form.html"
+                            class="btn btn-primary"
+                        >
+                            <i class="bi bi-person-plus me-2"></i>إضافة مستخدم
+                            جديد
+                        </a>
                     </div>
-                    <a href="/system/users/form.html" class="btn btn-primary">
-                        <i class="bi bi-person-plus me-2"></i>إضافة مستخدم جديد
-                    </a>
-                </div>
 
-                <!-- Statistics Cards -->
-                <div class="row g-3 mb-4">
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">إجمالي المستخدمين</p>
-                                        <h3 class="mb-0 fw-bold">245</h3>
-                                        <small class="text-success">
-                                            <i class="bi bi-arrow-up me-1"></i>12% من الشهر الماضي
-                                        </small>
+                    <!-- Statistics Cards -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                إجمالي المستخدمين
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">245</h3>
+                                            <small class="text-success">
+                                                <i
+                                                    class="bi bi-arrow-up me-1"
+                                                ></i
+                                                >12% من الشهر الماضي
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-primary-light">
+                                            <i
+                                                class="bi bi-people text-primary"
+                                            ></i>
+                                        </div>
                                     </div>
-                                    <div class="stat-icon bg-primary-light">
-                                        <i class="bi bi-people text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                الطلاب
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">180</h3>
+                                            <small class="text-success">
+                                                <i
+                                                    class="bi bi-arrow-up me-1"
+                                                ></i
+                                                >8% من الشهر الماضي
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-info-light">
+                                            <i
+                                                class="bi bi-mortarboard text-info"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                المعلمين
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">45</h3>
+                                            <small class="text-muted">
+                                                <i class="bi bi-dash me-1"></i
+                                                >لا تغيير
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-success-light">
+                                            <i
+                                                class="bi bi-person-workspace text-success"
+                                            ></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card stat-card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex justify-content-between align-items-start"
+                                    >
+                                        <div>
+                                            <p class="text-muted mb-2">
+                                                المستخدمون النشطون
+                                            </p>
+                                            <h3 class="mb-0 fw-bold">198</h3>
+                                            <small class="text-success">
+                                                <i
+                                                    class="bi bi-arrow-up me-1"
+                                                ></i
+                                                >5% من الشهر الماضي
+                                            </small>
+                                        </div>
+                                        <div class="stat-icon bg-warning-light">
+                                            <i
+                                                class="bi bi-activity text-warning"
+                                            ></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">الطلاب</p>
-                                        <h3 class="mb-0 fw-bold">180</h3>
-                                        <small class="text-success">
-                                            <i class="bi bi-arrow-up me-1"></i>8% من الشهر الماضي
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-info-light">
-                                        <i class="bi bi-mortarboard text-info"></i>
+                    <!-- Filters & Search Card -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <form class="row g-3">
+                                <!-- Search -->
+                                <div class="col-lg-3 col-md-6">
+                                    <label class="form-label">البحث</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-white">
+                                            <i class="bi bi-search"></i>
+                                        </span>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="بحث بالاسم أو البريد..."
+                                        />
                                     </div>
                                 </div>
-                            </div>
+
+                                <!-- Role Filter -->
+                                <div class="col-lg-2 col-md-6">
+                                    <label class="form-label">الدور</label>
+                                    <select class="form-select">
+                                        <option value="">جميع الأدوار</option>
+                                        <option value="student">طالب</option>
+                                        <option value="teacher">معلم</option>
+                                        <option value="supervisor">مشرف</option>
+                                        <option value="admin">
+                                            مدير النظام
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <!-- Status Filter -->
+                                <div class="col-lg-2 col-md-6">
+                                    <label class="form-label">الحالة</label>
+                                    <select class="form-select">
+                                        <option value="">جميع الحالات</option>
+                                        <option value="active">نشط</option>
+                                        <option value="inactive">
+                                            غير نشط
+                                        </option>
+                                        <option value="suspended">موقوف</option>
+                                    </select>
+                                </div>
+
+                                <!-- Registration Date -->
+                                <div class="col-lg-2 col-md-6">
+                                    <label class="form-label"
+                                        >تاريخ التسجيل</label
+                                    >
+                                    <select class="form-select">
+                                        <option value="">كل الفترات</option>
+                                        <option value="today">اليوم</option>
+                                        <option value="week">
+                                            هذا الأسبوع
+                                        </option>
+                                        <option value="month">هذا الشهر</option>
+                                        <option value="year">هذا العام</option>
+                                    </select>
+                                </div>
+
+                                <!-- Buttons -->
+                                <div
+                                    class="col-lg-3 col-md-12 d-flex align-items-end gap-2"
+                                >
+                                    <button
+                                        type="submit"
+                                        class="btn btn-primary flex-fill"
+                                    >
+                                        <i class="bi bi-funnel me-2"></i>تصفية
+                                    </button>
+                                    <button
+                                        type="reset"
+                                        class="btn btn-light flex-fill"
+                                    >
+                                        <i
+                                            class="bi bi-arrow-clockwise me-2"
+                                        ></i
+                                        >إعادة تعيين
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">المعلمين</p>
-                                        <h3 class="mb-0 fw-bold">45</h3>
-                                        <small class="text-muted">
-                                            <i class="bi bi-dash me-1"></i>لا تغيير
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-success-light">
-                                        <i class="bi bi-person-workspace text-success"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between align-items-start">
-                                    <div>
-                                        <p class="text-muted mb-2">المستخدمون النشطون</p>
-                                        <h3 class="mb-0 fw-bold">198</h3>
-                                        <small class="text-success">
-                                            <i class="bi bi-arrow-up me-1"></i>5% من الشهر الماضي
-                                        </small>
-                                    </div>
-                                    <div class="stat-icon bg-warning-light">
-                                        <i class="bi bi-activity text-warning"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Filters & Search Card -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <form class="row g-3">
-                            <!-- Search -->
-                            <div class="col-lg-3 col-md-6">
-                                <label class="form-label">البحث</label>
-                                <div class="input-group">
-                                    <span class="input-group-text bg-white">
-                                        <i class="bi bi-search"></i>
-                                    </span>
-                                    <input type="text" class="form-control" placeholder="بحث بالاسم أو البريد...">
-                                </div>
-                            </div>
-
-                            <!-- Role Filter -->
-                            <div class="col-lg-2 col-md-6">
-                                <label class="form-label">الدور</label>
-                                <select class="form-select">
-                                    <option value="">جميع الأدوار</option>
-                                    <option value="student">طالب</option>
-                                    <option value="teacher">معلم</option>
-                                    <option value="supervisor">مشرف</option>
-                                    <option value="admin">مدير النظام</option>
-                                </select>
-                            </div>
-
-                            <!-- Status Filter -->
-                            <div class="col-lg-2 col-md-6">
-                                <label class="form-label">الحالة</label>
-                                <select class="form-select">
-                                    <option value="">جميع الحالات</option>
-                                    <option value="active">نشط</option>
-                                    <option value="inactive">غير نشط</option>
-                                    <option value="suspended">موقوف</option>
-                                </select>
-                            </div>
-
-                            <!-- Registration Date -->
-                            <div class="col-lg-2 col-md-6">
-                                <label class="form-label">تاريخ التسجيل</label>
-                                <select class="form-select">
-                                    <option value="">كل الفترات</option>
-                                    <option value="today">اليوم</option>
-                                    <option value="week">هذا الأسبوع</option>
-                                    <option value="month">هذا الشهر</option>
-                                    <option value="year">هذا العام</option>
-                                </select>
-                            </div>
-
-                            <!-- Buttons -->
-                            <div class="col-lg-3 col-md-12 d-flex align-items-end gap-2">
-                                <button type="submit" class="btn btn-primary flex-fill">
-                                    <i class="bi bi-funnel me-2"></i>تصفية
+                    <!-- Users Table Card -->
+                    <div class="card">
+                        <div
+                            class="card-header d-flex justify-content-between align-items-center"
+                        >
+                            <h6 class="mb-0 fw-semibold">قائمة المستخدمين</h6>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-file-earmark-excel me-1"></i
+                                    >تصدير Excel
                                 </button>
-                                <button type="reset" class="btn btn-light flex-fill">
-                                    <i class="bi bi-arrow-clockwise me-2"></i>إعادة تعيين
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-printer me-1"></i>طباعة
                                 </button>
                             </div>
-                        </form>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th class="w-50px">
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </th>
+                                            <th>المستخدم</th>
+                                            <th>رقم الهاتف</th>
+                                            <th>الدور</th>
+                                            <th>الحالة</th>
+                                            <th>تاريخ التسجيل</th>
+                                            <th>آخر نشاط</th>
+                                            <th class="text-center">
+                                                الإجراءات
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- User Row 1 - Admin -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        style="
+                                                            width: 40px;
+                                                            height: 40px;
+                                                            background: linear-gradient(
+                                                                135deg,
+                                                                var(
+                                                                    --main-gradient-start
+                                                                ),
+                                                                var(
+                                                                    --main-gradient-end
+                                                                )
+                                                            );
+                                                        "
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            أحمد محمد
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #001</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 50 123 4567</td>
+                                            <td>
+                                                <span class="badge badge-danger"
+                                                    >مدير النظام</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >نشط</span
+                                                >
+                                            </td>
+                                            <td>15 يناير 2023</td>
+                                            <td>منذ ساعتين</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-admin.html?id=1"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=1"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 2 - Teacher -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-success"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            سارة أحمد
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #002</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 55 234 5678</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >معلم</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >نشط</span
+                                                >
+                                            </td>
+                                            <td>20 فبراير 2023</td>
+                                            <td>منذ 30 دقيقة</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-teacher.html?id=2"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=2"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 3 - Supervisor -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-warning"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            خالد محمود
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #003</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 54 345 6789</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-warning"
+                                                    >مشرف</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >نشط</span
+                                                >
+                                            </td>
+                                            <td>10 مارس 2023</td>
+                                            <td>منذ يوم واحد</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-supervisor.html?id=3"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=3"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 4 - Student -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-info"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            محمد خالد
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #004</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 56 456 7890</td>
+                                            <td>
+                                                <span class="badge badge-info"
+                                                    >طالب</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >نشط</span
+                                                >
+                                            </td>
+                                            <td>15 مايو 2023</td>
+                                            <td>منذ 5 دقائق</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-student.html?id=4"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=4"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 5 - Student (Inactive) -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-info"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            فاطمة عبدالله
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #005</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 53 567 8901</td>
+                                            <td>
+                                                <span class="badge badge-info"
+                                                    >طالب</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-secondary"
+                                                    >غير نشط</span
+                                                >
+                                            </td>
+                                            <td>28 يونيو 2023</td>
+                                            <td>منذ أسبوعين</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-student.html?id=5"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=5"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 6 - Teacher -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-success"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            عمر السعيد
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #006</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 55 678 9012</td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >معلم</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >نشط</span
+                                                >
+                                            </td>
+                                            <td>05 أغسطس 2023</td>
+                                            <td>منذ 3 ساعات</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-teacher.html?id=6"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=6"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 7 - Student -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-info"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            نورة العتيبي
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #007</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 50 789 0123</td>
+                                            <td>
+                                                <span class="badge badge-info"
+                                                    >طالب</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="badge badge-success"
+                                                    >نشط</span
+                                                >
+                                            </td>
+                                            <td>12 سبتمبر 2023</td>
+                                            <td>منذ 10 دقائق</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-student.html?id=7"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=7"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <!-- User Row 8 - Student (Suspended) -->
+                                        <tr>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    class="form-check-input"
+                                                />
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="d-flex align-items-center"
+                                                >
+                                                    <div
+                                                        class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3"
+                                                        class="size-40 avatar-gradient-info"
+                                                    >
+                                                        <i
+                                                            class="bi bi-person-fill text-white"
+                                                        ></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6
+                                                            class="mb-0 fw-semibold"
+                                                        >
+                                                            يوسف الحربي
+                                                        </h6>
+                                                        <small
+                                                            class="text-muted"
+                                                            >ID: #008</small
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>+966 54 890 1234</td>
+                                            <td>
+                                                <span class="badge badge-info"
+                                                    >طالب</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span class="badge badge-danger"
+                                                    >موقوف</span
+                                                >
+                                            </td>
+                                            <td>20 أكتوبر 2023</td>
+                                            <td>منذ شهر</td>
+                                            <td>
+                                                <div
+                                                    class="d-flex justify-content-center gap-1"
+                                                >
+                                                    <a
+                                                        href="/system/users/detail-student.html?id=8"
+                                                        class="btn btn-sm btn-light"
+                                                        title="عرض التفاصيل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-eye"
+                                                        ></i>
+                                                    </a>
+                                                    <a
+                                                        href="/system/users/form.html?id=8"
+                                                        class="btn btn-sm btn-light"
+                                                        title="تعديل"
+                                                    >
+                                                        <i
+                                                            class="bi bi-pencil"
+                                                        ></i>
+                                                    </a>
+                                                    <button
+                                                        class="btn btn-sm btn-light"
+                                                        title="حذف"
+                                                        data-bs-toggle="modal"
+                                                        data-bs-target="#deleteModal"
+                                                    >
+                                                        <i
+                                                            class="bi bi-trash text-danger"
+                                                        ></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="card-footer bg-white border-top">
+                            <div
+                                class="d-flex justify-content-between align-items-center"
+                            >
+                                <div class="text-muted small">
+                                    عرض 1 - 8 من أصل 245 مستخدم
+                                </div>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination mb-0">
+                                        <li class="page-item disabled">
+                                            <a
+                                                class="page-link"
+                                                href="#"
+                                                tabindex="-1"
+                                            >
+                                                <i
+                                                    class="bi bi-chevron-right"
+                                                ></i>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active">
+                                            <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">4</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">5</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">
+                                                <i
+                                                    class="bi bi-chevron-left"
+                                                ></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Users Table Card -->
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="mb-0 fw-semibold">قائمة المستخدمين</h6>
-                        <div class="d-flex gap-2">
-                            <button class="btn btn-sm btn-light">
-                                <i class="bi bi-file-earmark-excel me-1"></i>تصدير Excel
-                            </button>
-                            <button class="btn btn-sm btn-light">
-                                <i class="bi bi-printer me-1"></i>طباعة
-                            </button>
-                        </div>
+                <!-- Footer -->
+                <footer class="mt-auto py-3 text-center text-muted small">
+                    <p class="mb-0">
+                        &copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.
+                    </p>
+                </footer>
+            </div>
+        </div>
+
+        <!-- Delete Confirmation Modal -->
+        <div
+            class="modal fade"
+            id="deleteModal"
+            tabindex="-1"
+            aria-labelledby="deleteModalLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title fw-bold" id="deleteModalLabel">
+                            تأكيد الحذف
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
                     </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th class="w-50px">
-                                            <input type="checkbox" class="form-check-input">
-                                        </th>
-                                        <th>المستخدم</th>
-                                        <th>رقم الهاتف</th>
-                                        <th>الدور</th>
-                                        <th>الحالة</th>
-                                        <th>تاريخ التسجيل</th>
-                                        <th>آخر نشاط</th>
-                                        <th class="text-center">الإجراءات</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- User Row 1 - Admin -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">أحمد محمد</h6>
-                                                    <small class="text-muted">ID: #001</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 50 123 4567</td>
-                                        <td><span class="badge badge-danger">مدير النظام</span></td>
-                                        <td><span class="badge badge-success">نشط</span></td>
-                                        <td>15 يناير 2023</td>
-                                        <td>منذ ساعتين</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-admin.html?id=1" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=1" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 2 - Teacher -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-success">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">سارة أحمد</h6>
-                                                    <small class="text-muted">ID: #002</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 55 234 5678</td>
-                                        <td><span class="badge badge-success">معلم</span></td>
-                                        <td><span class="badge badge-success">نشط</span></td>
-                                        <td>20 فبراير 2023</td>
-                                        <td>منذ 30 دقيقة</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-teacher.html?id=2" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=2" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 3 - Supervisor -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-warning">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">خالد محمود</h6>
-                                                    <small class="text-muted">ID: #003</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 54 345 6789</td>
-                                        <td><span class="badge badge-warning">مشرف</span></td>
-                                        <td><span class="badge badge-success">نشط</span></td>
-                                        <td>10 مارس 2023</td>
-                                        <td>منذ يوم واحد</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-supervisor.html?id=3" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=3" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 4 - Student -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">محمد خالد</h6>
-                                                    <small class="text-muted">ID: #004</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 56 456 7890</td>
-                                        <td><span class="badge badge-info">طالب</span></td>
-                                        <td><span class="badge badge-success">نشط</span></td>
-                                        <td>15 مايو 2023</td>
-                                        <td>منذ 5 دقائق</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-student.html?id=4" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=4" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 5 - Student (Inactive) -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">فاطمة عبدالله</h6>
-                                                    <small class="text-muted">ID: #005</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 53 567 8901</td>
-                                        <td><span class="badge badge-info">طالب</span></td>
-                                        <td><span class="badge badge-secondary">غير نشط</span></td>
-                                        <td>28 يونيو 2023</td>
-                                        <td>منذ أسبوعين</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-student.html?id=5" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=5" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 6 - Teacher -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-success">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">عمر السعيد</h6>
-                                                    <small class="text-muted">ID: #006</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 55 678 9012</td>
-                                        <td><span class="badge badge-success">معلم</span></td>
-                                        <td><span class="badge badge-success">نشط</span></td>
-                                        <td>05 أغسطس 2023</td>
-                                        <td>منذ 3 ساعات</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-teacher.html?id=6" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=6" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 7 - Student -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">نورة العتيبي</h6>
-                                                    <small class="text-muted">ID: #007</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 50 789 0123</td>
-                                        <td><span class="badge badge-info">طالب</span></td>
-                                        <td><span class="badge badge-success">نشط</span></td>
-                                        <td>12 سبتمبر 2023</td>
-                                        <td>منذ 10 دقائق</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-student.html?id=7" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=7" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <!-- User Row 8 - Student (Suspended) -->
-                                    <tr>
-                                        <td>
-                                            <input type="checkbox" class="form-check-input">
-                                        </td>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
-                                                    <i class="bi bi-person-fill text-white"></i>
-                                                </div>
-                                                <div>
-                                                    <h6 class="mb-0 fw-semibold">يوسف الحربي</h6>
-                                                    <small class="text-muted">ID: #008</small>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>+966 54 890 1234</td>
-                                        <td><span class="badge badge-info">طالب</span></td>
-                                        <td><span class="badge badge-danger">موقوف</span></td>
-                                        <td>20 أكتوبر 2023</td>
-                                        <td>منذ شهر</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center gap-1">
-                                                <a href="/system/users/detail-student.html?id=8" class="btn btn-sm btn-light" title="عرض التفاصيل">
-                                                    <i class="bi bi-eye"></i>
-                                                </a>
-                                                <a href="/system/users/form.html?id=8" class="btn btn-sm btn-light" title="تعديل">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                                <button class="btn btn-sm btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                                                    <i class="bi bi-trash text-danger"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    
-                    <!-- Pagination -->
-                    <div class="card-footer bg-white border-top">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="text-muted small">
-                                عرض 1 - 8 من أصل 245 مستخدم
+                    <div class="modal-body">
+                        <div class="text-center mb-3">
+                            <div
+                                class="avatar-xl mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle"
+                                class="size-80 bg-danger-light-custom rounded-3"
+                            >
+                                <i
+                                    class="bi bi-exclamation-triangle text-danger"
+                                    class="fs-2-5rem"
+                                ></i>
                             </div>
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination mb-0">
-                                    <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1">
-                                            <i class="bi bi-chevron-right"></i>
-                                        </a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">5</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">
-                                            <i class="bi bi-chevron-left"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <h6 class="fw-semibold mb-2">
+                                هل أنت متأكد من حذف هذا المستخدم؟
+                            </h6>
+                            <p class="text-muted mb-0">
+                                لن تتمكن من التراجع عن هذا الإجراء!
+                            </p>
                         </div>
+                    </div>
+                    <div class="modal-footer border-0 justify-content-center">
+                        <button
+                            type="button"
+                            class="btn btn-light"
+                            data-bs-dismiss="modal"
+                        >
+                            إلغاء
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            نعم، احذف
+                        </button>
                     </div>
                 </div>
             </div>
-
-            <!-- Footer -->
-            <footer class="mt-auto py-3 text-center text-muted small">
-                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
-            </footer>
         </div>
-    </div>
 
-    <!-- Delete Confirmation Modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title fw-bold" id="deleteModalLabel">تأكيد الحذف</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="text-center mb-3">
-                        <div class="avatar-xl mx-auto mb-3 d-flex align-items-center justify-content-center rounded-circle" class="size-80 bg-danger-light-custom rounded-3">
-                            <i class="bi bi-exclamation-triangle text-danger" class="fs-2-5rem"></i>
-                        </div>
-                        <h6 class="fw-semibold mb-2">هل أنت متأكد من حذف هذا المستخدم؟</h6>
-                        <p class="text-muted mb-0">لن تتمكن من التراجع عن هذا الإجراء!</p>
-                    </div>
-                </div>
-                <div class="modal-footer border-0 justify-content-center">
-                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
-                    <button type="button" class="btn btn-danger">نعم، احذف</button>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- Bootstrap JS -->
+        <script src="../../assets/js/popper.min.js"></script>
+        <script src="../../assets/js/bootstrap.min.js"></script>
+        <script src="../../assets/js/custom.js"></script>
 
-    <!-- Bootstrap JS -->
-    <script src="../../assets/js/popper.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
-    <script src="../../assets/js/custom.js"></script>
-    
-    <!-- Load Partials -->
-    <script>
-        // Dynamically load sidebar and navbar
-        fetch('../partials/sidebar_admin.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('sidebar-container').innerHTML = data;
-                // Set active menu item
-                document.querySelector('.sidebar-menu-link[href="/system/users/list.html"]')?.closest('.sidebar-menu-item')?.classList.add('active');
-            });
+        <!-- Load Partials -->
+        <script>
+            // Dynamically load sidebar and navbar
+            fetch("../partials/sidebar_admin.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("sidebar-container").innerHTML =
+                        data;
+                    // Set active menu item
+                    document
+                        .querySelector(
+                            '.sidebar-menu-link[href="/system/users/list.html"]'
+                        )
+                        ?.closest(".sidebar-menu-item")
+                        ?.classList.add("active");
+                });
 
-        fetch('../partials/navbar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-container').innerHTML = data;
-                // Update page title
-                document.getElementById('currentPageTitle').textContent = 'إدارة المستخدمين';
-                document.getElementById('currentBreadcrumb').textContent = 'إدارة المستخدمين';
-            });
-    </script>
-</body>
+            fetch("../partials/navbar.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("navbar-container").innerHTML =
+                        data;
+                    // Update page title
+                    document.getElementById("currentPageTitle").textContent =
+                        "إدارة المستخدمين";
+                    document.getElementById("currentBreadcrumb").textContent =
+                        "إدارة المستخدمين";
+                });
+        </script>
+    </body>
 </html>
-
