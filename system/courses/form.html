@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة/تعديل دورة - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/list-admin.html">الدورات</a></li>
+                        <li class="breadcrumb-item active" id="formTitle">إضافة دورة جديدة</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold" id="pageTitle">إضافة دورة جديدة</h4>
+                        <p class="text-muted mb-0">املأ البيانات التالية لإضافة/تعديل دورة</p>
+                    </div>
+                </div>
+
+                <form id="courseForm" class="needs-validation" novalidate>
+                    <div class="row g-4">
+                        <!-- Main Content Column -->
+                        <div class="col-lg-8">
+                            <!-- Basic Information Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-info-circle me-2"></i>المعلومات الأساسية
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <!-- Course Name -->
+                                        <div class="col-12">
+                                            <label for="courseName" class="form-label">اسم الدورة <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="courseName" required placeholder="مثال: تطوير الويب المتقدم">
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال اسم الدورة
+                                            </div>
+                                        </div>
+
+                                        <!-- Description -->
+                                        <div class="col-12">
+                                            <label for="courseDescription" class="form-label">وصف الدورة <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" id="courseDescription" rows="4" required placeholder="وصف شامل للدورة ومحتواها..."></textarea>
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال وصف الدورة
+                                            </div>
+                                        </div>
+
+                                        <!-- Category -->
+                                        <div class="col-md-6">
+                                            <label for="courseCategory" class="form-label">التصنيف <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="courseCategory" required>
+                                                <option value="">اختر التصنيف</option>
+                                                <option value="programming">برمجة وتطوير</option>
+                                                <option value="design">تصميم</option>
+                                                <option value="business">أعمال</option>
+                                                <option value="marketing">تسويق</option>
+                                                <option value="languages">لغات</option>
+                                                <option value="other">أخرى</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار تصنيف الدورة
+                                            </div>
+                                        </div>
+
+                                        <!-- Level -->
+                                        <div class="col-md-6">
+                                            <label for="courseLevel" class="form-label">المستوى <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="courseLevel" required>
+                                                <option value="">اختر المستوى</option>
+                                                <option value="beginner">مبتدئ</option>
+                                                <option value="intermediate">متوسط</option>
+                                                <option value="advanced">متقدم</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار مستوى الدورة
+                                            </div>
+                                        </div>
+
+                                        <!-- Language -->
+                                        <div class="col-md-6">
+                                            <label for="courseLanguage" class="form-label">لغة التدريس <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="courseLanguage" required>
+                                                <option value="">اختر اللغة</option>
+                                                <option value="ar" selected>العربية</option>
+                                                <option value="en">الإنجليزية</option>
+                                                <option value="both">كلاهما</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار لغة التدريس
+                                            </div>
+                                        </div>
+
+                                        <!-- Instructor -->
+                                        <div class="col-md-6">
+                                            <label for="courseInstructor" class="form-label">المدرس <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="courseInstructor" required>
+                                                <option value="">اختر المدرس</option>
+                                                <option value="1">د. أحمد محمد</option>
+                                                <option value="2">أ. سارة أحمد</option>
+                                                <option value="3">م. خالد عمر</option>
+                                                <option value="4">د. محمد علي</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار المدرس
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Duration & Schedule Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-calendar-event me-2"></i>المدة والجدول الزمني
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <!-- Duration in Weeks -->
+                                        <div class="col-md-4">
+                                            <label for="courseDuration" class="form-label">مدة الدورة (بالأسابيع) <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" id="courseDuration" required min="1" placeholder="16">
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال مدة الدورة
+                                            </div>
+                                        </div>
+
+                                        <!-- Number of Sessions -->
+                                        <div class="col-md-4">
+                                            <label for="sessionsCount" class="form-label">عدد الجلسات <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" id="sessionsCount" required min="1" placeholder="32">
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال عدد الجلسات
+                                            </div>
+                                        </div>
+
+                                        <!-- Session Duration -->
+                                        <div class="col-md-4">
+                                            <label for="sessionDuration" class="form-label">مدة الجلسة (بالساعات) <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" id="sessionDuration" required min="0.5" step="0.5" placeholder="2">
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال مدة الجلسة
+                                            </div>
+                                        </div>
+
+                                        <!-- Start Date -->
+                                        <div class="col-md-6">
+                                            <label for="startDate" class="form-label">تاريخ البدء <span class="text-danger">*</span></label>
+                                            <input type="date" class="form-control" id="startDate" required>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار تاريخ البدء
+                                            </div>
+                                        </div>
+
+                                        <!-- End Date -->
+                                        <div class="col-md-6">
+                                            <label for="endDate" class="form-label">تاريخ الانتهاء</label>
+                                            <input type="date" class="form-control" id="endDate">
+                                            <small class="text-muted">سيتم حسابه تلقائيًا بناءً على مدة الدورة</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pricing Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-tag me-2"></i>التسعير
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <!-- Price -->
+                                        <div class="col-md-6">
+                                            <label for="coursePrice" class="form-label">السعر (ر.س) <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" id="coursePrice" required min="0" step="0.01" placeholder="2500">
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال سعر الدورة
+                                            </div>
+                                        </div>
+
+                                        <!-- Discount -->
+                                        <div class="col-md-6">
+                                            <label for="courseDiscount" class="form-label">نسبة الخصم (%)</label>
+                                            <input type="number" class="form-control" id="courseDiscount" min="0" max="100" placeholder="0">
+                                        </div>
+
+                                        <!-- Final Price Display -->
+                                        <div class="col-12">
+                                            <div class="alert alert-info">
+                                                <strong>السعر النهائي:</strong>
+                                                <span id="finalPrice" class="fs-5 fw-bold ms-2">0 ر.س</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- What You'll Learn Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-check-circle me-2"></i>ما ستتعلمه
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div id="learningPoints">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text"><i class="bi bi-check"></i></span>
+                                            <input type="text" class="form-control" placeholder="أضف نقطة تعليمية...">
+                                            <button class="btn btn-outline-danger" type="button" onclick="removeLearningPoint(this)">
+                                                <i class="bi bi-x"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="addLearningPoint()">
+                                        <i class="bi bi-plus-circle me-2"></i>إضافة نقطة
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Requirements Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-list-check me-2"></i>المتطلبات
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <div id="requirements">
+                                        <div class="input-group mb-2">
+                                            <span class="input-group-text"><i class="bi bi-dot"></i></span>
+                                            <input type="text" class="form-control" placeholder="أضف متطلب...">
+                                            <button class="btn btn-outline-danger" type="button" onclick="removeRequirement(this)">
+                                                <i class="bi bi-x"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" onclick="addRequirement()">
+                                        <i class="bi bi-plus-circle me-2"></i>إضافة متطلب
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Column -->
+                        <div class="col-lg-4">
+                            <!-- Course Image Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-image me-2"></i>صورة الدورة
+                                    </h5>
+                                </div>
+                                <div class="card-body text-center">
+                                    <div class="mb-3">
+                                        <div class="d-flex align-items-center justify-content-center rounded-3 mx-auto" style="width: 200px; height: 200px; background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));">
+                                            <i class="bi bi-image text-white" style="font-size: 4rem;"></i>
+                                        </div>
+                                    </div>
+                                    <input type="file" class="form-control" id="courseImage" accept="image/*">
+                                    <small class="text-muted d-block mt-2">الحجم الموصى به: 800x600 بكسل</small>
+                                </div>
+                            </div>
+
+                            <!-- Status & Settings Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-gear me-2"></i>الحالة والإعدادات
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Status -->
+                                    <div class="mb-3">
+                                        <label for="courseStatus" class="form-label">حالة الدورة</label>
+                                        <select class="form-select" id="courseStatus">
+                                            <option value="draft">مسودة</option>
+                                            <option value="upcoming">قادمة</option>
+                                            <option value="active">نشطة</option>
+                                            <option value="completed">مكتملة</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Max Students -->
+                                    <div class="mb-3">
+                                        <label for="maxStudents" class="form-label">الحد الأقصى للطلاب</label>
+                                        <input type="number" class="form-control" id="maxStudents" min="1" placeholder="150">
+                                    </div>
+
+                                    <!-- Zoom Mode -->
+                                    <div class="mb-3">
+                                        <label for="zoomMode" class="form-label">طريقة البث</label>
+                                        <select class="form-select" id="zoomMode">
+                                            <option value="zoom-link">رابط Zoom</option>
+                                            <option value="zoom-embedded">Zoom مضمن</option>
+                                            <option value="mixed">مختلط</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Certificate -->
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="certificate" checked>
+                                        <label class="form-check-label" for="certificate">
+                                            إصدار شهادة إتمام
+                                        </label>
+                                    </div>
+
+                                    <!-- Attendance Required -->
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="attendanceRequired" checked>
+                                        <label class="form-check-label" for="attendanceRequired">
+                                            الحضور إلزامي
+                                        </label>
+                                    </div>
+
+                                    <!-- Allow Reviews -->
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="allowReviews" checked>
+                                        <label class="form-check-label" for="allowReviews">
+                                            السماح بالتقييمات
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notes Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h5 class="mb-0 fw-bold">
+                                        <i class="bi bi-journal-text me-2"></i>ملاحظات إدارية
+                                    </h5>
+                                </div>
+                                <div class="card-body">
+                                    <textarea class="form-control" id="adminNotes" rows="4" placeholder="ملاحظات خاصة بالإدارة..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="bi bi-check-circle me-2"></i>حفظ الدورة
+                                        </button>
+                                        <button type="button" class="btn btn-light" onclick="saveDraft()">
+                                            <i class="bi bi-save me-2"></i>حفظ كمسودة
+                                        </button>
+                                        <a href="/system/courses/list-admin.html" class="btn btn-outline-secondary">
+                                            <i class="bi bi-x-circle me-2"></i>إلغاء
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        // Dynamically load sidebar and navbar
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+
+        // Check if editing existing course
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseId = urlParams.get('id');
+
+        if (courseId) {
+            // Edit mode
+            document.getElementById('formTitle').textContent = 'تعديل الدورة';
+            document.getElementById('pageTitle').textContent = 'تعديل الدورة';
+            
+            // TODO: Load course data and populate form
+            // This would normally fetch data from backend
+        }
+
+        // Form validation
+        (function() {
+            'use strict';
+            const form = document.getElementById('courseForm');
+            
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        })();
+
+        // Calculate final price
+        document.getElementById('coursePrice')?.addEventListener('input', calculateFinalPrice);
+        document.getElementById('courseDiscount')?.addEventListener('input', calculateFinalPrice);
+
+        function calculateFinalPrice() {
+            const price = parseFloat(document.getElementById('coursePrice').value) || 0;
+            const discount = parseFloat(document.getElementById('courseDiscount').value) || 0;
+            const finalPrice = price - (price * (discount / 100));
+            document.getElementById('finalPrice').textContent = finalPrice.toFixed(2) + ' ر.س';
+        }
+
+        // Dynamic fields management
+        function addLearningPoint() {
+            const container = document.getElementById('learningPoints');
+            const newPoint = document.createElement('div');
+            newPoint.className = 'input-group mb-2';
+            newPoint.innerHTML = `
+                <span class="input-group-text"><i class="bi bi-check"></i></span>
+                <input type="text" class="form-control" placeholder="أضف نقطة تعليمية...">
+                <button class="btn btn-outline-danger" type="button" onclick="removeLearningPoint(this)">
+                    <i class="bi bi-x"></i>
+                </button>
+            `;
+            container.appendChild(newPoint);
+        }
+
+        function removeLearningPoint(button) {
+            const container = document.getElementById('learningPoints');
+            if (container.children.length > 1) {
+                button.closest('.input-group').remove();
+            }
+        }
+
+        function addRequirement() {
+            const container = document.getElementById('requirements');
+            const newReq = document.createElement('div');
+            newReq.className = 'input-group mb-2';
+            newReq.innerHTML = `
+                <span class="input-group-text"><i class="bi bi-dot"></i></span>
+                <input type="text" class="form-control" placeholder="أضف متطلب...">
+                <button class="btn btn-outline-danger" type="button" onclick="removeRequirement(this)">
+                    <i class="bi bi-x"></i>
+                </button>
+            `;
+            container.appendChild(newReq);
+        }
+
+        function removeRequirement(button) {
+            const container = document.getElementById('requirements');
+            if (container.children.length > 1) {
+                button.closest('.input-group').remove();
+            }
+        }
+
+        function saveDraft() {
+            document.getElementById('courseStatus').value = 'draft';
+            document.getElementById('courseForm').dispatchEvent(new Event('submit'));
+        }
+
+        // Initialize final price calculation
+        calculateFinalPrice();
+    </script>
+</body>
+</html>
+

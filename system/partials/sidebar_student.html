@@ -1,0 +1,180 @@
+<!-- Student Sidebar - IDARTI Live Academy -->
+<aside class="sidebar">
+  <!-- Logo -->
+  <div class="sidebar-logo">
+    <a href="/system/dashboard/student.html" class="d-block">
+      <img src="../../assets/img/main_logo.png" alt="IDARTI Live Academy" class="img-fluid" style="max-width: 140px; height: auto;">
+    </a>
+  </div>
+  
+  <!-- User Info -->
+  <div class="text-center mb-4 px-2">
+    <h6 class="mb-1 fw-bold">محمد خالد</h6>
+    <span class="badge badge-info">طالب</span>
+  </div>
+  
+  <!-- Menu -->
+  <ul class="sidebar-menu">
+    <li class="sidebar-menu-item">
+      <a href="/system/dashboard/student.html" class="sidebar-menu-link active">
+        <i class="bi bi-speedometer2 sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">لوحة التحكم</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-header mt-4 mb-2 text-muted small px-3">الدورات والجلسات</li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/courses/list-student.html" class="sidebar-menu-link">
+        <i class="bi bi-journal-richtext sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">دوراتي</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/courses/student-sessions.html" class="sidebar-menu-link">
+        <i class="bi bi-camera-video sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">الجلسات القادمة</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/content/student-materials.html" class="sidebar-menu-link">
+        <i class="bi bi-file-earmark-text sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">المواد التعليمية</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/content/student-recordings.html" class="sidebar-menu-link">
+        <i class="bi bi-camera-reels sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">التسجيلات</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-header mt-4 mb-2 text-muted small px-3">المتابعة والتقييم</li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/attendance/student-record.html" class="sidebar-menu-link">
+        <i class="bi bi-calendar-check sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">سجل الحضور</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="#examsSubmenu" class="sidebar-menu-link" data-bs-toggle="collapse">
+        <i class="bi bi-award sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">الاختبارات</span>
+        <i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <div class="collapse" id="examsSubmenu">
+        <ul class="sidebar-submenu">
+          <li><a href="/system/exams/student-exams.html" class="sidebar-submenu-link">اختباراتي</a></li>
+          <li><a href="/system/exams/student-results.html" class="sidebar-submenu-link">نتائجي</a></li>
+        </ul>
+      </div>
+    </li>
+    
+    <li class="sidebar-menu-header mt-4 mb-2 text-muted small px-3">المالية</li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/billing/student-invoices.html" class="sidebar-menu-link">
+        <i class="bi bi-receipt sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">فواتيري</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/billing/student-payments.html" class="sidebar-menu-link">
+        <i class="bi bi-cash-coin sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">مدفوعاتي</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-header mt-4 mb-2 text-muted small px-3">التواصل</li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/complaints/student-form.html" class="sidebar-menu-link">
+        <i class="bi bi-chat-left-text sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">الشكاوى والاقتراحات</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/reviews/student-form.html" class="sidebar-menu-link">
+        <i class="bi bi-star sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">إضافة مراجعة</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-header mt-4 mb-2 text-muted small px-3">الحساب</li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/users/profile/student.html" class="sidebar-menu-link">
+        <i class="bi bi-person sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">الملف الشخصي</span>
+      </a>
+    </li>
+    
+    <li class="sidebar-menu-item">
+      <a href="/system/auth/logout.html" class="sidebar-menu-link">
+        <i class="bi bi-box-arrow-left sidebar-menu-icon"></i>
+        <span class="sidebar-menu-text">تسجيل الخروج</span>
+      </a>
+    </li>
+  </ul>
+  
+  <!-- Footer -->
+  <div class="sidebar-footer">
+    <p class="mb-0">IDARTI Live Academy &copy; 2025</p>
+    <small>v1.0.0</small>
+  </div>
+  
+  <!-- Decorative Elements -->
+  <div class="decorative-dots" style="top: 20px; right: 20px;"></div>
+  <div class="decorative-circle" style="bottom: 50px; right: -100px;"></div>
+</aside>
+
+<style>
+  /* Additional Sidebar Styles */
+  .sidebar-menu-header {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+  
+  .sidebar-submenu {
+    list-style: none;
+    padding: 0;
+    padding-right: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar-submenu-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-smooth);
+    font-size: 0.9rem;
+  }
+  
+  .sidebar-submenu-link:hover {
+    color: var(--main-color);
+    background: rgba(108, 99, 255, 0.05);
+  }
+  
+  .avatar-lg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));
+    box-shadow: 0 4px 15px rgba(108, 99, 255, 0.2);
+  }
+</style>

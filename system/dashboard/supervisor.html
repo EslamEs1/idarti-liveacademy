@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم المشرف - IDARTI Live Academy</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Navbar -->
+      <div id="navbar-container"></div>
+      
+      <!-- Main Content -->
+      <div class="container-fluid px-4">
+        <!-- Welcome Section -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="card card-gradient text-white">
+              <div class="card-body p-4">
+                <div class="row align-items-center">
+                  <div class="col-md-8">
+                    <h4 class="fw-bold mb-1">مرحباً بك، خالد محمود!</h4>
+                    <p class="mb-0">لديك 5 شكاوى بانتظار المراجعة و3 تسجيلات معلقة للاعتماد.</p>
+                  </div>
+                  <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <a href="/system/complaints/supervisor-list.html" class="btn btn-light rounded-pill">
+                      <i class="bi bi-chat-left-text me-2"></i>عرض الشكاوى
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stats Row -->
+        <div class="row g-4 mb-4">
+          <!-- Active Courses -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-journal-richtext"></i>
+                </div>
+                <div class="stat-card-value">12</div>
+                <div class="stat-card-label">دورات تحت الإشراف</div>
+                <div class="progress mt-3" style="height: 6px;">
+                  <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Total Teachers -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-person-video3"></i>
+                </div>
+                <div class="stat-card-value">8</div>
+                <div class="stat-card-label">المعلمون النشطون</div>
+                <div class="progress mt-3" style="height: 6px;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pending Complaints -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-chat-left-text"></i>
+                </div>
+                <div class="stat-card-value">5</div>
+                <div class="stat-card-label">شكاوى معلقة</div>
+                <div class="progress mt-3" style="height: 6px;">
+                  <div class="progress-bar bg-warning" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Average Quality Score -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-star"></i>
+                </div>
+                <div class="stat-card-value">4.5</div>
+                <div class="stat-card-label">متوسط جودة المحتوى</div>
+                <div class="progress mt-3" style="height: 6px;">
+                  <div class="progress-bar bg-info" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Content Quality & Pending Complaints -->
+        <div class="row g-4 mb-4">
+          <!-- Content Quality -->
+          <div class="col-lg-8">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">جودة المحتوى حسب الدورة</h5>
+                <a href="/system/courses/list-supervisor.html" class="btn btn-sm btn-outline-primary rounded-pill">عرض الكل</a>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>اسم الدورة</th>
+                        <th>المعلم</th>
+                        <th>الطلاب</th>
+                        <th>المحتوى</th>
+                        <th>التقييم</th>
+                        <th>الحالة</th>
+                        <th>الإجراءات</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-primary-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-code-slash text-primary"></i>
+                            </div>
+                            <div>تطوير الويب المتقدم</div>
+                          </div>
+                        </td>
+                        <td>م. سارة أحمد</td>
+                        <td>24</td>
+                        <td>
+                          <span class="badge badge-success">ممتاز</span>
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-star-fill text-warning me-1"></i>
+                            <span>4.8</span>
+                          </div>
+                        </td>
+                        <td><span class="badge badge-success">نشط</span></td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-light rounded-pill">
+                            <i class="bi bi-eye me-1"></i>عرض
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-info-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-phone text-info"></i>
+                            </div>
+                            <div>تطوير تطبيقات الموبايل</div>
+                          </div>
+                        </td>
+                        <td>م. خالد عبدالله</td>
+                        <td>18</td>
+                        <td>
+                          <span class="badge badge-success">ممتاز</span>
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-star-fill text-warning me-1"></i>
+                            <span>4.6</span>
+                          </div>
+                        </td>
+                        <td><span class="badge badge-success">نشط</span></td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-light rounded-pill">
+                            <i class="bi bi-eye me-1"></i>عرض
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-warning-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-palette text-warning"></i>
+                            </div>
+                            <div>تصميم واجهات المستخدم</div>
+                          </div>
+                        </td>
+                        <td>م. نورا علي</td>
+                        <td>22</td>
+                        <td>
+                          <span class="badge badge-warning">يحتاج مراجعة</span>
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-star-fill text-warning me-1"></i>
+                            <span>4.2</span>
+                          </div>
+                        </td>
+                        <td><span class="badge badge-warning">بحاجة لتحديث</span></td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-warning rounded-pill">
+                            <i class="bi bi-exclamation-triangle me-1"></i>مراجعة
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-danger-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-database text-danger"></i>
+                            </div>
+                            <div>قواعد البيانات المتقدمة</div>
+                          </div>
+                        </td>
+                        <td>م. أحمد صالح</td>
+                        <td>15</td>
+                        <td>
+                          <span class="badge badge-danger">ضعيف</span>
+                        </td>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <i class="bi bi-star-fill text-warning me-1"></i>
+                            <span>3.8</span>
+                          </div>
+                        </td>
+                        <td><span class="badge badge-danger">يحتاج تدخل</span></td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-danger rounded-pill">
+                            <i class="bi bi-exclamation-circle me-1"></i>عاجل
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Pending Complaints -->
+          <div class="col-lg-4">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">الشكاوى المفتوحة</h5>
+                <span class="badge badge-danger">5</span>
+              </div>
+              <div class="card-body p-0">
+                <div class="list-group list-group-flush">
+                  <a href="#" class="list-group-item list-group-item-action p-3">
+                    <div class="d-flex w-100 justify-content-between mb-1">
+                      <h6 class="mb-1">مشكلة في جودة الصوت</h6>
+                      <small class="text-danger">منذ 2 ساعة</small>
+                    </div>
+                    <p class="mb-1 small text-muted">طالب: محمد خالد - دورة تطوير الويب</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small>الأولوية: عالية</small>
+                      <span class="badge badge-danger">جديد</span>
+                    </div>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action p-3">
+                    <div class="d-flex w-100 justify-content-between mb-1">
+                      <h6 class="mb-1">طلب مواد إضافية</h6>
+                      <small class="text-warning">منذ 4 ساعات</small>
+                    </div>
+                    <p class="mb-1 small text-muted">طالب: فاطمة أحمد - دورة الموبايل</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small>الأولوية: متوسطة</small>
+                      <span class="badge badge-warning">قيد المراجعة</span>
+                    </div>
+                  </a>
+                  <a href="#" class="list-group-item list-group-item-action p-3">
+                    <div class="d-flex w-100 justify-content-between mb-1">
+                      <h6 class="mb-1">اقتراح تحسين المنهج</h6>
+                      <small class="text-muted">أمس</small>
+                    </div>
+                    <p class="mb-1 small text-muted">معلم: سارة أحمد - دورة تطوير الويب</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <small>الأولوية: منخفضة</small>
+                      <span class="badge badge-info">اقتراح</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer text-center">
+                <a href="/system/complaints/supervisor-list.html" class="btn btn-sm btn-primary rounded-pill">
+                  عرض جميع الشكاوى
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pending Recordings & Attendance Alerts -->
+        <div class="row g-4 mb-4">
+          <!-- Pending Recordings -->
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">التسجيلات بانتظار الاعتماد</h5>
+                <span class="badge badge-warning">3</span>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>الجلسة</th>
+                        <th>المعلم</th>
+                        <th>التاريخ</th>
+                        <th>الإجراءات</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-primary-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-camera-reels text-primary"></i>
+                            </div>
+                            <div>تطوير الويب - الوحدة 5</div>
+                          </div>
+                        </td>
+                        <td>م. سارة أحمد</td>
+                        <td>اليوم</td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-success me-1 rounded-pill">
+                            <i class="bi bi-check-lg"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-danger rounded-pill">
+                            <i class="bi bi-x-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-info-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-camera-reels text-info"></i>
+                            </div>
+                            <div>الموبايل - الوحدة 3</div>
+                          </div>
+                        </td>
+                        <td>م. خالد عبدالله</td>
+                        <td>أمس</td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-success me-1 rounded-pill">
+                            <i class="bi bi-check-lg"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-danger rounded-pill">
+                            <i class="bi bi-x-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-warning-light rounded-circle me-2 d-flex align-items-center justify-content-center">
+                              <i class="bi bi-camera-reels text-warning"></i>
+                            </div>
+                            <div>تصميم UI/UX - الوحدة 2</div>
+                          </div>
+                        </td>
+                        <td>م. نورا علي</td>
+                        <td>أمس</td>
+                        <td>
+                          <a href="#" class="btn btn-sm btn-success me-1 rounded-pill">
+                            <i class="bi bi-check-lg"></i>
+                          </a>
+                          <a href="#" class="btn btn-sm btn-danger rounded-pill">
+                            <i class="bi bi-x-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Attendance Alerts -->
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">تنبيهات الحضور</h5>
+                <a href="/system/attendance/supervisor-list.html" class="btn btn-sm btn-outline-primary rounded-pill">عرض الكل</a>
+              </div>
+              <div class="card-body">
+                <!-- Alert 1 -->
+                <div class="alert alert-warning d-flex align-items-start mb-3" role="alert">
+                  <i class="bi bi-exclamation-triangle-fill me-2 fs-5"></i>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1">دورة تطوير الويب المتقدم</h6>
+                    <p class="mb-2 small">5 طلاب لديهم نسبة حضور أقل من 70%</p>
+                    <a href="#" class="btn btn-sm btn-warning rounded-pill">عرض القائمة</a>
+                  </div>
+                </div>
+                
+                <!-- Alert 2 -->
+                <div class="alert alert-danger d-flex align-items-start mb-3" role="alert">
+                  <i class="bi bi-exclamation-circle-fill me-2 fs-5"></i>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1">دورة قواعد البيانات المتقدمة</h6>
+                    <p class="mb-2 small">متوسط الحضور العام: 62% - يحتاج تدخل عاجل</p>
+                    <a href="#" class="btn btn-sm btn-danger rounded-pill">اتخاذ إجراء</a>
+                  </div>
+                </div>
+                
+                <!-- Alert 3 -->
+                <div class="alert alert-info d-flex align-items-start mb-0" role="alert">
+                  <i class="bi bi-info-circle-fill me-2 fs-5"></i>
+                  <div class="flex-grow-1">
+                    <h6 class="mb-1">دورة تطوير تطبيقات الموبايل</h6>
+                    <p class="mb-2 small">متوسط الحضور: 87% - أداء ممتاز</p>
+                    <a href="#" class="btn btn-sm btn-info rounded-pill">عرض التفاصيل</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="card card-glass">
+              <div class="card-body">
+                <h5 class="mb-4">إجراءات سريعة</h5>
+                <div class="row g-3">
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/courses/list-supervisor.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-journal-richtext fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">إدارة الدورات</span>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/content/supervisor-materials.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-file-earmark-check fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">اعتماد المحتوى</span>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/complaints/supervisor-list.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-chat-left-text fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">معالجة الشكاوى</span>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/reports/supervisor-courses.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-bar-chart fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">التقارير</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="../../assets/js/custom_system.js"></script>
+  
+  <!-- Load Partials -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Sidebar
+      fetch('../partials/sidebar_supervisor.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-container').innerHTML = data;
+        });
+      
+      // Load Navbar
+      fetch('../partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+          
+          // Update page title in navbar
+          const pageTitle = document.getElementById('currentPageTitle');
+          const breadcrumb = document.getElementById('currentBreadcrumb');
+          
+          if (pageTitle && breadcrumb) {
+            pageTitle.textContent = 'لوحة تحكم المشرف';
+            breadcrumb.textContent = 'لوحة تحكم المشرف';
+          }
+        });
+    });
+  </script>
+</body>
+</html>

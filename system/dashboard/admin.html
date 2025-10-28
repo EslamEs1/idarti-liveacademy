@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة تحكم المدير - IDARTI Live Academy</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Navbar -->
+      <div id="navbar-container"></div>
+      
+      <!-- Main Content -->
+      <div class="container-fluid px-4">
+        <!-- Welcome Section -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="card card-gradient text-white">
+              <div class="card-body p-4">
+                <div class="row align-items-center">
+                  <div class="col-md-8">
+                    <h4 class="fw-bold mb-1">مرحباً بك، أحمد محمد!</h4>
+                    <p class="mb-0">نظرة شاملة على أداء المنصة. إجمالي الإيرادات هذا الشهر: 45,280 ريال.</p>
+                  </div>
+                  <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <a href="/system/settings/index.html" class="btn btn-light rounded-pill">
+                      <i class="bi bi-gear me-2"></i>إعدادات النظام
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Stats Row -->
+        <div class="row g-4 mb-4">
+          <!-- Total Users -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-people"></i>
+                </div>
+                <div class="stat-card-value">1,247</div>
+                <div class="stat-card-label">إجمالي المستخدمين</div>
+                <div class="d-flex align-items-center mt-2">
+                  <i class="bi bi-arrow-up text-success me-1"></i>
+                  <small class="text-success">+12% من الشهر الماضي</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Active Courses -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-journal-richtext"></i>
+                </div>
+                <div class="stat-card-value">24</div>
+                <div class="stat-card-label">الدورات النشطة</div>
+                <div class="d-flex align-items-center mt-2">
+                  <i class="bi bi-arrow-up text-success me-1"></i>
+                  <small class="text-success">+3 هذا الشهر</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Monthly Revenue -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-cash-coin"></i>
+                </div>
+                <div class="stat-card-value">45K</div>
+                <div class="stat-card-label">الإيرادات الشهرية</div>
+                <div class="d-flex align-items-center mt-2">
+                  <i class="bi bi-arrow-up text-success me-1"></i>
+                  <small class="text-success">+18% من الشهر الماضي</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Active Subscriptions -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card stat-card h-100">
+              <div class="card-body">
+                <div class="stat-card-icon">
+                  <i class="bi bi-person-check"></i>
+                </div>
+                <div class="stat-card-value">892</div>
+                <div class="stat-card-label">الاشتراكات النشطة</div>
+                <div class="d-flex align-items-center mt-2">
+                  <i class="bi bi-arrow-up text-success me-1"></i>
+                  <small class="text-success">+8% من الشهر الماضي</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Revenue Chart & Recent Activity -->
+        <div class="row g-4 mb-4">
+          <!-- Revenue Chart -->
+          <div class="col-lg-8">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">الإيرادات الشهرية</h5>
+                <div>
+                  <select class="form-select form-select-sm d-inline-block w-auto">
+                    <option selected>آخر 6 أشهر</option>
+                    <option>آخر 12 شهر</option>
+                    <option>السنة الحالية</option>
+                  </select>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- Revenue Summary Cards -->
+                <div class="row mb-4">
+                  <div class="col-md-4">
+                    <div class="card bg-light border-0">
+                      <div class="card-body text-center py-3">
+                        <h6 class="text-muted mb-1">إجمالي الإيرادات</h6>
+                        <h4 class="mb-0 text-primary">268,450 ريال</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card bg-light border-0">
+                      <div class="card-body text-center py-3">
+                        <h6 class="text-muted mb-1">متوسط الاشتراك</h6>
+                        <h4 class="mb-0 text-success">501 ريال</h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card bg-light border-0">
+                      <div class="card-body text-center py-3">
+                        <h6 class="text-muted mb-1">معدل النمو</h6>
+                        <h4 class="mb-0 text-info">+18%</h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Simple Bar Chart -->
+                <div class="row g-0 text-center align-items-end" style="height: 200px;">
+                  <div class="col">
+                    <div class="mb-2">
+                      <h6 class="mb-0">35K</h6>
+                    </div>
+                    <div style="height: 140px; background: linear-gradient(135deg, var(--main-color), var(--main-color-light)); border-radius: 4px 4px 0 0;"></div>
+                    <small class="d-block mt-2 text-muted">مايو</small>
+                  </div>
+                  <div class="col">
+                    <div class="mb-2">
+                      <h6 class="mb-0">38K</h6>
+                    </div>
+                    <div style="height: 152px; background: linear-gradient(135deg, var(--main-color), var(--main-color-light)); border-radius: 4px 4px 0 0;"></div>
+                    <small class="d-block mt-2 text-muted">يونيو</small>
+                  </div>
+                  <div class="col">
+                    <div class="mb-2">
+                      <h6 class="mb-0">42K</h6>
+                    </div>
+                    <div style="height: 168px; background: linear-gradient(135deg, var(--main-color), var(--main-color-light)); border-radius: 4px 4px 0 0;"></div>
+                    <small class="d-block mt-2 text-muted">يوليو</small>
+                  </div>
+                  <div class="col">
+                    <div class="mb-2">
+                      <h6 class="mb-0">40K</h6>
+                    </div>
+                    <div style="height: 160px; background: linear-gradient(135deg, var(--main-color), var(--main-color-light)); border-radius: 4px 4px 0 0;"></div>
+                    <small class="d-block mt-2 text-muted">أغسطس</small>
+                  </div>
+                  <div class="col">
+                    <div class="mb-2">
+                      <h6 class="mb-0">43K</h6>
+                    </div>
+                    <div style="height: 172px; background: linear-gradient(135deg, var(--main-color), var(--main-color-light)); border-radius: 4px 4px 0 0;"></div>
+                    <small class="d-block mt-2 text-muted">سبتمبر</small>
+                  </div>
+                  <div class="col">
+                    <div class="mb-2">
+                      <h6 class="mb-0">45K</h6>
+                    </div>
+                    <div style="height: 180px; background: linear-gradient(135deg, var(--main-color), var(--main-color-light)); border-radius: 4px 4px 0 0;"></div>
+                    <small class="d-block mt-2 text-muted">أكتوبر</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Recent Activity -->
+          <div class="col-lg-4">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">النشاط الأخير</h5>
+                <a href="#" class="btn btn-sm btn-outline-primary rounded-pill">عرض الكل</a>
+              </div>
+              <div class="card-body p-0">
+                <div class="timeline p-4">
+                  <!-- Activity 1 -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <div class="d-flex justify-content-between mb-1">
+                        <h6 class="mb-0">تسجيل مستخدم جديد</h6>
+                        <small class="text-muted">منذ 5 دقائق</small>
+                      </div>
+                      <p class="mb-0 small text-muted">انضم محمد أحمد كطالب جديد</p>
+                    </div>
+                  </div>
+                  
+                  <!-- Activity 2 -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <div class="d-flex justify-content-between mb-1">
+                        <h6 class="mb-0">دفعة جديدة</h6>
+                        <small class="text-muted">منذ 15 دقيقة</small>
+                      </div>
+                      <p class="mb-0 small text-muted">تم استلام دفعة بمبلغ 500 ريال</p>
+                    </div>
+                  </div>
+                  
+                  <!-- Activity 3 -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <div class="d-flex justify-content-between mb-1">
+                        <h6 class="mb-0">دورة جديدة</h6>
+                        <small class="text-muted">منذ ساعة</small>
+                      </div>
+                      <p class="mb-0 small text-muted">تم إضافة دورة "أمن المعلومات"</p>
+                    </div>
+                  </div>
+                  
+                  <!-- Activity 4 -->
+                  <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <div class="d-flex justify-content-between mb-1">
+                        <h6 class="mb-0">شكوى جديدة</h6>
+                        <small class="text-muted">منذ 3 ساعات</small>
+                      </div>
+                      <p class="mb-0 small text-muted">تم تقديم شكوى من طالب</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- System Status & This Week's Subscriptions -->
+        <div class="row g-4 mb-4">
+          <!-- System Status -->
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">حالة النظام</h5>
+                <span class="badge badge-success">كل الأنظمة تعمل</span>
+              </div>
+              <div class="card-body">
+                <!-- Service 1 -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar-sm bg-success-light rounded-circle me-3 d-flex align-items-center justify-content-center">
+                      <i class="bi bi-server text-success"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-0">خادم التطبيق</h6>
+                      <small class="text-muted">استجابة: 45ms</small>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">نشط</span>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar-sm bg-success-light rounded-circle me-3 d-flex align-items-center justify-content-center">
+                      <i class="bi bi-database text-success"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-0">قاعدة البيانات</h6>
+                      <small class="text-muted">استجابة: 12ms</small>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">نشط</span>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar-sm bg-success-light rounded-circle me-3 d-flex align-items-center justify-content-center">
+                      <i class="bi bi-camera-video text-success"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-0">خدمة Zoom</h6>
+                      <small class="text-muted">متصل</small>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">نشط</span>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="d-flex align-items-center">
+                    <div class="avatar-sm bg-success-light rounded-circle me-3 d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cloud-check text-success"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-0">التخزين السحابي</h6>
+                      <small class="text-muted">75% مستخدم</small>
+                    </div>
+                  </div>
+                  <span class="badge badge-success">نشط</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- This Week's Subscriptions -->
+          <div class="col-lg-6">
+            <div class="card h-100">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">اشتراكات هذا الأسبوع</h5>
+                <a href="/system/enrollments/list.html" class="btn btn-sm btn-outline-primary rounded-pill">عرض الكل</a>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>الطالب</th>
+                        <th>الدورة</th>
+                        <th>المبلغ</th>
+                        <th>الحالة</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-light rounded-circle me-2">
+                              <img src="../../assets/img/white_logo.png" alt="User" class="rounded-circle" width="32" height="32">
+                            </div>
+                            <div>أحمد سالم</div>
+                          </div>
+                        </td>
+                        <td>تطوير الويب المتقدم</td>
+                        <td>450 ريال</td>
+                        <td><span class="badge badge-success">مدفوع</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-light rounded-circle me-2">
+                              <img src="../../assets/img/white_logo.png" alt="User" class="rounded-circle" width="32" height="32">
+                            </div>
+                            <div>فاطمة أحمد</div>
+                          </div>
+                        </td>
+                        <td>تطوير تطبيقات الموبايل</td>
+                        <td>500 ريال</td>
+                        <td><span class="badge badge-success">مدفوع</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-light rounded-circle me-2">
+                              <img src="../../assets/img/white_logo.png" alt="User" class="rounded-circle" width="32" height="32">
+                            </div>
+                            <div>سارة محمد</div>
+                          </div>
+                        </td>
+                        <td>تصميم واجهات المستخدم</td>
+                        <td>480 ريال</td>
+                        <td><span class="badge badge-warning">معلق</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div class="avatar-sm bg-light rounded-circle me-2">
+                              <img src="../../assets/img/white_logo.png" alt="User" class="rounded-circle" width="32" height="32">
+                            </div>
+                            <div>خالد عبدالله</div>
+                          </div>
+                        </td>
+                        <td>قواعد البيانات المتقدمة</td>
+                        <td>550 ريال</td>
+                        <td><span class="badge badge-success">مدفوع</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="card card-glass">
+              <div class="card-body">
+                <h5 class="mb-4">إجراءات سريعة</h5>
+                <div class="row g-3">
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/users/list.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-people fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">إدارة المستخدمين</span>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/courses/list-admin.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-journal-richtext fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">إدارة الدورات</span>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/billing/invoices.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-receipt fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">الفواتير والمدفوعات</span>
+                    </a>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                    <a href="/system/settings/index.html" class="btn btn-light w-100 p-3 text-start h-100">
+                      <i class="bi bi-gear fs-4 d-block mb-2"></i>
+                      <span class="fw-medium">إعدادات النظام</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="../../assets/js/custom_system.js"></script>
+  
+  <!-- Load Partials -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Sidebar
+      fetch('../partials/sidebar_admin.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-container').innerHTML = data;
+        });
+      
+      // Load Navbar
+      fetch('../partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+          
+          // Update page title in navbar
+          const pageTitle = document.getElementById('currentPageTitle');
+          const breadcrumb = document.getElementById('currentBreadcrumb');
+          
+          if (pageTitle && breadcrumb) {
+            pageTitle.textContent = 'لوحة تحكم المدير';
+            breadcrumb.textContent = 'لوحة تحكم المدير';
+          }
+        });
+    });
+  </script>
+</body>
+</html>
