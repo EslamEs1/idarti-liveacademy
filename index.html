@@ -6,13 +6,13 @@
     <title>IDARTI Live Academy - الوصول السريع</title>
     
     <!-- Bootstrap RTL CSS -->
-    <link rel="stylesheet" href="../assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css">
     
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../assets/css/custom_system.css">
+    <link rel="stylesheet" href="assets/css/custom_system.css">
     
     <style>
         .role-card {
@@ -74,7 +74,7 @@
             <div class="hero-section text-center mb-5">
                 <div class="position-relative" style="z-index: 2;">
                     <div class="mb-4">
-                        <img src="../assets/img/main_logo.png" alt="IDARTI Live Academy" class="mb-3" style="max-height: 80px;">
+                        <img src="assets/img/main_logo.png" alt="IDARTI Live Academy" class="mb-3" style="max-height: 80px;">
                     </div>
                     <h2 class="fw-bold mb-3">مرحباً بك في منصة IDARTI Live Academy</h2>
                     <p class="lead mb-0">اختر دورك للوصول إلى لوحة التحكم الخاصة بك</p>
@@ -223,11 +223,11 @@
     </div>
 
     <!-- Bootstrap Bundle with Popper -->
-    <script src="../assets/js/popper.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
     
     <!-- Custom JavaScript -->
-    <script src="../assets/js/custom.js"></script>
+    <script src="assets/js/custom.js"></script>
 
     <script>
         function redirectTo(role) {
@@ -237,19 +237,19 @@
             // Redirect to the appropriate dashboard
             switch(role) {
                 case 'admin':
-                    window.location.href = 'dashboard/admin.html';
+                    window.location.href = 'system/dashboard/admin.html';
                     break;
                 case 'student':
-                    window.location.href = 'dashboard/student.html';
+                    window.location.href = 'system/dashboard/student.html';
                     break;
                 case 'teacher':
-                    window.location.href = 'dashboard/teacher.html';
+                    window.location.href = 'system/dashboard/teacher.html';
                     break;
                 case 'supervisor':
-                    window.location.href = 'dashboard/supervisor.html';
+                    window.location.href = 'system/dashboard/supervisor.html';
                     break;
                 default:
-                    window.location.href = 'auth/login.html';
+                    window.location.href = 'system/auth/login.html';
             }
         }
 

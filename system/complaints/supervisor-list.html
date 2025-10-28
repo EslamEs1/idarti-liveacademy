@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قائمة الشكاوى والاقتراحات - المشرف - IDARTI Live Academy</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Navbar -->
+      <div id="navbar-container"></div>
+      
+      <!-- Main Content -->
+      <div class="container-fluid px-4">
+        <!-- Page Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h4 class="fw-bold mb-1">قائمة الشكاوى والاقتراحات</h4>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/system/dashboard/supervisor.html">لوحة التحكم</a></li>
+                <li class="breadcrumb-item active">قائمة الشكاوى والاقتراحات</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary">
+              <i class="bi bi-download me-2"></i>تصدير التقرير
+            </button>
+            <button class="btn btn-primary">
+              <i class="bi bi-plus-lg me-2"></i>إضافة شكوى
+            </button>
+          </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-primary">28</h3>
+                    <p class="stat-card-label">إجمالي الشكاوى</p>
+                  </div>
+                  <div class="stat-icon bg-primary-light text-primary">
+                    <i class="bi bi-chat-left-text"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-warning">12</h3>
+                    <p class="stat-card-label">قيد المراجعة</p>
+                  </div>
+                  <div class="stat-icon bg-warning-light text-warning">
+                    <i class="bi bi-clock"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-success">14</h3>
+                    <p class="stat-card-label">تم الحل</p>
+                  </div>
+                  <div class="stat-icon bg-success-light text-success">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-danger">2</h3>
+                    <p class="stat-card-label">عاجل</p>
+                  </div>
+                  <div class="stat-icon bg-danger-light text-danger">
+                    <i class="bi bi-exclamation-triangle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-3">
+                <label class="form-label">البحث</label>
+                <input type="text" class="form-control" placeholder="رقم الشكوى أو الموضوع">
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">النوع</label>
+                <select class="form-select">
+                  <option value="">جميع الأنواع</option>
+                  <option value="complaint">شكوى</option>
+                  <option value="suggestion">اقتراح</option>
+                  <option value="technical">مشكلة تقنية</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">الحالة</label>
+                <select class="form-select">
+                  <option value="">جميع الحالات</option>
+                  <option value="pending">قيد المراجعة</option>
+                  <option value="resolved">تم الحل</option>
+                  <option value="urgent">عاجل</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">الأولوية</label>
+                <select class="form-select">
+                  <option value="">جميع الأولويات</option>
+                  <option value="high">عالي</option>
+                  <option value="medium">متوسط</option>
+                  <option value="low">منخفض</option>
+                </select>
+              </div>
+              <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-primary me-2">
+                  <i class="bi bi-search me-1"></i>بحث
+                </button>
+                <button class="btn btn-outline-secondary">
+                  <i class="bi bi-arrow-clockwise me-1"></i>إعادة تعيين
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Complaints Table -->
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">قائمة الشكاوى والاقتراحات</h5>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light">
+                <i class="bi bi-grid-3x3-gap me-1"></i>عرض شبكي
+              </button>
+              <button class="btn btn-sm btn-light">
+                <i class="bi bi-list me-1"></i>عرض قائمة
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>رقم الشكوى</th>
+                    <th>النوع</th>
+                    <th>المرسل</th>
+                    <th>الموضوع</th>
+                    <th>الأولوية</th>
+                    <th>الحالة</th>
+                    <th>التاريخ</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="fw-bold text-primary">#COMP-001</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-danger">شكوى</span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="user-avatar user-avatar-sm me-2">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">أحمد محمد</h6>
+                          <small class="text-muted">طالب</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6 class="mb-0">مشكلة في تحميل المحتوى</h6>
+                        <small class="text-muted">لا يمكنني تحميل الملفات التعليمية...</small>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-danger">عاجل</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-warning">قيد المراجعة</span>
+                    </td>
+                    <td>
+                      <small class="text-muted">منذ ساعتين</small>
+                    </td>
+                    <td>
+                      <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="رد">
+                          <i class="bi bi-reply"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="حل المشكلة">
+                          <i class="bi bi-check-circle"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إعادة توجيه">
+                          <i class="bi bi-arrow-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <span class="fw-bold text-primary">#SUGG-002</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">اقتراح</span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="user-avatar user-avatar-sm me-2">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">فاطمة أحمد</h6>
+                          <small class="text-muted">معلمة</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6 class="mb-0">اقتراح تحسين المنصة</h6>
+                        <small class="text-muted">نقترح إضافة ميزة جديدة...</small>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-warning">متوسط</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-success">تم الحل</span>
+                    </td>
+                    <td>
+                      <small class="text-muted">منذ يوم</small>
+                    </td>
+                    <td>
+                      <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="رد">
+                          <i class="bi bi-reply"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="حل المشكلة">
+                          <i class="bi bi-check-circle"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إعادة توجيه">
+                          <i class="bi bi-arrow-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <span class="fw-bold text-primary">#TECH-003</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-secondary">مشكلة تقنية</span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="user-avatar user-avatar-sm me-2">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">محمد علي</h6>
+                          <small class="text-muted">طالب</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div>
+                        <h6 class="mb-0">خطأ في تسجيل الدخول</h6>
+                        <small class="text-muted">لا يمكنني تسجيل الدخول...</small>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-danger">عاجل</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-warning">قيد المراجعة</span>
+                    </td>
+                    <td>
+                      <small class="text-muted">منذ 30 دقيقة</small>
+                    </td>
+                    <td>
+                      <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="رد">
+                          <i class="bi bi-reply"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="حل المشكلة">
+                          <i class="bi bi-check-circle"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إعادة توجيه">
+                          <i class="bi bi-arrow-right"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="text-muted">
+                عرض 1-3 من 28 شكوى
+              </div>
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">السابق</a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">التالي</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="../../assets/js/custom.js"></script>
+
+  <!-- Load Partials -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Sidebar
+      fetch('../partials/sidebar_supervisor.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-container').innerHTML = data;
+        });
+      
+      // Load Navbar
+      fetch('../partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+          
+          // Update page title in navbar
+          const pageTitle = document.getElementById('currentPageTitle');
+          const breadcrumb = document.getElementById('currentBreadcrumb');
+          
+          if (pageTitle && breadcrumb) {
+            pageTitle.textContent = 'قائمة الشكاوى والاقتراحات';
+            breadcrumb.textContent = 'قائمة الشكاوى والاقتراحات';
+          }
+        });
+    });
+  </script>
+</body>
+</html>

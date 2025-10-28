@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة المعلمين - المشرف - IDARTI Live Academy</title>
+  
+  <!-- Bootstrap RTL CSS -->
+  <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Navbar -->
+      <div id="navbar-container"></div>
+      
+      <!-- Main Content -->
+      <div class="container-fluid px-4">
+        <!-- Page Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h4 class="fw-bold mb-1">إدارة المعلمين</h4>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/system/dashboard/supervisor.html">لوحة التحكم</a></li>
+                <li class="breadcrumb-item active">إدارة المعلمين</li>
+              </ol>
+            </nav>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary">
+              <i class="bi bi-download me-2"></i>تصدير التقرير
+            </button>
+            <button class="btn btn-primary">
+              <i class="bi bi-plus-lg me-2"></i>إضافة معلم
+            </button>
+          </div>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="row g-4 mb-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-primary">24</h3>
+                    <p class="stat-card-label">إجمالي المعلمين</p>
+                  </div>
+                  <div class="stat-icon bg-primary-light text-primary">
+                    <i class="bi bi-person-video3"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-success">18</h3>
+                    <p class="stat-card-label">نشط</p>
+                  </div>
+                  <div class="stat-icon bg-success-light text-success">
+                    <i class="bi bi-check-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-warning">4</h3>
+                    <p class="stat-card-label">يحتاج مراجعة</p>
+                  </div>
+                  <div class="stat-icon bg-warning-light text-warning">
+                    <i class="bi bi-exclamation-triangle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+            <div class="card stat-card">
+              <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <h3 class="stat-card-value text-info">2</h3>
+                    <p class="stat-card-label">معطل</p>
+                  </div>
+                  <div class="stat-icon bg-info-light text-info">
+                    <i class="bi bi-pause-circle"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-3">
+                <label class="form-label">البحث</label>
+                <input type="text" class="form-control" placeholder="اسم المعلم أو البريد الإلكتروني">
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">الحالة</label>
+                <select class="form-select">
+                  <option value="">جميع الحالات</option>
+                  <option value="active">نشط</option>
+                  <option value="inactive">معطل</option>
+                  <option value="pending">يحتاج مراجعة</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">التخصص</label>
+                <select class="form-select">
+                  <option value="">جميع التخصصات</option>
+                  <option value="math">الرياضيات</option>
+                  <option value="science">العلوم</option>
+                  <option value="arabic">اللغة العربية</option>
+                  <option value="english">اللغة الإنجليزية</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <label class="form-label">التقييم</label>
+                <select class="form-select">
+                  <option value="">جميع التقييمات</option>
+                  <option value="excellent">ممتاز (5 نجوم)</option>
+                  <option value="very-good">جيد جداً (4 نجوم)</option>
+                  <option value="good">جيد (3 نجوم)</option>
+                </select>
+              </div>
+              <div class="col-md-3 d-flex align-items-end">
+                <button class="btn btn-primary me-2">
+                  <i class="bi bi-search me-1"></i>بحث
+                </button>
+                <button class="btn btn-outline-secondary">
+                  <i class="bi bi-arrow-clockwise me-1"></i>إعادة تعيين
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Teachers Table -->
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">قائمة المعلمين</h5>
+            <div class="d-flex gap-2">
+              <button class="btn btn-sm btn-light">
+                <i class="bi bi-grid-3x3-gap me-1"></i>عرض شبكي
+              </button>
+              <button class="btn btn-sm btn-light">
+                <i class="bi bi-list me-1"></i>عرض قائمة
+              </button>
+            </div>
+          </div>
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table table-hover mb-0">
+                <thead>
+                  <tr>
+                    <th>المعلم</th>
+                    <th>التخصص</th>
+                    <th>الدورات النشطة</th>
+                    <th>التقييم</th>
+                    <th>الحالة</th>
+                    <th>آخر نشاط</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="user-avatar user-avatar-sm me-3">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">أحمد محمد</h6>
+                          <small class="text-muted">ahmed.mohamed@idarti.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-primary">الرياضيات</span>
+                    </td>
+                    <td>
+                      <span class="fw-bold text-primary">3</span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="me-2">
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <span class="text-muted">4.9</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-success">نشط</span>
+                    </td>
+                    <td>
+                      <small class="text-muted">منذ ساعتين</small>
+                    </td>
+                    <td>
+                      <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="تقييم الأداء">
+                          <i class="bi bi-star"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إرسال رسالة">
+                          <i class="bi bi-envelope"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إعدادات">
+                          <i class="bi bi-gear"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="user-avatar user-avatar-sm me-3">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">فاطمة أحمد</h6>
+                          <small class="text-muted">fatima.ahmed@idarti.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">اللغة العربية</span>
+                    </td>
+                    <td>
+                      <span class="fw-bold text-primary">2</span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="me-2">
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star text-muted"></i>
+                        </div>
+                        <span class="text-muted">4.2</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-warning">يحتاج مراجعة</span>
+                    </td>
+                    <td>
+                      <small class="text-muted">منذ يوم</small>
+                    </td>
+                    <td>
+                      <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="تقييم الأداء">
+                          <i class="bi bi-star"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إرسال رسالة">
+                          <i class="bi bi-envelope"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إعدادات">
+                          <i class="bi bi-gear"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                  <tr>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="user-avatar user-avatar-sm me-3">
+                          <i class="bi bi-person"></i>
+                        </div>
+                        <div>
+                          <h6 class="mb-0">محمد علي</h6>
+                          <small class="text-muted">mohamed.ali@idarti.com</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-success">العلوم</span>
+                    </td>
+                    <td>
+                      <span class="fw-bold text-primary">4</span>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="me-2">
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                          <i class="bi bi-star-fill text-warning"></i>
+                        </div>
+                        <span class="text-muted">5.0</span>
+                      </div>
+                    </td>
+                    <td>
+                      <span class="badge badge-success">نشط</span>
+                    </td>
+                    <td>
+                      <small class="text-muted">منذ 30 دقيقة</small>
+                    </td>
+                    <td>
+                      <div class="d-flex gap-1">
+                        <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="تقييم الأداء">
+                          <i class="bi bi-star"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إرسال رسالة">
+                          <i class="bi bi-envelope"></i>
+                        </button>
+                        <button class="btn btn-sm btn-light" title="إعدادات">
+                          <i class="bi bi-gear"></i>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="text-muted">
+                عرض 1-3 من 24 معلم
+              </div>
+              <nav aria-label="Page navigation">
+                <ul class="pagination pagination-sm mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">السابق</a>
+                  </li>
+                  <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">التالي</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="../../assets/js/popper.min.js"></script>
+  <script src="../../assets/js/bootstrap.min.js"></script>
+  
+  <!-- Custom JavaScript -->
+  <script src="../../assets/js/custom.js"></script>
+
+  <!-- Load Partials -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load Sidebar
+      fetch('../partials/sidebar_supervisor.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('sidebar-container').innerHTML = data;
+        });
+      
+      // Load Navbar
+      fetch('../partials/navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-container').innerHTML = data;
+          
+          // Update page title in navbar
+          const pageTitle = document.getElementById('currentPageTitle');
+          const breadcrumb = document.getElementById('currentBreadcrumb');
+          
+          if (pageTitle && breadcrumb) {
+            pageTitle.textContent = 'إدارة المعلمين';
+            breadcrumb.textContent = 'إدارة المعلمين';
+          }
+        });
+    });
+  </script>
+</body>
+</html>
