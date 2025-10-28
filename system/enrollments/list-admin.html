@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الالتحاقات - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">الالتحاقات</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">إدارة الالتحاقات</h4>
+                        <p class="text-muted mb-0">إدارة ومتابعة جميع التحاقات الطلاب في الدورات</p>
+                    </div>
+                    <div>
+                        <a href="/system/enrollments/form.html" class="btn btn-primary">
+                            <i class="bi bi-plus-circle me-2"></i>التحاق جديد
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">إجمالي الالتحاقات</p>
+                                        <h3 class="mb-0 fw-bold">342</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-arrow-up me-1"></i>+12% عن الشهر السابق
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-person-check text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">التحاقات نشطة</p>
+                                        <h3 class="mb-0 fw-bold">256</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-check-circle me-1"></i>75% من الإجمالي
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">بانتظار الموافقة</p>
+                                        <h3 class="mb-0 fw-bold">18</h3>
+                                        <small class="text-warning">
+                                            <i class="bi bi-clock me-1"></i>يحتاج مراجعة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light">
+                                        <i class="bi bi-hourglass text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">التحاقات هذا الشهر</p>
+                                        <h3 class="mb-0 fw-bold">45</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-calendar me-1"></i>مارس 2025
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-calendar-plus text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">بحث</label>
+                                <input type="text" class="form-control" placeholder="اسم الطالب أو الدورة...">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">الدورة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الدورات</option>
+                                    <option>تطوير الويب المتقدم</option>
+                                    <option>تصميم واجهات المستخدم</option>
+                                    <option>برمجة تطبيقات الجوال</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">الحالة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الحالات</option>
+                                    <option>نشط</option>
+                                    <option>بانتظار الموافقة</option>
+                                    <option>مجمد</option>
+                                    <option>منتهي</option>
+                                    <option>ملغي</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">حالة الدفع</label>
+                                <select class="form-select">
+                                    <option selected>الكل</option>
+                                    <option>مدفوع كاملاً</option>
+                                    <option>دفع جزئي</option>
+                                    <option>غير مدفوع</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <div class="d-flex gap-2">
+                                    <button type="submit" class="btn btn-primary flex-grow-1">
+                                        <i class="bi bi-search me-2"></i>بحث
+                                    </button>
+                                    <button type="reset" class="btn btn-light">
+                                        <i class="bi bi-x-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Enrollments Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">قائمة الالتحاقات</h6>
+                            <div>
+                                <button class="btn btn-sm btn-light me-2">
+                                    <i class="bi bi-file-earmark-excel me-1"></i>تصدير
+                                </button>
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-printer me-1"></i>طباعة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">
+                                            <input type="checkbox" class="form-check-input">
+                                        </th>
+                                        <th>#</th>
+                                        <th>الطالب</th>
+                                        <th>الدورة</th>
+                                        <th>تاريخ الالتحاق</th>
+                                        <th>حالة الدفع</th>
+                                        <th>المبلغ</th>
+                                        <th class="text-center">التقدم</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Pending Approval -->
+                                    <tr class="table-warning">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>EN-1025</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">أحمد عبدالله</h6>
+                                                    <small class="text-muted">ahmed@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                        </td>
+                                        <td>8 مارس 2025</td>
+                                        <td>
+                                            <span class="badge badge-danger">غير مدفوع</span>
+                                        </td>
+                                        <td>2,500 ر.س</td>
+                                        <td class="text-center">
+                                            <span class="text-muted">-</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">بانتظار الموافقة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-admin.html?id=1025" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-success" title="الموافقة">
+                                                    <i class="bi bi-check-lg"></i>
+                                                </button>
+                                                <button class="btn btn-danger" title="رفض">
+                                                    <i class="bi bi-x-lg"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Active Enrollment -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>EN-1024</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">محمد خالد</h6>
+                                                    <small class="text-muted">mohammed@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                        </td>
+                                        <td>15 يناير 2025</td>
+                                        <td>
+                                            <span class="badge badge-success">مدفوع كاملاً</span>
+                                        </td>
+                                        <td>2,500 ر.س</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-success" style="width: 75%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">75%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">نشط</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-admin.html?id=1024" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <a href="/system/enrollments/form.html?edit=1024" class="btn btn-light" title="تعديل">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="تجميد">
+                                                    <i class="bi bi-pause-circle text-warning"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Partial Payment -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>EN-1023</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">فاطمة أحمد</h6>
+                                                    <small class="text-muted">fatima@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">تصميم واجهات المستخدم</span>
+                                        </td>
+                                        <td>10 فبراير 2025</td>
+                                        <td>
+                                            <span class="badge badge-warning">دفع جزئي</span>
+                                        </td>
+                                        <td>1,500 / 3,000 ر.س</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-primary" style="width: 45%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">45%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">نشط</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-admin.html?id=1023" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <a href="/system/enrollments/form.html?edit=1023" class="btn btn-light" title="تعديل">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="متابعة الدفع">
+                                                    <i class="bi bi-cash text-success"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Frozen Enrollment -->
+                                    <tr class="table-secondary">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>EN-1022</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold text-muted">عبدالله سعيد</h6>
+                                                    <small class="text-muted">abdullah@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold text-muted">برمجة تطبيقات الجوال</span>
+                                        </td>
+                                        <td>5 يناير 2025</td>
+                                        <td>
+                                            <span class="badge badge-success">مدفوع كاملاً</span>
+                                        </td>
+                                        <td>3,500 ر.س</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-secondary" style="width: 30%"></div>
+                                                </div>
+                                                <span class="small fw-semibold text-muted">30%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-secondary">مجمد</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-admin.html?id=1022" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="تنشيط">
+                                                    <i class="bi bi-play-circle text-success"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="إلغاء">
+                                                    <i class="bi bi-x-circle text-danger"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Completed Enrollment -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>EN-1021</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">سارة محمود</h6>
+                                                    <small class="text-muted">sara@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">أساسيات البرمجة</span>
+                                        </td>
+                                        <td>1 نوفمبر 2024</td>
+                                        <td>
+                                            <span class="badge badge-success">مدفوع كاملاً</span>
+                                        </td>
+                                        <td>1,800 ر.س</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">100%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-info">منتهي</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-admin.html?id=1021" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="إصدار شهادة">
+                                                    <i class="bi bi-award text-warning"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">عرض 5 من أصل 342 التحاق</small>
+                            <nav>
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">السابق</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">التالي</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

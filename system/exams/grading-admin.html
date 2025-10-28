@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصحيح الاختبار - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/exams/list-admin.html">الاختبارات</a></li>
+                        <li class="breadcrumb-item"><a href="/system/exams/results-admin.html?exam=1">النتائج</a></li>
+                        <li class="breadcrumb-item active">التصحيح</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="fw-bold mb-1">تصحيح: اختبار JavaScript المتقدم</h5>
+                                <p class="text-muted mb-0">
+                                    <i class="bi bi-journal-richtext me-2"></i>تطوير الويب المتقدم
+                                    <span class="mx-2">|</span>
+                                    <i class="bi bi-hourglass me-2"></i>بانتظار التصحيح: 8 محاولات
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <span class="badge bg-warning fs-6">قيد التصحيح</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Progress Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h6 class="mb-2">تقدم التصحيح</h6>
+                                <div class="progress" style="height: 25px;">
+                                    <div class="progress-bar bg-success" style="width: 25%">
+                                        2 / 8
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <div class="btn-group">
+                                    <button class="btn btn-sm btn-light" onclick="previousAttempt()" id="prevBtn" disabled>
+                                        <i class="bi bi-arrow-right"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" onclick="nextAttempt()" id="nextBtn">
+                                        <i class="bi bi-arrow-left"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Main Grading Area -->
+                    <div class="col-lg-8">
+                        <!-- Student Attempt Card -->
+                        <div id="attempt1" class="attempt-card">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0">محاولة الطالب: محمد أحمد</h6>
+                                            <small class="text-muted">تاريخ التقديم: 10 مارس 2025 - 3:45 مساءً</small>
+                                        </div>
+                                        <span class="badge bg-warning">بانتظار التصحيح</span>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <!-- Essay Question 1 -->
+                                    <div class="question-grading mb-4">
+                                        <div class="question-header p-3 bg-light rounded mb-3">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <span class="badge bg-warning mb-2">سؤال مقالي</span>
+                                                    <h6 class="fw-bold mb-1">السؤال 3: اشرح مفهوم Closure في JavaScript مع مثال عملي</h6>
+                                                    <small class="text-muted">النقاط المخصصة: 10 نقاط</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-content p-4 border rounded mb-3" style="background: #f8f9fa;">
+                                            <h6 class="text-muted mb-3">إجابة الطالب:</h6>
+                                            <p style="line-height: 1.8;">
+                                                Closure في JavaScript هو مفهوم قوي يسمح للدالة بالوصول إلى المتغيرات من النطاق الخارجي حتى بعد انتهاء تنفيذ الدالة الخارجية. 
+                                                Closure يتكون عندما تقوم دالة داخلية بالإشارة إلى متغيرات من دالة خارجية.
+                                            </p>
+                                            <p style="line-height: 1.8;">
+                                                مثال عملي:
+                                            </p>
+                                            <pre class="bg-white p-3 rounded"><code>function createCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  }
+}
+
+const counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3</code></pre>
+                                            <p style="line-height: 1.8;">
+                                                في هذا المثال، الدالة الداخلية لديها closure على المتغير count، مما يسمح لها بتذكر قيمته بين الاستدعاءات المتعددة.
+                                                هذا يعتبر من أهم استخدامات Closure في إنشاء private variables.
+                                            </p>
+                                            <div class="mt-3">
+                                                <small class="text-muted"><i class="bi bi-chat-text me-1"></i>عدد الكلمات: 85 كلمة</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="grading-form">
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-bold">الدرجة المستحقة <span class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" id="score_q3" min="0" max="10" step="0.5" required>
+                                                        <span class="input-group-text">/ 10</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-bold">التقييم السريع</label>
+                                                    <div class="btn-group w-100" role="group">
+                                                        <button type="button" class="btn btn-outline-success" onclick="setScore(10)">
+                                                            <i class="bi bi-star-fill"></i> ممتاز (10)
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-primary" onclick="setScore(7)">
+                                                            <i class="bi bi-star-half"></i> جيد (7)
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-danger" onclick="setScore(5)">
+                                                            <i class="bi bi-star"></i> ضعيف (5)
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="form-label fw-bold">ملاحظات للطالب</label>
+                                                    <textarea class="form-control" id="feedback_q3" rows="3" placeholder="أضف ملاحظات للمساعدة في تحسين الإجابة..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Essay Question 2 -->
+                                    <div class="question-grading mb-4">
+                                        <div class="question-header p-3 bg-light rounded mb-3">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <span class="badge bg-warning mb-2">سؤال مقالي</span>
+                                                    <h6 class="fw-bold mb-1">السؤال 5: قارن بين Promise و async/await في JavaScript</h6>
+                                                    <small class="text-muted">النقاط المخصصة: 8 نقاط</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="answer-content p-4 border rounded mb-3" style="background: #f8f9fa;">
+                                            <h6 class="text-muted mb-3">إجابة الطالب:</h6>
+                                            <p style="line-height: 1.8;">
+                                                كلاهما يستخدم للتعامل مع العمليات غير المتزامنة في JavaScript. Promise هو كائن يمثل اكتمال أو فشل عملية غير متزامنة،
+                                                بينما async/await هو syntactic sugar يجعل كتابة Promise أسهل وأكثر وضوحاً.
+                                            </p>
+                                            <p style="line-height: 1.8;">
+                                                مثال Promise:
+                                            </p>
+                                            <pre class="bg-white p-3 rounded"><code>fetchData()
+  .then(data => console.log(data))
+  .catch(error => console.error(error));</code></pre>
+                                            <p style="line-height: 1.8;">
+                                                نفس المثال مع async/await:
+                                            </p>
+                                            <pre class="bg-white p-3 rounded"><code>async function getData() {
+  try {
+    const data = await fetchData();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}</code></pre>
+                                            <div class="mt-3">
+                                                <small class="text-muted"><i class="bi bi-chat-text me-1"></i>عدد الكلمات: 62 كلمة</small>
+                                            </div>
+                                        </div>
+
+                                        <div class="grading-form">
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-bold">الدرجة المستحقة <span class="text-danger">*</span></label>
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" id="score_q5" min="0" max="8" step="0.5" required>
+                                                        <span class="input-group-text">/ 8</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label fw-bold">التقييم السريع</label>
+                                                    <div class="btn-group w-100" role="group">
+                                                        <button type="button" class="btn btn-outline-success" onclick="setScore2(8)">
+                                                            <i class="bi bi-star-fill"></i> ممتاز (8)
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-primary" onclick="setScore2(5)">
+                                                            <i class="bi bi-star-half"></i> جيد (5)
+                                                        </button>
+                                                        <button type="button" class="btn btn-outline-danger" onclick="setScore2(3)">
+                                                            <i class="bi bi-star"></i> ضعيف (3)
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="form-label fw-bold">ملاحظات للطالب</label>
+                                                    <textarea class="form-control" id="feedback_q5" rows="3" placeholder="أضف ملاحظات للمساعدة في تحسين الإجابة..."></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="d-flex justify-content-between gap-2">
+                                        <button class="btn btn-light">
+                                            <i class="bi bi-save me-2"></i>حفظ كمسودة
+                                        </button>
+                                        <div class="d-flex gap-2">
+                                            <button class="btn btn-danger">
+                                                <i class="bi bi-flag me-2"></i>إبلاغ عن غش
+                                            </button>
+                                            <button class="btn btn-success" onclick="submitGrading()">
+                                                <i class="bi bi-check-circle me-2"></i>حفظ التصحيح والمتابعة
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Completion Message (hidden initially) -->
+                        <div id="completionMsg" class="card" style="display: none;">
+                            <div class="card-body text-center py-5">
+                                <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+                                <h4 class="mt-3 fw-bold">أحسنت!</h4>
+                                <p class="text-muted mb-4">تم الانتهاء من تصحيح جميع المحاولات</p>
+                                <div class="d-flex gap-2 justify-content-center">
+                                    <a href="/system/exams/results-admin.html?exam=1" class="btn btn-primary">
+                                        <i class="bi bi-bar-chart me-2"></i>عرض النتائج
+                                    </a>
+                                    <a href="/system/exams/list-admin.html" class="btn btn-light">
+                                        <i class="bi bi-arrow-right me-2"></i>العودة للقائمة
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Grading Rubric -->
+                        <div class="card mb-4 sticky-top" style="top: 20px;">
+                            <div class="card-header">
+                                <h6 class="mb-0">معايير التقييم</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <h6 class="fw-bold mb-2">السؤال المقالي (10 نقاط)</h6>
+                                    <ul class="list-unstyled small">
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle text-success me-2"></i>
+                                            <strong>الفهم (4 نقاط):</strong> فهم صحيح للمفهوم
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle text-success me-2"></i>
+                                            <strong>الشرح (3 نقاط):</strong> شرح واضح ومفصل
+                                        </li>
+                                        <li class="mb-2">
+                                            <i class="bi bi-check-circle text-success me-2"></i>
+                                            <strong>المثال (2 نقطة):</strong> مثال عملي صحيح
+                                        </li>
+                                        <li>
+                                            <i class="bi bi-check-circle text-success me-2"></i>
+                                            <strong>التنسيق (1 نقطة):</strong> تنظيم وكتابة جيدة
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <hr>
+
+                                <div class="mb-3">
+                                    <h6 class="fw-bold mb-2">نصائح التصحيح</h6>
+                                    <div class="alert alert-info small mb-0">
+                                        <i class="bi bi-lightbulb me-2"></i>
+                                        كن عادلاً ومتسقاً في التقييم. قدم ملاحظات بناءة تساعد الطالب على التحسين.
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <!-- Pending List -->
+                                <div>
+                                    <h6 class="fw-bold mb-3">قائمة الانتظار</h6>
+                                    <div class="list-group list-group-flush">
+                                        <div class="list-group-item px-0 py-2 border-start border-3 border-warning">
+                                            <div class="d-flex justify-content-between">
+                                                <span class="small fw-semibold">محمد أحمد</span>
+                                                <span class="badge bg-warning">الحالي</span>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item px-0 py-2">
+                                            <div class="d-flex justify-content-between">
+                                                <span class="small">فاطمة علي</span>
+                                                <span class="badge bg-secondary">قادم</span>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item px-0 py-2">
+                                            <div class="d-flex justify-content-between">
+                                                <span class="small">خالد حسن</span>
+                                                <span class="badge bg-secondary">قادم</span>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item px-0 py-2">
+                                            <div class="small text-muted">+5 آخرين</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <script>
+        let currentAttempt = 1;
+        const totalAttempts = 8;
+
+        function setScore(score) {
+            document.getElementById('score_q3').value = score;
+        }
+
+        function setScore2(score) {
+            document.getElementById('score_q5').value = score;
+        }
+
+        function submitGrading() {
+            const score1 = document.getElementById('score_q3').value;
+            const score2 = document.getElementById('score_q5').value;
+
+            if (!score1 || !score2) {
+                alert('الرجاء إدخال الدرجات لجميع الأسئلة');
+                return;
+            }
+
+            alert('تم حفظ التصحيح بنجاح!');
+            currentAttempt++;
+
+            if (currentAttempt > totalAttempts) {
+                // Show completion message
+                document.getElementById('attempt1').style.display = 'none';
+                document.getElementById('completionMsg').style.display = 'block';
+            } else {
+                // In real app, load next attempt
+                // Reset form for next student
+                document.getElementById('score_q3').value = '';
+                document.getElementById('score_q5').value = '';
+                document.getElementById('feedback_q3').value = '';
+                document.getElementById('feedback_q5').value = '';
+                
+                updateProgress();
+            }
+        }
+
+        function nextAttempt() {
+            if (currentAttempt < totalAttempts) {
+                currentAttempt++;
+                updateProgress();
+            }
+        }
+
+        function previousAttempt() {
+            if (currentAttempt > 1) {
+                currentAttempt--;
+                updateProgress();
+            }
+        }
+
+        function updateProgress() {
+            const progressBar = document.querySelector('.progress-bar');
+            const percentage = (currentAttempt / totalAttempts) * 100;
+            progressBar.style.width = percentage + '%';
+            progressBar.textContent = currentAttempt + ' / ' + totalAttempts;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = (currentAttempt === 1);
+            document.getElementById('nextBtn').disabled = (currentAttempt === totalAttempts);
+        }
+    </script>
+</body>
+</html>

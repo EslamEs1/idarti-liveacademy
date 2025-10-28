@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الجلسات - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/list-admin.html">الدورات</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/detail-admin.html">تطوير الويب المتقدم</a></li>
+                        <li class="breadcrumb-item active">الجلسات</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">إدارة الجلسات - تطوير الويب المتقدم</h4>
+                        <p class="text-muted mb-0">إدارة وجدولة جميع جلسات الدورة</p>
+                    </div>
+                    <div>
+                        <a href="/system/courses/session-form.html" class="btn btn-primary">
+                            <i class="bi bi-plus-circle me-2"></i>إضافة جلسة جديدة
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">إجمالي الجلسات</p>
+                                        <h3 class="mb-0 fw-bold">32</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-info-circle me-1"></i>حسب خطة الدورة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-calendar-event text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">جلسات مكتملة</p>
+                                        <h3 class="mb-0 fw-bold">24</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-check-circle me-1"></i>75% معدل الإنجاز
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">جلسات قادمة</p>
+                                        <h3 class="mb-0 fw-bold">8</h3>
+                                        <small class="text-primary">
+                                            <i class="bi bi-calendar-plus me-1"></i>مجدولة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-calendar-plus text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">معدل الحضور</p>
+                                        <h3 class="mb-0 fw-bold">89%</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-graph-up me-1"></i>ممتاز
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-people text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">الحالة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الحالات</option>
+                                    <option>مكتملة</option>
+                                    <option>قادمة</option>
+                                    <option>جارية</option>
+                                    <option>ملغاة</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">المعلم</label>
+                                <select class="form-select">
+                                    <option selected>جميع المعلمين</option>
+                                    <option>د. أحمد محمد</option>
+                                    <option>أ. فاطمة علي</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">الشهر</label>
+                                <select class="form-select">
+                                    <option>جميع الأشهر</option>
+                                    <option selected>مارس 2025</option>
+                                    <option>فبراير 2025</option>
+                                    <option>يناير 2025</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-search me-2"></i>بحث
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sessions Calendar View -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">جدول الجلسات - مارس 2025</h6>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-sm btn-light active">
+                                    <i class="bi bi-list-ul"></i> قائمة
+                                </button>
+                                <button type="button" class="btn btn-sm btn-light">
+                                    <i class="bi bi-calendar3"></i> تقويم
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">
+                                            <input type="checkbox" class="form-check-input">
+                                        </th>
+                                        <th>#</th>
+                                        <th>عنوان الجلسة</th>
+                                        <th>التاريخ والوقت</th>
+                                        <th>المعلم</th>
+                                        <th>المدة</th>
+                                        <th class="text-center">الطلاب</th>
+                                        <th class="text-center">الحضور</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Today's Session -->
+                                    <tr class="table-primary">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>25</td>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">React Hooks المتقدمة</h6>
+                                                <small class="text-muted">الوحدة الخامسة</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="badge badge-primary">اليوم</span>
+                                                <small class="d-block mt-1">06:00 م - 08:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td>د. أحمد محمد</td>
+                                        <td>ساعتان</td>
+                                        <td class="text-center">
+                                            <span class="fw-semibold">45</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">جارية</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-primary">مباشرة الآن</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="تعديل">
+                                                    <i class="bi bi-pencil"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="حذف">
+                                                    <i class="bi bi-trash text-danger"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Completed Session -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>24</td>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">State Management مع Redux</h6>
+                                                <small class="text-muted">الوحدة الخامسة</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="text-muted">أمس</span>
+                                                <small class="d-block mt-1">06:00 م - 08:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td>د. أحمد محمد</td>
+                                        <td>ساعتان</td>
+                                        <td class="text-center">
+                                            <span class="fw-semibold">45</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-1">
+                                                <span class="badge badge-success">42</span>
+                                                <small class="text-muted">(93%)</small>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">مكتملة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <a href="/system/attendance/session-sheet-admin.html" class="btn btn-light" title="الحضور">
+                                                    <i class="bi bi-clipboard-check"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="التقرير">
+                                                    <i class="bi bi-file-earmark-bar-graph"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Upcoming Session -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>26</td>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">Performance Optimization</h6>
+                                                <small class="text-muted">الوحدة السادسة</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="text-muted">غداً</span>
+                                                <small class="d-block mt-1">06:00 م - 08:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td>د. أحمد محمد</td>
+                                        <td>ساعتان</td>
+                                        <td class="text-center">
+                                            <span class="fw-semibold">45</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="text-muted">-</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-info">قادمة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <a href="/system/courses/session-form.html?edit=26" class="btn btn-light" title="تعديل">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="إلغاء">
+                                                    <i class="bi bi-x-circle text-warning"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Scheduled Session -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>27</td>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">Testing مع Jest & RTL</h6>
+                                                <small class="text-muted">الوحدة السادسة</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="text-muted">10 مارس</span>
+                                                <small class="d-block mt-1">06:00 م - 08:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td>د. أحمد محمد</td>
+                                        <td>ساعتان</td>
+                                        <td class="text-center">
+                                            <span class="fw-semibold">45</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="text-muted">-</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-secondary">مجدولة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <a href="/system/courses/session-form.html?edit=27" class="btn btn-light" title="تعديل">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="حذف">
+                                                    <i class="bi bi-trash text-danger"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Cancelled Session -->
+                                    <tr class="table-secondary">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>23</td>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold text-muted">Context API</h6>
+                                                <small class="text-muted">الوحدة الرابعة</small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div>
+                                                <span class="text-muted">5 مارس</span>
+                                                <small class="d-block mt-1">06:00 م - 08:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td>د. أحمد محمد</td>
+                                        <td>ساعتان</td>
+                                        <td class="text-center">
+                                            <span class="fw-semibold text-muted">45</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="text-muted">-</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-danger">ملغاة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <button class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="إعادة جدولة">
+                                                    <i class="bi bi-arrow-clockwise"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <button class="btn btn-light btn-sm">
+                                    <i class="bi bi-file-earmark-excel me-1"></i>تصدير
+                                </button>
+                                <button class="btn btn-light btn-sm">
+                                    <i class="bi bi-printer me-1"></i>طباعة
+                                </button>
+                            </div>
+                            <nav>
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">السابق</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">التالي</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0">إجراءات سريعة</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-light text-start">
+                                        <i class="bi bi-calendar-plus me-2"></i>جدولة جلسة جديدة
+                                    </button>
+                                    <button class="btn btn-light text-start">
+                                        <i class="bi bi-arrow-repeat me-2"></i>إعادة جدولة جلسات متعددة
+                                    </button>
+                                    <button class="btn btn-light text-start">
+                                        <i class="bi bi-file-earmark-bar-graph me-2"></i>عرض تقرير شامل
+                                    </button>
+                                    <button class="btn btn-light text-start">
+                                        <i class="bi bi-envelope me-2"></i>إرسال إشعارات للطلاب
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0">إحصائيات الأداء</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">نسبة الحضور</span>
+                                        <span class="fw-bold text-success">89%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-success" style="width: 89%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">معدل الإنجاز</span>
+                                        <span class="fw-bold text-primary">75%</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-primary" style="width: 75%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-muted">رضا الطلاب</span>
+                                        <span class="fw-bold text-warning">4.8/5.0</span>
+                                    </div>
+                                    <div class="progress" style="height: 8px;">
+                                        <div class="progress-bar bg-warning" style="width: 96%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

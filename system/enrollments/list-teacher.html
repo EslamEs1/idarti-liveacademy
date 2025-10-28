@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحاقات دوراتي - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/teacher.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">طلاب دوراتي</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">طلاب دوراتي</h4>
+                        <p class="text-muted mb-0">قائمة الطلاب الملتحقين بالدورات التي أدرسها</p>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">إجمالي طلابي</p>
+                                        <h3 class="mb-0 fw-bold">156</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-arrow-up me-1"></i>+8 طلاب هذا الشهر
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-people text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">طلاب نشطون</p>
+                                        <h3 class="mb-0 fw-bold">142</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-check-circle me-1"></i>91% معدل نشاط
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">متوسط التقدم</p>
+                                        <h3 class="mb-0 fw-bold">68%</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-graph-up me-1"></i>جيد جداً
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-graph-up text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-4">
+                                <label class="form-label">بحث</label>
+                                <input type="text" class="form-control" placeholder="اسم الطالب...">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">الدورة</label>
+                                <select class="form-select">
+                                    <option selected>جميع دوراتي</option>
+                                    <option>تطوير الويب المتقدم</option>
+                                    <option>أساسيات البرمجة</option>
+                                    <option>قواعد البيانات</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">الحالة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الحالات</option>
+                                    <option>نشط</option>
+                                    <option>مجمد</option>
+                                    <option>منتهي</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">&nbsp;</label>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-search me-2"></i>بحث
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Enrollments Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">قائمة الطلاب</h6>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الطالب</th>
+                                        <th>الدورة</th>
+                                        <th>تاريخ الالتحاق</th>
+                                        <th class="text-center">التقدم</th>
+                                        <th class="text-center">الحضور</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>EN-1024</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">محمد خالد</h6>
+                                                    <small class="text-muted">mohammed@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                        </td>
+                                        <td>15 يناير 2025</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-success" style="width: 75%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">75%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">95%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">نشط</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-teacher.html?id=1024" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="إرسال رسالة">
+                                                    <i class="bi bi-envelope"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>EN-1023</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">فاطمة أحمد</h6>
+                                                    <small class="text-muted">fatima@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                        </td>
+                                        <td>10 فبراير 2025</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-primary" style="width: 60%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">60%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">92%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">نشط</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-teacher.html?id=1023" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="إرسال رسالة">
+                                                    <i class="bi bi-envelope"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <td>EN-1020</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">علي محمود</h6>
+                                                    <small class="text-muted">ali@example.com</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="fw-semibold">أساسيات البرمجة</span>
+                                        </td>
+                                        <td>20 يناير 2025</td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center gap-2">
+                                                <div class="progress" style="width: 60px; height: 8px;">
+                                                    <div class="progress-bar bg-warning" style="width: 35%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">35%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">68%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">نشط</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/enrollments/detail-teacher.html?id=1020" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-warning btn-sm" title="يحتاج متابعة">
+                                                    <i class="bi bi-exclamation-triangle text-white"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">عرض 3 من أصل 156 طالب</small>
+                            <nav>
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">السابق</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">التالي</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_teacher.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

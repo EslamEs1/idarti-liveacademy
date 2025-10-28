@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعدادات النظام - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">إعدادات النظام</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="mb-4">
+                    <h4 class="mb-1 fw-bold">إعدادات النظام</h4>
+                    <p class="text-muted mb-0">إدارة الإعدادات العامة للمنصة</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Sidebar Navigation -->
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <a href="#general" class="list-group-item list-group-item-action active" data-bs-toggle="tab">
+                                        <i class="bi bi-gear me-2"></i>إعدادات عامة
+                                    </a>
+                                    <a href="#platform" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-window me-2"></i>إعدادات المنصة
+                                    </a>
+                                    <a href="#zoom" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-camera-video me-2"></i>تكامل Zoom
+                                    </a>
+                                    <a href="#email" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-envelope me-2"></i>إعدادات البريد
+                                    </a>
+                                    <a href="#payment" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-credit-card me-2"></i>بوابات الدفع
+                                    </a>
+                                    <a href="#notifications" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-bell me-2"></i>الإشعارات
+                                    </a>
+                                    <a href="#security" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-shield-check me-2"></i>الأمان
+                                    </a>
+                                    <a href="#backup" class="list-group-item list-group-item-action" data-bs-toggle="tab">
+                                        <i class="bi bi-database me-2"></i>النسخ الاحتياطي
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content -->
+                    <div class="col-lg-9">
+                        <div class="tab-content">
+                            <!-- General Settings -->
+                            <div class="tab-pane fade show active" id="general">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">الإعدادات العامة</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <label class="form-label">اسم المنصة</label>
+                                                    <input type="text" class="form-control" value="IDARTI Live Academy">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">البريد الإلكتروني</label>
+                                                    <input type="email" class="form-control" value="info@idarti-academy.com">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">رقم الهاتف</label>
+                                                    <input type="tel" class="form-control" value="+966 50 123 4567">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">العنوان</label>
+                                                    <input type="text" class="form-control" value="الرياض، المملكة العربية السعودية">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">اللغة الافتراضية</label>
+                                                    <select class="form-select">
+                                                        <option selected>العربية</option>
+                                                        <option>English</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">المنطقة الزمنية</label>
+                                                    <select class="form-select">
+                                                        <option selected>Asia/Riyadh (GMT+3)</option>
+                                                        <option>Asia/Dubai (GMT+4)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">شعار المنصة</label>
+                                                    <input type="file" class="form-control" accept="image/*">
+                                                    <small class="text-muted">الحجم الموصى به: 200x60 بكسل</small>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Platform Settings -->
+                            <div class="tab-pane fade" id="platform">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">إعدادات المنصة</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="maintenance" checked>
+                                                        <label class="form-check-label" for="maintenance">
+                                                            تفعيل المنصة (إيقاف وضع الصيانة)
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="registration" checked>
+                                                        <label class="form-check-label" for="registration">
+                                                            السماح بالتسجيل الجديد
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="emailVerification" checked>
+                                                        <label class="form-check-label" for="emailVerification">
+                                                            التحقق من البريد الإلكتروني عند التسجيل
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">الحد الأقصى لحجم الملف (MB)</label>
+                                                    <input type="number" class="form-control" value="50">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">عدد المحاولات لتسجيل الدخول</label>
+                                                    <input type="number" class="form-control" value="5">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">رسالة الصيانة</label>
+                                                    <textarea class="form-control" rows="3">المنصة قيد الصيانة حالياً. سنعود قريباً...</textarea>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Zoom Integration -->
+                            <div class="tab-pane fade" id="zoom">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">تكامل Zoom</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="zoomEnabled" checked>
+                                                        <label class="form-check-label" for="zoomEnabled">
+                                                            تفعيل تكامل Zoom
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">طريقة الاتصال</label>
+                                                    <select class="form-select">
+                                                        <option selected>رابط خارجي</option>
+                                                        <option>تضمين عبر SDK</option>
+                                                        <option>مختلط</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">Zoom API Key</label>
+                                                    <input type="text" class="form-control" placeholder="أدخل API Key">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">Zoom API Secret</label>
+                                                    <input type="password" class="form-control" placeholder="أدخل API Secret">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">المدة الافتراضية للاجتماع (دقيقة)</label>
+                                                    <input type="number" class="form-control" value="60">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">الحد الأقصى للمشاركين</label>
+                                                    <input type="number" class="form-control" value="100">
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="button" class="btn btn-light me-2">
+                                                    <i class="bi bi-check-circle me-2"></i>اختبار الاتصال
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email Settings -->
+                            <div class="tab-pane fade" id="email">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">إعدادات البريد الإلكتروني</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <label class="form-label">SMTP Host</label>
+                                                    <input type="text" class="form-control" placeholder="smtp.example.com">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">SMTP Port</label>
+                                                    <input type="number" class="form-control" value="587">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">اسم المستخدم</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">كلمة المرور</label>
+                                                    <input type="password" class="form-control">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">البريد المرسل</label>
+                                                    <input type="email" class="form-control" value="noreply@idarti-academy.com">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">اسم المرسل</label>
+                                                    <input type="text" class="form-control" value="IDARTI Live Academy">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">نوع التشفير</label>
+                                                    <select class="form-select">
+                                                        <option selected>TLS</option>
+                                                        <option>SSL</option>
+                                                        <option>لا يوجد</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="button" class="btn btn-light me-2">
+                                                    <i class="bi bi-envelope-check me-2"></i>إرسال بريد تجريبي
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Settings -->
+                            <div class="tab-pane fade" id="payment">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">بوابات الدفع</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <label class="form-label">العملة الافتراضية</label>
+                                                    <select class="form-select">
+                                                        <option selected>ريال سعودي (SAR)</option>
+                                                        <option>درهم إماراتي (AED)</option>
+                                                        <option>دولار أمريكي (USD)</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch mb-3">
+                                                        <input class="form-check-input" type="checkbox" id="stripeEnabled">
+                                                        <label class="form-check-label" for="stripeEnabled">
+                                                            تفعيل Stripe
+                                                        </label>
+                                                    </div>
+                                                    <input type="text" class="form-control mb-2" placeholder="Publishable Key">
+                                                    <input type="password" class="form-control" placeholder="Secret Key">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch mb-3">
+                                                        <input class="form-check-input" type="checkbox" id="paypalEnabled">
+                                                        <label class="form-check-label" for="paypalEnabled">
+                                                            تفعيل PayPal
+                                                        </label>
+                                                    </div>
+                                                    <input type="text" class="form-control mb-2" placeholder="Client ID">
+                                                    <input type="password" class="form-control" placeholder="Client Secret">
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notifications -->
+                            <div class="tab-pane fade" id="notifications">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">إعدادات الإشعارات</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                                                        <label class="form-check-label" for="emailNotif">
+                                                            إشعارات البريد الإلكتروني
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="smsNotif">
+                                                        <label class="form-check-label" for="smsNotif">
+                                                            إشعارات SMS
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="pushNotif" checked>
+                                                        <label class="form-check-label" for="pushNotif">
+                                                            إشعارات Push
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security -->
+                            <div class="tab-pane fade" id="security">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">إعدادات الأمان</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="twoFactor">
+                                                        <label class="form-check-label" for="twoFactor">
+                                                            المصادقة الثنائية إلزامية للمديرين
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">الحد الأدنى لطول كلمة المرور</label>
+                                                    <input type="number" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label class="form-label">مدة انتهاء كلمة المرور (أيام)</label>
+                                                    <input type="number" class="form-control" value="90">
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Backup -->
+                            <div class="tab-pane fade" id="backup">
+                                <div class="card mb-4">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0 fw-bold">النسخ الاحتياطي</h6>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="row g-3">
+                                                <div class="col-md-12">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="autoBackup" checked>
+                                                        <label class="form-check-label" for="autoBackup">
+                                                            تفعيل النسخ الاحتياطي التلقائي
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">التكرار</label>
+                                                    <select class="form-select">
+                                                        <option selected>يومي</option>
+                                                        <option>أسبوعي</option>
+                                                        <option>شهري</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label class="form-label">آخر نسخة احتياطية</label>
+                                                    <input type="text" class="form-control" value="2025-03-10 02:00 AM" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="mt-4">
+                                                <button type="button" class="btn btn-success me-2">
+                                                    <i class="bi bi-database-add me-2"></i>إنشاء نسخة احتياطية الآن
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-save me-2"></i>حفظ التغييرات
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

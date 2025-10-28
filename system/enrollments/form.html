@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التحاق جديد - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/enrollments/list-admin.html">الالتحاقات</a></li>
+                        <li class="breadcrumb-item active" id="breadcrumb-title">التحاق جديد</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="mb-4">
+                    <h4 class="mb-1 fw-bold" id="page-title">التحاق جديد</h4>
+                    <p class="text-muted mb-0">إضافة طالب جديد إلى دورة</p>
+                </div>
+
+                <form id="enrollmentForm" class="needs-validation" novalidate>
+                    <div class="row g-4">
+                        <!-- Main Form -->
+                        <div class="col-lg-8">
+                            <!-- Student Information -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h6 class="mb-0 fw-bold">معلومات الطالب</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <label class="form-label">الطالب <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="student_id" required>
+                                                <option value="">اختر الطالب...</option>
+                                                <option value="1">محمد خالد - mohammed@example.com</option>
+                                                <option value="2">فاطمة أحمد - fatima@example.com</option>
+                                                <option value="3">عبدالله سعيد - abdullah@example.com</option>
+                                                <option value="4">سارة محمود - sara@example.com</option>
+                                                <option value="5">أحمد عبدالله - ahmed@example.com</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار الطالب
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="alert alert-info">
+                                                <i class="bi bi-info-circle me-2"></i>
+                                                <strong>معلومات الطالب:</strong> محمد خالد | رقم الهاتف: +966 50 123 4567 | 3 دورات سابقة
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Information -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h6 class="mb-0 fw-bold">معلومات الدورة</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <label class="form-label">الدورة <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="course_id" id="courseSelect" required>
+                                                <option value="">اختر الدورة...</option>
+                                                <option value="1" data-price="2500" data-duration="16">تطوير الويب المتقدم</option>
+                                                <option value="2" data-price="3000" data-duration="12">تصميم واجهات المستخدم</option>
+                                                <option value="3" data-price="3500" data-duration="14">برمجة تطبيقات الجوال</option>
+                                                <option value="4" data-price="1800" data-duration="8">أساسيات البرمجة</option>
+                                                <option value="5" data-price="2200" data-duration="10">قواعد البيانات</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار الدورة
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">السعر</label>
+                                            <input type="text" class="form-control" id="coursePrice" readonly>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">المدة</label>
+                                            <input type="text" class="form-control" id="courseDuration" readonly>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">تاريخ الالتحاق <span class="text-danger">*</span></label>
+                                            <input type="date" class="form-control" name="enrollment_date" required>
+                                            <div class="invalid-feedback">
+                                                يرجى تحديد تاريخ الالتحاق
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Information -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h6 class="mb-0 fw-bold">معلومات الدفع</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">نوع الدفع <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="payment_type" id="paymentType" required>
+                                                <option value="">اختر نوع الدفع...</option>
+                                                <option value="full">دفع كامل</option>
+                                                <option value="installment">دفع بالتقسيط</option>
+                                                <option value="deferred">دفع مؤجل</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار نوع الدفع
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">المبلغ المدفوع <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="amount_paid" min="0" required>
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال المبلغ المدفوع
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6" id="installmentsField" style="display: none;">
+                                            <label class="form-label">عدد الأقساط</label>
+                                            <select class="form-select" name="installments">
+                                                <option value="2">قسطان</option>
+                                                <option value="3">3 أقساط</option>
+                                                <option value="4">4 أقساط</option>
+                                                <option value="6">6 أقساط</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">رمز القسيمة (اختياري)</label>
+                                            <input type="text" class="form-control" name="coupon_code" placeholder="أدخل رمز القسيمة">
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">ملاحظات الدفع (اختياري)</label>
+                                            <textarea class="form-control" name="payment_notes" rows="2" placeholder="أي ملاحظات متعلقة بالدفع..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Settings -->
+                            <div class="card">
+                                <div class="card-header bg-white">
+                                    <h6 class="mb-0 fw-bold">إعدادات إضافية</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <label class="form-label">الحالة <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="status" required>
+                                                <option value="pending">بانتظار الموافقة</option>
+                                                <option value="active" selected>نشط</option>
+                                                <option value="frozen">مجمد</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار الحالة
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="sendNotification" name="send_notification" checked>
+                                                <label class="form-check-label" for="sendNotification">
+                                                    إرسال إشعار للطالب
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="sendEmail" name="send_email" checked>
+                                                <label class="form-check-label" for="sendEmail">
+                                                    إرسال بريد إلكتروني تأكيدي
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" id="autoInvoice" name="auto_invoice" checked>
+                                                <label class="form-check-label" for="autoInvoice">
+                                                    إنشاء فاتورة تلقائياً
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">ملاحظات داخلية (اختياري)</label>
+                                            <textarea class="form-control" name="admin_notes" rows="3" placeholder="ملاحظات للاستخدام الداخلي فقط..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="col-lg-4">
+                            <!-- Summary Card -->
+                            <div class="card mb-4">
+                                <div class="card-header bg-white">
+                                    <h6 class="mb-0 fw-bold">ملخص الالتحاق</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">الطالب:</span>
+                                        <span class="fw-semibold" id="summaryStudent">-</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">الدورة:</span>
+                                        <span class="fw-semibold" id="summaryCourse">-</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">سعر الدورة:</span>
+                                        <span class="fw-semibold" id="summaryPrice">-</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <span class="text-muted">نوع الدفع:</span>
+                                        <span class="fw-semibold" id="summaryPaymentType">-</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-3 pb-3 border-bottom">
+                                        <span class="text-muted">المبلغ المدفوع:</span>
+                                        <span class="fw-semibold text-success" id="summaryPaid">-</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <span class="text-muted">المبلغ المتبقي:</span>
+                                        <span class="fw-semibold text-danger" id="summaryRemaining">-</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quick Actions -->
+                            <div class="card">
+                                <div class="card-header bg-white">
+                                    <h6 class="mb-0 fw-bold">إرشادات</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="alert alert-info mb-0">
+                                        <h6 class="alert-heading fw-bold">
+                                            <i class="bi bi-info-circle me-2"></i>نصائح
+                                        </h6>
+                                        <ul class="mb-0 small">
+                                            <li>تأكد من توفر مقاعد في الدورة</li>
+                                            <li>راجع معلومات الطالب بدقة</li>
+                                            <li>سيتم إنشاء فاتورة تلقائياً</li>
+                                            <li>سيتلقى الطالب بريد إلكتروني تأكيدي</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <a href="/system/enrollments/list-admin.html" class="btn btn-light">
+                                    <i class="bi bi-x-circle me-2"></i>إلغاء
+                                </a>
+                                <div>
+                                    <button type="button" class="btn btn-light me-2">
+                                        <i class="bi bi-eye me-2"></i>معاينة
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-check-circle me-2"></i>
+                                        <span id="submitButtonText">حفظ الالتحاق</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+
+        // Form Mode Detection
+        const urlParams = new URLSearchParams(window.location.search);
+        const editMode = urlParams.has('edit');
+        
+        if (editMode) {
+            document.getElementById('page-title').textContent = 'تعديل الالتحاق';
+            document.getElementById('breadcrumb-title').textContent = 'تعديل الالتحاق';
+            document.getElementById('submitButtonText').textContent = 'حفظ التعديلات';
+        }
+
+        // Course Selection Handler
+        document.getElementById('courseSelect').addEventListener('change', function() {
+            const selected = this.options[this.selectedIndex];
+            if (selected.value) {
+                const price = selected.dataset.price;
+                const duration = selected.dataset.duration;
+                document.getElementById('coursePrice').value = price + ' ر.س';
+                document.getElementById('courseDuration').value = duration + ' أسبوع';
+                document.getElementById('summaryCourse').textContent = selected.text;
+                document.getElementById('summaryPrice').textContent = price + ' ر.س';
+            } else {
+                document.getElementById('coursePrice').value = '';
+                document.getElementById('courseDuration').value = '';
+            }
+        });
+
+        // Payment Type Handler
+        document.getElementById('paymentType').addEventListener('change', function() {
+            const installmentsField = document.getElementById('installmentsField');
+            if (this.value === 'installment') {
+                installmentsField.style.display = 'block';
+            } else {
+                installmentsField.style.display = 'none';
+            }
+            
+            const paymentTypes = {
+                'full': 'دفع كامل',
+                'installment': 'دفع بالتقسيط',
+                'deferred': 'دفع مؤجل'
+            };
+            document.getElementById('summaryPaymentType').textContent = paymentTypes[this.value] || '-';
+        });
+
+        // Form Validation
+        (function () {
+            'use strict'
+            const form = document.querySelector('.needs-validation')
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })()
+    </script>
+</body>
+</html>
+

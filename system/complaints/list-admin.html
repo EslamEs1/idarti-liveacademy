@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الشكاوى والاقتراحات - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">الشكاوى والاقتراحات</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="mb-4">
+                    <h4 class="mb-1 fw-bold">إدارة الشكاوى والاقتراحات</h4>
+                    <p class="text-muted mb-0">متابعة وحل جميع الشكاوى والاقتراحات من المستخدمين</p>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">إجمالي الشكاوى</p>
+                                        <h3 class="mb-0 fw-bold">147</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-info-circle me-1"></i>جميع الفترات
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-chat-left-text text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">شكاوى جديدة</p>
+                                        <h3 class="mb-0 fw-bold">12</h3>
+                                        <small class="text-danger">
+                                            <i class="bi bi-exclamation-circle me-1"></i>تحتاج رد
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-danger-light">
+                                        <i class="bi bi-bell text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">قيد المعالجة</p>
+                                        <h3 class="mb-0 fw-bold">28</h3>
+                                        <small class="text-warning">
+                                            <i class="bi bi-clock me-1"></i>جارٍ الحل
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light">
+                                        <i class="bi bi-hourglass text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">تم الحل</p>
+                                        <h3 class="mb-0 fw-bold">107</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-check-circle me-1"></i>73% معدل الحل
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">بحث</label>
+                                <input type="text" class="form-control" placeholder="رقم الشكوى أو المستخدم...">
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">النوع</label>
+                                <select class="form-select">
+                                    <option selected>الكل</option>
+                                    <option>شكوى</option>
+                                    <option>اقتراح</option>
+                                    <option>استفسار</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">الحالة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الحالات</option>
+                                    <option>جديدة</option>
+                                    <option>قيد المعالجة</option>
+                                    <option>تم الحل</option>
+                                    <option>مغلقة</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2">
+                                <label class="form-label">الأولوية</label>
+                                <select class="form-select">
+                                    <option selected>الكل</option>
+                                    <option>عاجلة</option>
+                                    <option>عالية</option>
+                                    <option>متوسطة</option>
+                                    <option>منخفضة</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-search me-2"></i>بحث
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Complaints Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">قائمة الشكاوى والاقتراحات</h6>
+                            <div>
+                                <button class="btn btn-sm btn-light me-2">
+                                    <i class="bi bi-file-earmark-excel me-1"></i>تصدير
+                                </button>
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-printer me-1"></i>طباعة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 50px;">
+                                            <input type="checkbox" class="form-check-input">
+                                        </th>
+                                        <th>#</th>
+                                        <th>المستخدم</th>
+                                        <th>النوع</th>
+                                        <th>العنوان</th>
+                                        <th>الأولوية</th>
+                                        <th>التاريخ</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- New/Urgent Complaint -->
+                                    <tr class="table-danger">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>#C-1045</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold small">أحمد عبدالله</h6>
+                                                    <small class="text-muted">طالب</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge badge-danger">شكوى</span></td>
+                                        <td>
+                                            <span class="fw-semibold">مشكلة في الوصول للجلسة المباشرة</span>
+                                        </td>
+                                        <td><span class="badge bg-danger">عاجلة</span></td>
+                                        <td>8 مارس 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-danger">جديدة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/complaints/detail-admin.html?id=1045" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-success" title="رد">
+                                                    <i class="bi bi-reply"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="تعيين">
+                                                    <i class="bi bi-person-plus"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- In Progress Complaint -->
+                                    <tr class="table-warning">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>#C-1044</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold small">محمد خالد</h6>
+                                                    <small class="text-muted">طالب</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge badge-warning">شكوى</span></td>
+                                        <td>
+                                            <span class="fw-semibold">تأخر في رفع المواد التعليمية</span>
+                                        </td>
+                                        <td><span class="badge bg-warning">عالية</span></td>
+                                        <td>5 مارس 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">قيد المعالجة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/complaints/detail-admin.html?id=1044" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-success" title="حل">
+                                                    <i class="bi bi-check-lg"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="متابعة">
+                                                    <i class="bi bi-arrow-repeat"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Suggestion -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>#C-1043</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold small">فاطمة أحمد</h6>
+                                                    <small class="text-muted">طالب</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge badge-info">اقتراح</span></td>
+                                        <td>
+                                            <span class="fw-semibold">إضافة نظام للتسجيلات التفاعلية</span>
+                                        </td>
+                                        <td><span class="badge bg-secondary">متوسطة</span></td>
+                                        <td>3 مارس 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">قيد المراجعة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/complaints/detail-admin.html?id=1043" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-primary" title="قبول">
+                                                    <i class="bi bi-hand-thumbs-up"></i>
+                                                </button>
+                                                <button class="btn btn-light" title="رفض">
+                                                    <i class="bi bi-hand-thumbs-down"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Resolved Complaint -->
+                                    <tr class="table-success">
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>#C-1042</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold small">عبدالله سعيد</h6>
+                                                    <small class="text-muted">طالب</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge badge-primary">استفسار</span></td>
+                                        <td>
+                                            <span class="fw-semibold">استفسار عن مواعيد الاختبارات</span>
+                                        </td>
+                                        <td><span class="badge bg-secondary">منخفضة</span></td>
+                                        <td>28 فبراير 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">تم الحل</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/complaints/detail-admin.html?id=1042" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="إغلاق">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Teacher Complaint -->
+                                    <tr>
+                                        <td><input type="checkbox" class="form-check-input"></td>
+                                        <td>#C-1041</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--secondary-gradient-start), var(--secondary-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold small">سارة أحمد</h6>
+                                                    <small class="text-muted">معلم</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge badge-warning">شكوى</span></td>
+                                        <td>
+                                            <span class="fw-semibold">مشكلة تقنية في نظام رفع الملفات</span>
+                                        </td>
+                                        <td><span class="badge bg-warning">عالية</span></td>
+                                        <td>1 مارس 2025</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">قيد المعالجة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/complaints/detail-admin.html?id=1041" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="تصعيد">
+                                                    <i class="bi bi-arrow-up-circle"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">عرض 5 من أصل 147 شكوى</small>
+                            <nav>
+                                <ul class="pagination pagination-sm mb-0">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">السابق</a>
+                                    </li>
+                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">التالي</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

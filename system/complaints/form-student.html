@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إرسال شكوى أو اقتراح - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/student.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">الشكاوى والاقتراحات</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="text-center mb-4">
+                    <h4 class="mb-2 fw-bold">إرسال شكوى أو اقتراح</h4>
+                    <p class="text-muted mb-0">نحن نهتم برأيك ونسعى لتحسين تجربتك التعليمية</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- My Complaints Card -->
+                        <div class="card mb-4">
+                            <div class="card-header bg-white">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0 fw-bold">شكاوي السابقة</h6>
+                                    <span class="badge badge-primary">3 شكاوى</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="list-group">
+                                    <div class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-1 fw-semibold">تأخر في رفع المواد التعليمية</h6>
+                                                <p class="text-muted small mb-2">تطوير الويب المتقدم</p>
+                                                <small class="text-muted">
+                                                    <i class="bi bi-calendar me-1"></i>5 مارس 2025
+                                                </small>
+                                            </div>
+                                            <div class="text-end">
+                                                <span class="badge badge-warning mb-2">قيد المعالجة</span>
+                                                <br>
+                                                <a href="/system/complaints/detail-student.html?id=1044" class="btn btn-sm btn-light">
+                                                    <i class="bi bi-eye me-1"></i>عرض
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="d-flex justify-content-between align-items-start">
+                                            <div>
+                                                <h6 class="mb-1 fw-semibold">استفسار عن موعد الاختبار</h6>
+                                                <p class="text-muted small mb-2">تصميم واجهات المستخدم</p>
+                                                <small class="text-muted">
+                                                    <i class="bi bi-calendar me-1"></i>28 فبراير 2025
+                                                </small>
+                                            </div>
+                                            <div class="text-end">
+                                                <span class="badge badge-success mb-2">تم الحل</span>
+                                                <br>
+                                                <a href="/system/complaints/detail-student.html?id=1038" class="btn btn-sm btn-light">
+                                                    <i class="bi bi-eye me-1"></i>عرض
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- New Complaint Form -->
+                        <div class="card">
+                            <div class="card-header bg-white">
+                                <h6 class="mb-0 fw-bold">إرسال شكوى أو اقتراح جديد</h6>
+                            </div>
+                            <div class="card-body">
+                                <form id="complaintForm" class="needs-validation" novalidate>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">النوع <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="type" required>
+                                                <option value="">اختر النوع...</option>
+                                                <option value="complaint">شكوى</option>
+                                                <option value="suggestion">اقتراح</option>
+                                                <option value="inquiry">استفسار</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار النوع
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">الدورة المتعلقة <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="course" required>
+                                                <option value="">اختر الدورة...</option>
+                                                <option>تطوير الويب المتقدم</option>
+                                                <option>تصميم واجهات المستخدم</option>
+                                                <option>برمجة تطبيقات الجوال</option>
+                                                <option value="general">عام - غير متعلق بدورة محددة</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                يرجى اختيار الدورة
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">العنوان <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="title" placeholder="عنوان مختصر للشكوى أو الاقتراح" required>
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال العنوان
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">الوصف التفصيلي <span class="text-danger">*</span></label>
+                                            <textarea class="form-control" name="description" rows="6" placeholder="اشرح المشكلة أو الاقتراح بالتفصيل..." required></textarea>
+                                            <div class="invalid-feedback">
+                                                يرجى إدخال الوصف
+                                            </div>
+                                            <div class="form-text">حد أدنى 50 حرف - كن محدداً قدر الإمكان</div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">مرفقات (اختياري)</label>
+                                            <input type="file" class="form-control" name="attachments" multiple accept="image/*,.pdf,.doc,.docx">
+                                            <div class="form-text">يمكنك رفع صور أو ملفات PDF/Word (حد أقصى 5 ملفات)</div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <label class="form-label">الأولوية</label>
+                                            <select class="form-select" name="priority">
+                                                <option value="low">منخفضة</option>
+                                                <option value="medium" selected>متوسطة</option>
+                                                <option value="high">عالية</option>
+                                                <option value="urgent">عاجلة</option>
+                                            </select>
+                                            <div class="form-text">حدد مدى أهمية وعجلة الموضوع</div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="emailNotification" checked>
+                                                <label class="form-check-label" for="emailNotification">
+                                                    أرغب في تلقي إشعارات عبر البريد الإلكتروني عند الرد على شكواي
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="alert alert-info">
+                                                <h6 class="alert-heading fw-bold">
+                                                    <i class="bi bi-info-circle me-2"></i>ملاحظات مهمة
+                                                </h6>
+                                                <ul class="mb-0 small">
+                                                    <li>سيتم الرد على شكواك خلال 24-48 ساعة عمل</li>
+                                                    <li>يمكنك متابعة حالة شكواك من خلال صفحة الشكاوى</li>
+                                                    <li>نحترم خصوصيتك ولن يتم مشاركة معلوماتك</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="d-flex justify-content-between">
+                                                <a href="/system/dashboard/student.html" class="btn btn-light">
+                                                    <i class="bi bi-x-circle me-2"></i>إلغاء
+                                                </a>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-send me-2"></i>إرسال الشكوى
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_student.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+
+        // Form Validation
+        (function () {
+            'use strict'
+            const form = document.querySelector('.needs-validation')
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })()
+    </script>
+</body>
+</html>

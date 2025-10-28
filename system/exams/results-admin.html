@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نتائج الاختبار - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/exams/list-admin.html">الاختبارات</a></li>
+                        <li class="breadcrumb-item active">نتائج الاختبار</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="fw-bold mb-1">اختبار JavaScript المتقدم</h5>
+                                <p class="text-muted mb-0">
+                                    <i class="bi bi-journal-richtext me-2"></i>تطوير الويب المتقدم
+                                    <span class="mx-2">|</span>
+                                    <i class="bi bi-person me-2"></i>أ. أحمد محمد
+                                    <span class="mx-2">|</span>
+                                    <i class="bi bi-calendar me-2"></i>10 مارس 2025
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-end">
+                                <button class="btn btn-sm btn-light me-2">
+                                    <i class="bi bi-file-earmark-excel me-1"></i>تصدير Excel
+                                </button>
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-printer me-1"></i>طباعة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">المحاولات</p>
+                                        <h3 class="mb-0 fw-bold">45</h3>
+                                        <small class="text-primary">
+                                            <i class="bi bi-people me-1"></i>من أصل 45 طالب
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-people text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">متوسط الدرجات</p>
+                                        <h3 class="mb-0 fw-bold">82%</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-graph-up me-1"></i>ممتاز
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-trophy text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">معدل النجاح</p>
+                                        <h3 class="mb-0 fw-bold">91%</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-check-circle me-1"></i>41 ناجح
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">أعلى درجة</p>
+                                        <h3 class="mb-0 fw-bold">98%</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-star-fill me-1"></i>ممتاز
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-star text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Charts Section -->
+                    <div class="col-lg-8">
+                        <!-- Grade Distribution -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">توزيع الدرجات</h6>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="gradeDistributionChart" height="80"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Question Analysis -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">تحليل الأسئلة</h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>السؤال</th>
+                                                <th class="text-center">النوع</th>
+                                                <th class="text-center">الإجابات الصحيحة</th>
+                                                <th class="text-center">معدل الصعوبة</th>
+                                                <th class="text-center">الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-semibold">السؤال 1</span>
+                                                    <br>
+                                                    <small class="text-muted">ما هو الفرق بين let و var...</small>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-primary">اختيار متعدد</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="progress" style="height: 20px;">
+                                                        <div class="progress-bar bg-success" style="width: 87%" title="87%">87%</div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">سهل</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-semibold">السؤال 2</span>
+                                                    <br>
+                                                    <small class="text-muted">JavaScript هي لغة مترجمة...</small>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-info">صح/خطأ</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="progress" style="height: 20px;">
+                                                        <div class="progress-bar bg-success" style="width: 92%" title="92%">92%</div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">سهل</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="fw-semibold">السؤال 3</span>
+                                                    <br>
+                                                    <small class="text-muted">اشرح مفهوم Closure...</small>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-warning">مقالي</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="progress" style="height: 20px;">
+                                                        <div class="progress-bar bg-warning" style="width: 65%" title="65%">65%</div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-warning">متوسط</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Student Results Table -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0">نتائج الطلاب</h6>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>الطالب</th>
+                                                <th class="text-center">الدرجة</th>
+                                                <th class="text-center">النسبة</th>
+                                                <th class="text-center">الوقت المستغرق</th>
+                                                <th class="text-center">الحالة</th>
+                                                <th class="text-center">الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="table-success">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="user-avatar me-2">
+                                                            <i class="bi bi-person-fill"></i>
+                                                        </div>
+                                                        <span class="fw-semibold">محمد أحمد</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="fw-bold">98/100</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-success fs-6">98%</span>
+                                                </td>
+                                                <td class="text-center">72 دقيقة</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">ناجح</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                            <i class="bi bi-file-text"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="table-success">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="user-avatar me-2">
+                                                            <i class="bi bi-person-fill"></i>
+                                                        </div>
+                                                        <span class="fw-semibold">فاطمة علي</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="fw-bold">92/100</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-success fs-6">92%</span>
+                                                </td>
+                                                <td class="text-center">85 دقيقة</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">ناجح</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                            <i class="bi bi-file-text"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="table-success">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="user-avatar me-2">
+                                                            <i class="bi bi-person-fill"></i>
+                                                        </div>
+                                                        <span class="fw-semibold">خالد حسن</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="fw-bold">85/100</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-primary fs-6">85%</span>
+                                                </td>
+                                                <td class="text-center">90 دقيقة</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">ناجح</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                            <i class="bi bi-file-text"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="table-danger">
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="user-avatar me-2">
+                                                            <i class="bi bi-person-fill"></i>
+                                                        </div>
+                                                        <span class="fw-semibold">عمر سعيد</span>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="fw-bold">45/100</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="badge bg-danger fs-6">45%</span>
+                                                </td>
+                                                <td class="text-center">60 دقيقة</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-danger">راسب</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <button class="btn btn-light" title="عرض التفاصيل">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                        <button class="btn btn-light" title="مراجعة الإجابات">
+                                                            <i class="bi bi-file-text"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summary Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Performance Summary -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">ملخص الأداء</h6>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="performanceChart"></canvas>
+                                
+                                <hr>
+                                
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-success"><i class="bi bi-check-circle-fill me-1"></i>ممتاز (90-100%)</span>
+                                    <span class="fw-bold">18</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-primary"><i class="bi bi-check-circle-fill me-1"></i>جيد جداً (80-89%)</span>
+                                    <span class="fw-bold">15</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="text-warning"><i class="bi bi-dash-circle-fill me-1"></i>جيد (70-79%)</span>
+                                    <span class="fw-bold">8</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-danger"><i class="bi bi-x-circle-fill me-1"></i>راسب (أقل من 50%)</span>
+                                    <span class="fw-bold">4</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Stats -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">إحصائيات سريعة</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-muted">متوسط الوقت المستغرق</small>
+                                        <small class="fw-bold">78 دقيقة</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-primary" style="width: 87%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-muted">معدل الإكمال</small>
+                                        <small class="fw-bold">100%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-success" style="width: 100%"></div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <small class="text-muted">معدل النزاهة</small>
+                                        <small class="fw-bold">95%</small>
+                                    </div>
+                                    <div class="progress" style="height: 6px;">
+                                        <div class="progress-bar bg-info" style="width: 95%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0">إجراءات</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <a href="/system/exams/grading-admin.html?exam=1" class="btn btn-warning">
+                                        <i class="bi bi-pencil-square me-2"></i>تصحيح الأسئلة المقالية
+                                    </a>
+                                    <button class="btn btn-light">
+                                        <i class="bi bi-envelope me-2"></i>إرسال النتائج
+                                    </button>
+                                    <button class="btn btn-light">
+                                        <i class="bi bi-archive me-2"></i>أرشفة الاختبار
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <!-- Charts -->
+    <script>
+        // Grade Distribution Chart
+        const ctx1 = document.getElementById('gradeDistributionChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['0-10', '10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80', '80-90', '90-100'],
+                datasets: [{
+                    label: 'عدد الطلاب',
+                    data: [0, 0, 1, 1, 2, 3, 8, 12, 10, 8],
+                    backgroundColor: 'rgba(108, 99, 255, 0.8)',
+                    borderColor: 'rgba(108, 99, 255, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 2
+                        }
+                    }
+                }
+            }
+        });
+
+        // Performance Pie Chart
+        const ctx2 = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['ممتاز', 'جيد جداً', 'جيد', 'راسب'],
+                datasets: [{
+                    data: [18, 15, 8, 4],
+                    backgroundColor: [
+                        'rgba(25, 135, 84, 0.8)',
+                        'rgba(13, 110, 253, 0.8)',
+                        'rgba(255, 193, 7, 0.8)',
+                        'rgba(220, 53, 69, 0.8)'
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

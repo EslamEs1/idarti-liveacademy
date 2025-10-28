@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة/تعديل جلسة - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/list-admin.html">الدورات</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/detail-admin.html">تطوير الويب المتقدم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/sessions-list-admin.html">الجلسات</a></li>
+                        <li class="breadcrumb-item active" id="pageMode">إضافة جلسة</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold" id="pageTitle">إضافة جلسة جديدة</h4>
+                        <p class="text-muted mb-0">املأ تفاصيل الجلسة أدناه</p>
+                    </div>
+                    <a href="/system/courses/sessions-list-admin.html" class="btn btn-light">
+                        <i class="bi bi-arrow-right me-2"></i>رجوع
+                    </a>
+                </div>
+
+                <!-- Form -->
+                <form class="needs-validation" novalidate>
+                    <!-- Basic Information Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">
+                                <i class="bi bi-info-circle me-2"></i>معلومات أساسية
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Session Title -->
+                                <div class="col-md-12">
+                                    <label for="sessionTitle" class="form-label">عنوان الجلسة <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="sessionTitle" required placeholder="مثال: مقدمة في React Hooks">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال عنوان الجلسة
+                                    </div>
+                                </div>
+
+                                <!-- Session Number -->
+                                <div class="col-md-4">
+                                    <label for="sessionNumber" class="form-label">رقم الجلسة <span class="text-danger">*</span></label>
+                                    <input type="number" class="form-control" id="sessionNumber" required min="1" placeholder="25">
+                                    <div class="invalid-feedback">
+                                        يرجى إدخال رقم الجلسة
+                                    </div>
+                                </div>
+
+                                <!-- Module -->
+                                <div class="col-md-8">
+                                    <label for="sessionModule" class="form-label">الوحدة <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="sessionModule" required>
+                                        <option value="">اختر الوحدة...</option>
+                                        <option>الوحدة الأولى: مقدمة في تطوير الويب</option>
+                                        <option>الوحدة الثانية: تطوير الواجهات الأمامية</option>
+                                        <option>الوحدة الثالثة: برمجة الباك إند</option>
+                                        <option>الوحدة الرابعة: State Management</option>
+                                        <option selected>الوحدة الخامسة: React المتقدم</option>
+                                        <option>الوحدة السادسة: Performance & Testing</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار الوحدة
+                                    </div>
+                                </div>
+
+                                <!-- Description -->
+                                <div class="col-md-12">
+                                    <label for="sessionDescription" class="form-label">وصف الجلسة</label>
+                                    <textarea class="form-control" id="sessionDescription" rows="3" placeholder="وصف مختصر لمحتوى الجلسة..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schedule Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">
+                                <i class="bi bi-calendar-event me-2"></i>الجدول الزمني
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Date -->
+                                <div class="col-md-4">
+                                    <label for="sessionDate" class="form-label">تاريخ الجلسة <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="sessionDate" required>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار التاريخ
+                                    </div>
+                                </div>
+
+                                <!-- Start Time -->
+                                <div class="col-md-4">
+                                    <label for="startTime" class="form-label">وقت البدء <span class="text-danger">*</span></label>
+                                    <input type="time" class="form-control" id="startTime" required value="18:00">
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار وقت البدء
+                                    </div>
+                                </div>
+
+                                <!-- Duration -->
+                                <div class="col-md-4">
+                                    <label for="sessionDuration" class="form-label">مدة الجلسة <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="sessionDuration" required>
+                                        <option value="">اختر المدة...</option>
+                                        <option>ساعة واحدة</option>
+                                        <option selected>ساعتان</option>
+                                        <option>3 ساعات</option>
+                                        <option>4 ساعات</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار المدة
+                                    </div>
+                                </div>
+
+                                <!-- End Time (auto-calculated) -->
+                                <div class="col-md-12">
+                                    <div class="alert alert-info mb-0">
+                                        <i class="bi bi-info-circle me-2"></i>
+                                        <strong>وقت الانتهاء المتوقع:</strong> 08:00 م
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instructor & Meeting Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">
+                                <i class="bi bi-person-badge me-2"></i>المعلم والاجتماع
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Instructor -->
+                                <div class="col-md-6">
+                                    <label for="instructor" class="form-label">المعلم <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="instructor" required>
+                                        <option value="">اختر المعلم...</option>
+                                        <option selected>د. أحمد محمد</option>
+                                        <option>أ. فاطمة علي</option>
+                                        <option>د. خالد عبدالله</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار المعلم
+                                    </div>
+                                </div>
+
+                                <!-- Meeting Method -->
+                                <div class="col-md-6">
+                                    <label for="meetingMethod" class="form-label">طريقة الاجتماع <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="meetingMethod" required>
+                                        <option value="">اختر الطريقة...</option>
+                                        <option selected>Zoom</option>
+                                        <option>Google Meet</option>
+                                        <option>Microsoft Teams</option>
+                                        <option>رابط خارجي</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        يرجى اختيار طريقة الاجتماع
+                                    </div>
+                                </div>
+
+                                <!-- Meeting Link -->
+                                <div class="col-md-12">
+                                    <label for="meetingLink" class="form-label">رابط الاجتماع</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
+                                        <input type="url" class="form-control" id="meetingLink" placeholder="https://zoom.us/j/123456789">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="bi bi-plus-circle me-1"></i>إنشاء رابط Zoom
+                                        </button>
+                                    </div>
+                                    <small class="text-muted">سيتم إنشاء رابط تلقائيًا عند الحفظ إذا تركت هذا الحقل فارغًا</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Attendance & Settings Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">
+                                <i class="bi bi-gear me-2"></i>إعدادات الحضور والجلسة
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Attendance Type -->
+                                <div class="col-md-6">
+                                    <label for="attendanceType" class="form-label">طريقة تسجيل الحضور</label>
+                                    <select class="form-select" id="attendanceType">
+                                        <option selected>يدوي (من قبل المعلم)</option>
+                                        <option>كود حضور</option>
+                                        <option>تلقائي (من Zoom)</option>
+                                        <option>مختلط</option>
+                                    </select>
+                                </div>
+
+                                <!-- Max Students -->
+                                <div class="col-md-6">
+                                    <label for="maxStudents" class="form-label">الحد الأقصى للطلاب</label>
+                                    <input type="number" class="form-control" id="maxStudents" placeholder="غير محدود" min="1">
+                                    <small class="text-muted">اتركه فارغًا لعدم التحديد</small>
+                                </div>
+
+                                <!-- Settings Checkboxes -->
+                                <div class="col-md-12">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="recordSession" checked>
+                                        <label class="form-check-label" for="recordSession">
+                                            تسجيل الجلسة تلقائيًا
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="allowChat" checked>
+                                        <label class="form-check-label" for="allowChat">
+                                            السماح بالمحادثة
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="sendNotification" checked>
+                                        <label class="form-check-label" for="sendNotification">
+                                            إرسال إشعار للطلاب
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="requireApproval">
+                                        <label class="form-check-label" for="requireApproval">
+                                            يتطلب موافقة المشرف
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Materials & Notes Card -->
+                    <div class="card mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">
+                                <i class="bi bi-file-earmark me-2"></i>المواد والملاحظات
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <!-- Materials -->
+                                <div class="col-md-12">
+                                    <label class="form-label">المواد التعليمية</label>
+                                    <div class="border rounded p-3 mb-2" style="min-height: 100px;">
+                                        <p class="text-muted text-center mb-0">
+                                            <i class="bi bi-cloud-upload fs-1 d-block mb-2"></i>
+                                            اسحب الملفات هنا أو انقر للتحميل
+                                        </p>
+                                    </div>
+                                    <button type="button" class="btn btn-light btn-sm">
+                                        <i class="bi bi-paperclip me-1"></i>إضافة ملف
+                                    </button>
+                                </div>
+
+                                <!-- Notes for Instructor -->
+                                <div class="col-md-12">
+                                    <label for="instructorNotes" class="form-label">ملاحظات للمعلم</label>
+                                    <textarea class="form-control" id="instructorNotes" rows="3" placeholder="ملاحظات خاصة بالمعلم..."></textarea>
+                                </div>
+
+                                <!-- Admin Notes -->
+                                <div class="col-md-12">
+                                    <label for="adminNotes" class="form-label">ملاحظات إدارية</label>
+                                    <textarea class="form-control" id="adminNotes" rows="2" placeholder="ملاحظات داخلية..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-light" onclick="history.back()">
+                                    <i class="bi bi-x-circle me-2"></i>إلغاء
+                                </button>
+                                <div>
+                                    <button type="button" class="btn btn-light me-2">
+                                        <i class="bi bi-eye me-2"></i>معاينة
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-check-circle me-2"></i>حفظ الجلسة
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+
+        // Check if edit mode from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('edit')) {
+            document.getElementById('pageTitle').textContent = 'تعديل الجلسة';
+            document.getElementById('pageMode').textContent = 'تعديل جلسة';
+            // Load session data here...
+        }
+
+        // Form validation
+        (function() {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>
+

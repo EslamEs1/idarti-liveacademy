@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الحضور والغياب - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">إدارة الحضور والغياب</h4>
+                        <p class="text-muted mb-0">مراقبة وإدارة حضور الطلاب في جميع الجلسات</p>
+                    </div>
+                    <div>
+                        <a href="/system/attendance/reports-admin.html" class="btn btn-success me-2">
+                            <i class="bi bi-file-earmark-bar-graph me-2"></i>التقارير
+                        </a>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attendanceCodeModal">
+                            <i class="bi bi-qr-code me-2"></i>إنشاء كود حضور
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">معدل الحضور العام</p>
+                                        <h3 class="mb-0 fw-bold">89%</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-arrow-up me-1"></i>5% من الشهر الماضي
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">جلسات اليوم</p>
+                                        <h3 class="mb-0 fw-bold">8</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-info-circle me-1"></i>5 مكتملة، 3 قادمة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-calendar-event text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">غيابات هذا الأسبوع</p>
+                                        <h3 class="mb-0 fw-bold">24</h3>
+                                        <small class="text-danger">
+                                            <i class="bi bi-exclamation-triangle me-1"></i>تحتاج متابعة
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-danger-light">
+                                        <i class="bi bi-x-circle text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">تأخيرات</p>
+                                        <h3 class="mb-0 fw-bold">12</h3>
+                                        <small class="text-warning">
+                                            <i class="bi bi-clock me-1"></i>هذا الأسبوع
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light">
+                                        <i class="bi bi-clock-history text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <!-- Course Filter -->
+                            <div class="col-lg-3 col-md-6">
+                                <label class="form-label">الدورة</label>
+                                <select class="form-select">
+                                    <option value="">جميع الدورات</option>
+                                    <option value="1">تطوير الويب المتقدم</option>
+                                    <option value="2">تصميم واجهات المستخدم UI/UX</option>
+                                    <option value="3">التسويق الرقمي الشامل</option>
+                                    <option value="4">قواعد البيانات المتقدمة</option>
+                                </select>
+                            </div>
+
+                            <!-- Session Filter -->
+                            <div class="col-lg-3 col-md-6">
+                                <label class="form-label">الجلسة</label>
+                                <select class="form-select">
+                                    <option value="">جميع الجلسات</option>
+                                    <option value="today">جلسات اليوم</option>
+                                    <option value="week">هذا الأسبوع</option>
+                                    <option value="month">هذا الشهر</option>
+                                </select>
+                            </div>
+
+                            <!-- Date Filter -->
+                            <div class="col-lg-2 col-md-6">
+                                <label class="form-label">من تاريخ</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <div class="col-lg-2 col-md-6">
+                                <label class="form-label">إلى تاريخ</label>
+                                <input type="date" class="form-control">
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="col-lg-2 col-md-12 d-flex align-items-end gap-2">
+                                <button type="submit" class="btn btn-primary flex-fill">
+                                    <i class="bi bi-funnel me-2"></i>تصفية
+                                </button>
+                                <button type="button" class="btn btn-light" onclick="window.print()">
+                                    <i class="bi bi-printer"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Attendance Sessions List -->
+                <div class="card">
+                    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0 fw-bold">سجل الحضور - جلسات اليوم</h5>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-light">
+                                <i class="bi bi-download me-2"></i>تصدير Excel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>الدورة</th>
+                                        <th>الجلسة</th>
+                                        <th>المدرس</th>
+                                        <th>التاريخ والوقت</th>
+                                        <th>عدد الطلاب</th>
+                                        <th>الحضور</th>
+                                        <th>الغياب</th>
+                                        <th>التأخير</th>
+                                        <th>نسبة الحضور</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Session 1 -->
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">تطوير الويب المتقدم</h6>
+                                                <small class="text-muted">برمجة وتطوير</small>
+                                            </div>
+                                        </td>
+                                        <td>الجلسة 24: React Components</td>
+                                        <td>د. أحمد محمد</td>
+                                        <td>
+                                            <div>
+                                                <span class="d-block">اليوم</span>
+                                                <small class="text-muted">06:00 م - 08:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td><span class="fw-semibold">145</span></td>
+                                        <td><span class="badge badge-success">130</span></td>
+                                        <td><span class="badge badge-danger">12</span></td>
+                                        <td><span class="badge badge-warning">3</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress flex-grow-1" style="height: 8px; width: 60px;">
+                                                    <div class="progress-bar bg-success" style="width: 90%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">90%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex justify-content-center gap-1">
+                                                <a href="/system/attendance/session-sheet-admin.html?session=24" class="btn btn-sm btn-primary" title="تسجيل الحضور">
+                                                    <i class="bi bi-clipboard-check"></i>
+                                                </a>
+                                                <button class="btn btn-sm btn-light" title="عرض التقرير">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-light" title="إرسال تنبيه">
+                                                    <i class="bi bi-bell"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Session 2 -->
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">تصميم واجهات المستخدم</h6>
+                                                <small class="text-muted">تصميم</small>
+                                            </div>
+                                        </td>
+                                        <td>الجلسة 11: Prototyping</td>
+                                        <td>أ. سارة أحمد</td>
+                                        <td>
+                                            <div>
+                                                <span class="d-block">اليوم</span>
+                                                <small class="text-muted">08:00 م - 10:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td><span class="fw-semibold">98</span></td>
+                                        <td><span class="badge badge-success">92</span></td>
+                                        <td><span class="badge badge-danger">5</span></td>
+                                        <td><span class="badge badge-warning">1</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress flex-grow-1" style="height: 8px; width: 60px;">
+                                                    <div class="progress-bar bg-success" style="width: 94%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">94%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex justify-content-center gap-1">
+                                                <a href="/system/attendance/session-sheet-admin.html?session=11" class="btn btn-sm btn-primary" title="تسجيل الحضور">
+                                                    <i class="bi bi-clipboard-check"></i>
+                                                </a>
+                                                <button class="btn btn-sm btn-light" title="عرض التقرير">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-light" title="إرسال تنبيه">
+                                                    <i class="bi bi-bell"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Session 3 -->
+                                    <tr>
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">قواعد البيانات المتقدمة</h6>
+                                                <small class="text-muted">برمجة وتطوير</small>
+                                            </div>
+                                        </td>
+                                        <td>الجلسة 5: SQL Optimization</td>
+                                        <td>د. محمد علي</td>
+                                        <td>
+                                            <div>
+                                                <span class="d-block">اليوم</span>
+                                                <small class="text-muted">04:00 م - 06:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td><span class="fw-semibold">52</span></td>
+                                        <td><span class="badge badge-success">48</span></td>
+                                        <td><span class="badge badge-danger">3</span></td>
+                                        <td><span class="badge badge-warning">1</span></td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress flex-grow-1" style="height: 8px; width: 60px;">
+                                                    <div class="progress-bar bg-success" style="width: 92%"></div>
+                                                </div>
+                                                <span class="small fw-semibold">92%</span>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex justify-content-center gap-1">
+                                                <a href="/system/attendance/session-sheet-admin.html?session=5" class="btn btn-sm btn-primary" title="تسجيل الحضور">
+                                                    <i class="bi bi-clipboard-check"></i>
+                                                </a>
+                                                <button class="btn btn-sm btn-light" title="عرض التقرير">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button class="btn btn-sm btn-light" title="إرسال تنبيه">
+                                                    <i class="bi bi-bell"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Session 4 - Upcoming -->
+                                    <tr class="table-light">
+                                        <td>
+                                            <div>
+                                                <h6 class="mb-0 fw-semibold">التسويق الرقمي الشامل</h6>
+                                                <small class="text-muted">تسويق</small>
+                                            </div>
+                                        </td>
+                                        <td>الجلسة 15: Social Media Marketing</td>
+                                        <td>م. خالد عمر</td>
+                                        <td>
+                                            <div>
+                                                <span class="d-block">غدًا</span>
+                                                <small class="text-muted">07:00 م - 09:00 م</small>
+                                            </div>
+                                        </td>
+                                        <td><span class="fw-semibold">67</span></td>
+                                        <td colspan="4" class="text-center">
+                                            <span class="badge badge-info">لم تبدأ بعد</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button class="btn btn-sm btn-light" disabled>
+                                                <i class="bi bi-clock"></i> قادمة
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <div class="text-muted small">
+                        عرض 1 - 4 من أصل 48 جلسة
+                    </div>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination mb-0">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1">
+                                    <i class="bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <i class="bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Attendance Code Modal -->
+    <div class="modal fade" id="attendanceCodeModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">إنشاء كود حضور</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div class="mb-3">
+                        <label class="form-label">اختر الجلسة</label>
+                        <select class="form-select">
+                            <option value="24">الجلسة 24: React Components - تطوير الويب المتقدم</option>
+                            <option value="11">الجلسة 11: Prototyping - تصميم واجهات المستخدم</option>
+                            <option value="5">الجلسة 5: SQL Optimization - قواعد البيانات المتقدمة</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">مدة صلاحية الكود (بالدقائق)</label>
+                        <input type="number" class="form-control" value="15" min="5" max="60">
+                    </div>
+                    <div class="p-4 bg-light rounded-3">
+                        <h1 class="display-1 fw-bold mb-3" id="attendanceCode">7825</h1>
+                        <p class="text-muted mb-3">صالح لمدة 15 دقيقة</p>
+                        <div class="progress mb-3" style="height: 4px;">
+                            <div class="progress-bar bg-primary" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-arrow-clockwise me-2"></i>إنشاء كود جديد
+                    </button>
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        // Dynamically load sidebar and navbar
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جلسات الدورة - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/student.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/list-student.html">دوراتي</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/detail-student.html">تطوير الويب المتقدم</a></li>
+                        <li class="breadcrumb-item active">الجلسات</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">جلسات الدورة - تطوير الويب المتقدم</h4>
+                        <p class="text-muted mb-0">متابعة الجلسات القادمة والمسجلة</p>
+                    </div>
+                </div>
+
+                <!-- Progress Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h6 class="mb-3">تقدمك في الدورة</h6>
+                                <div class="d-flex align-items-center gap-4 mb-3">
+                                    <div>
+                                        <h3 class="mb-0 fw-bold text-success">24/32</h3>
+                                        <small class="text-muted">جلسات مكتملة</small>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-0 fw-bold text-primary">89%</h3>
+                                        <small class="text-muted">نسبة حضورك</small>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-0 fw-bold text-warning">48</h3>
+                                        <small class="text-muted">ساعة دراسة</small>
+                                    </div>
+                                </div>
+                                <div class="progress" style="height: 12px;">
+                                    <div class="progress-bar bg-success" style="width: 75%">75%</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <div class="d-inline-flex align-items-center justify-content-center rounded-circle" style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end));">
+                                    <div class="text-white">
+                                        <h2 class="mb-0 fw-bold">75%</h2>
+                                        <small>التقدم</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Session Alert -->
+                <div class="alert alert-info d-flex align-items-center mb-4" role="alert">
+                    <i class="bi bi-calendar-event fs-4 me-3"></i>
+                    <div class="flex-grow-1">
+                        <h6 class="alert-heading mb-1">الجلسة القادمة</h6>
+                        <p class="mb-0">React Hooks المتقدمة - اليوم في تمام الساعة 06:00 مساءً</p>
+                    </div>
+                    <button class="btn btn-primary">الانضمام</button>
+                </div>
+
+                <!-- Sessions Tabs -->
+                <ul class="nav nav-tabs mb-4" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#upcoming-sessions">
+                            <i class="bi bi-calendar-plus me-2"></i>الجلسات القادمة
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#completed-sessions">
+                            <i class="bi bi-check-circle me-2"></i>الجلسات المكتملة
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#recordings">
+                            <i class="bi bi-camera-video me-2"></i>التسجيلات
+                        </button>
+                    </li>
+                </ul>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
+                    <!-- Upcoming Sessions -->
+                    <div class="tab-pane fade show active" id="upcoming-sessions">
+                        <div class="row g-3">
+                            <!-- Today's Session -->
+                            <div class="col-lg-6">
+                                <div class="card border-primary">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <span class="badge badge-primary">اليوم</span>
+                                            <span class="badge badge-info">الجلسة 25</span>
+                                        </div>
+                                        <h5 class="card-title fw-bold">React Hooks المتقدمة</h5>
+                                        <p class="text-muted small mb-3">الوحدة الخامسة</p>
+                                        <div class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="bi bi-clock text-primary me-2"></i>
+                                                <span>06:00 م - 08:00 م (ساعتان)</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-person-badge text-primary me-2"></i>
+                                                <span>د. أحمد محمد</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-primary">
+                                                <i class="bi bi-camera-video me-2"></i>الانضمام للجلسة
+                                            </button>
+                                            <button class="btn btn-light">
+                                                <i class="bi bi-file-earmark me-2"></i>عرض المواد
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Tomorrow's Session -->
+                            <div class="col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <span class="badge badge-secondary">غداً</span>
+                                            <span class="badge badge-info">الجلسة 26</span>
+                                        </div>
+                                        <h5 class="card-title fw-bold">Performance Optimization</h5>
+                                        <p class="text-muted small mb-3">الوحدة السادسة</p>
+                                        <div class="mb-3">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <i class="bi bi-clock text-muted me-2"></i>
+                                                <span>06:00 م - 08:00 م (ساعتان)</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-person-badge text-muted me-2"></i>
+                                                <span>د. أحمد محمد</span>
+                                            </div>
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                            <button class="btn btn-light">
+                                                <i class="bi bi-calendar-check me-2"></i>إضافة للتقويم
+                                            </button>
+                                            <button class="btn btn-light">
+                                                <i class="bi bi-file-earmark me-2"></i>عرض المواد
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Future Sessions -->
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header bg-white">
+                                        <h6 class="mb-0">الجلسات القادمة الأخرى</h6>
+                                    </div>
+                                    <div class="list-group list-group-flush">
+                                        <div class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Testing مع Jest & RTL</h6>
+                                                    <small class="text-muted">10 مارس - 06:00 م</small>
+                                                </div>
+                                                <span class="badge badge-secondary">الجلسة 27</span>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-item">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Next.js Framework</h6>
+                                                    <small class="text-muted">13 مارس - 06:00 م</small>
+                                                </div>
+                                                <span class="badge badge-secondary">الجلسة 28</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Completed Sessions -->
+                    <div class="tab-pane fade" id="completed-sessions">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>عنوان الجلسة</th>
+                                                <th>التاريخ</th>
+                                                <th class="text-center">حضورك</th>
+                                                <th class="text-center">الدرجة</th>
+                                                <th class="text-center">الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>24</td>
+                                                <td>
+                                                    <h6 class="mb-0">State Management مع Redux</h6>
+                                                    <small class="text-muted">الوحدة الخامسة</small>
+                                                </td>
+                                                <td>7 مارس 2025</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">حاضر</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="fw-bold text-success">95%</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="مشاهدة التسجيل">
+                                                        <i class="bi bi-play-circle"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-light" title="المواد">
+                                                        <i class="bi bi-file-earmark"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>23</td>
+                                                <td>
+                                                    <h6 class="mb-0">Context API</h6>
+                                                    <small class="text-muted">الوحدة الرابعة</small>
+                                                </td>
+                                                <td>5 مارس 2025</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-success">حاضر</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="fw-bold text-success">88%</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light">
+                                                        <i class="bi bi-play-circle"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-light">
+                                                        <i class="bi bi-file-earmark"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr class="table-warning">
+                                                <td>22</td>
+                                                <td>
+                                                    <h6 class="mb-0">Custom Hooks</h6>
+                                                    <small class="text-muted">الوحدة الرابعة</small>
+                                                </td>
+                                                <td>3 مارس 2025</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-danger">غائب</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span class="text-muted">-</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light">
+                                                        <i class="bi bi-play-circle"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-light">
+                                                        <i class="bi bi-file-earmark"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recordings Tab -->
+                    <div class="tab-pane fade" id="recordings">
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style="height: 150px; background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));">
+                                            <i class="bi bi-play-circle text-white" style="font-size: 3rem;"></i>
+                                        </div>
+                                        <h6 class="card-title">State Management مع Redux</h6>
+                                        <p class="text-muted small mb-3">الجلسة 24 - 7 مارس 2025</p>
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="bi bi-play-circle me-2"></i>مشاهدة
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style="height: 150px; background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end));">
+                                            <i class="bi bi-play-circle text-white" style="font-size: 3rem;"></i>
+                                        </div>
+                                        <h6 class="card-title">Context API</h6>
+                                        <p class="text-muted small mb-3">الجلسة 23 - 5 مارس 2025</p>
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="bi bi-play-circle me-2"></i>مشاهدة
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style="height: 150px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                            <i class="bi bi-play-circle text-white" style="font-size: 3rem;"></i>
+                                        </div>
+                                        <h6 class="card-title">Custom Hooks</h6>
+                                        <p class="text-muted small mb-3">الجلسة 22 - 3 مارس 2025</p>
+                                        <div class="d-grid">
+                                            <button class="btn btn-primary btn-sm">
+                                                <i class="bi bi-play-circle me-2"></i>مشاهدة
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_student.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كتابة مراجعة - IDARTI Live Academy</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <div id="sidebar-container"></div>
+        <div class="content-wrapper">
+            <div id="navbar-container"></div>
+
+            <div class="container-fluid px-4 py-4">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/student.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">كتابة مراجعة</li>
+                    </ol>
+                </nav>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h6 class="mb-0">إضافة مراجعة جديدة</h6>
+                            </div>
+                            <div class="card-body">
+                                <form id="reviewForm" class="needs-validation" novalidate>
+                                    <div class="mb-4">
+                                        <label class="form-label">الدورة <span class="text-danger">*</span></label>
+                                        <select class="form-select" required>
+                                            <option value="">-- اختر الدورة --</option>
+                                            <option value="1">تطوير الويب المتقدم (تم إكمالها)</option>
+                                            <option value="2">أساسيات البرمجة (تم إكمالها)</option>
+                                            <option value="3">React Components (75% مكتملة)</option>
+                                        </select>
+                                        <small class="text-muted">يمكنك إضافة مراجعة للدورات المكتملة أو في نهايتها</small>
+                                        <div class="invalid-feedback">الرجاء اختيار الدورة</div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">التقييم بالنجوم <span class="text-danger">*</span></label>
+                                        <div class="star-rating mb-3">
+                                            <input type="radio" id="star5" name="rating" value="5" required>
+                                            <label for="star5" class="star-label">
+                                                <i class="bi bi-star-fill"></i>
+                                            </label>
+                                            <input type="radio" id="star4" name="rating" value="4">
+                                            <label for="star4" class="star-label">
+                                                <i class="bi bi-star-fill"></i>
+                                            </label>
+                                            <input type="radio" id="star3" name="rating" value="3">
+                                            <label for="star3" class="star-label">
+                                                <i class="bi bi-star-fill"></i>
+                                            </label>
+                                            <input type="radio" id="star2" name="rating" value="2">
+                                            <label for="star2" class="star-label">
+                                                <i class="bi bi-star-fill"></i>
+                                            </label>
+                                            <input type="radio" id="star1" name="rating" value="1">
+                                            <label for="star1" class="star-label">
+                                                <i class="bi bi-star-fill"></i>
+                                            </label>
+                                        </div>
+                                        <small class="text-muted">اضغط على عدد النجوم التي تريد إعطاءها للدورة</small>
+                                        <div class="invalid-feedback">الرجاء اختيار تقييم</div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">عنوان المراجعة <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="مثال: دورة رائعة في JavaScript" required>
+                                        <div class="invalid-feedback">الرجاء إدخال عنوان المراجعة</div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">نص المراجعة <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" rows="8" placeholder="أخبرنا عن تجربتك في الدورة..." required></textarea>
+                                        <small class="text-muted">كن دقيقاً ومفيداً للآخرين (الحد الأدنى 50 كلمة)</small>
+                                        <div class="invalid-feedback">الرجاء كتابة مراجعة</div>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">نقاط القوة</label>
+                                        <div id="strengths">
+                                            <div class="input-group mb-2">
+                                                <input type="text" class="form-control" placeholder="مثال: شرح واضح">
+                                                <button type="button" class="btn btn-outline-primary">
+                                                    <i class="bi bi-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">أضف ما أعجبك في الدورة</small>
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label class="form-label">نقاط التحسين</label>
+                                        <div id="improvements">
+                                            <div class="input-group mb-2">
+                                                <input type="text" class="form-control" placeholder="مثال: زيادة التفاعل">
+                                                <button type="button" class="btn btn-outline-primary">
+                                                    <i class="bi bi-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <small class="text-muted">اقترح تحسينات للدورة</small>
+                                    </div>
+
+                                    <div class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" required>
+                                        <label class="form-check-label">
+                                            أؤكد أن هذه المراجعة صحيحة وأصيلة
+                                        </label>
+                                        <div class="invalid-feedback">يجب الموافقة على تقديم مراجعة أصيلة</div>
+                                    </div>
+
+                                    <div class="d-flex gap-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="bi bi-check-circle me-2"></i>نشر المراجعة
+                                        </button>
+                                        <button type="button" class="btn btn-light">
+                                            <i class="bi bi-save me-2"></i>حفظ كمسودة
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="mb-0">نصائح لكتابة مراجعة مفيدة</h6>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        كن محدداً في تفاصيل تجربتك
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        اذكر نقاط القوة والتحسين
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        كن محترماً ومهذباً
+                                    </li>
+                                    <li class="mb-3">
+                                        <i class="bi bi-check-circle text-success me-2"></i>
+                                        تجنب التعليقات الشخصية
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="card mt-3">
+                            <div class="card-header bg-info text-white">
+                                <h6 class="mb-0">
+                                    <i class="bi bi-info-circle me-2"></i>معلومات مهمة
+                                </h6>
+                            </div>
+                            <div class="card-body">
+                                <p class="mb-2 small">
+                                    المراجعات تخضع للموافقة من قبل الإدارة قبل النشر
+                                </p>
+                                <p class="mb-2 small">
+                                    يمكنك تعديل مراجعتك لاحقاً من صفحة "مراجعاتي"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <script>
+        fetch('../partials/sidebar_student.html').then(r => r.text()).then(d => {
+            document.getElementById('sidebar-container').innerHTML = d;
+        });
+        fetch('../partials/navbar.html').then(r => r.text()).then(d => {
+            document.getElementById('navbar-container').innerHTML = d;
+        });
+
+        // Star rating interaction
+        document.querySelectorAll('.star-rating input[type="radio"]').forEach((star) => {
+            star.addEventListener('change', function() {
+                const value = parseInt(this.value);
+                const labels = document.querySelectorAll('.star-label');
+                labels.forEach((label, index) => {
+                    if (index < value) {
+                        label.classList.add('text-warning');
+                    } else {
+                        label.classList.remove('text-warning');
+                    }
+                });
+            });
+        });
+
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            if (!this.checkValidity()) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            this.classList.add('was-validated');
+        });
+    </script>
+    <style>
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-label {
+            font-size: 2rem;
+            color: #dee2e6;
+            cursor: pointer;
+        }
+        .star-label:hover,
+        .star-label:hover ~ .star-label {
+            color: #ffc107 !important;
+        }
+    </style>
+</body>
+</html>
+

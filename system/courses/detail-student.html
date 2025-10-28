@@ -80,25 +80,22 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex gap-2 mb-4 flex-wrap">
-                    <a href="/system/courses/form.html?id=1" class="btn btn-primary">
-                        <i class="bi bi-pencil me-2"></i>تعديل الدورة
-                    </a>
-                    <button class="btn btn-light">
-                        <i class="bi bi-people me-2"></i>إدارة الطلاب
+                    <button class="btn btn-primary">
+                        <i class="bi bi-play-circle me-2"></i>متابعة الدراسة
                     </button>
                     <button class="btn btn-light">
-                        <i class="bi bi-calendar-event me-2"></i>الجلسات
+                        <i class="bi bi-calendar-event me-2"></i>الجلسات القادمة
                     </button>
                     <button class="btn btn-light">
-                        <i class="bi bi-file-earmark-text me-2"></i>المواد
+                        <i class="bi bi-file-earmark-text me-2"></i>المواد التعليمية
                     </button>
                     <button class="btn btn-light">
-                        <i class="bi bi-file-earmark-bar-graph me-2"></i>التقارير
+                        <i class="bi bi-camera-video me-2"></i>التسجيلات
                     </button>
-                    <button class="btn btn-outline-danger ms-auto">
-                        <i class="bi bi-trash me-2"></i>حذف
+                    <button class="btn btn-light">
+                        <i class="bi bi-trophy me-2"></i>شهادتي
                     </button>
-                    <a href="/system/courses/list-admin.html" class="btn btn-light">
+                    <a href="/system/courses/list-student.html" class="btn btn-light ms-auto">
                         <i class="bi bi-arrow-right me-2"></i>رجوع
                     </a>
                 </div>
@@ -112,17 +109,12 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab">
-                            <i class="bi bi-book me-2"></i>المنهج والجلسات
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="students-tab" data-bs-toggle="tab" data-bs-target="#students" type="button" role="tab">
-                            <i class="bi bi-people me-2"></i>الطلاب
+                            <i class="bi bi-camera-video me-2"></i>الحلقات والجلسات
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="materials-tab" data-bs-toggle="tab" data-bs-target="#materials" type="button" role="tab">
-                            <i class="bi bi-file-earmark-text me-2"></i>المواد
+                            <i class="bi bi-file-earmark-text me-2"></i>المواد التعليمية
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -131,8 +123,8 @@
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button" role="tab">
-                            <i class="bi bi-gear me-2"></i>الإعدادات
+                        <button class="nav-link" id="grades-tab" data-bs-toggle="tab" data-bs-target="#grades" type="button" role="tab">
+                            <i class="bi bi-trophy me-2"></i>درجاتي
                         </button>
                     </li>
                 </ul>
@@ -308,10 +300,10 @@
                     <div class="tab-pane fade" id="curriculum" role="tabpanel">
                         <div class="card">
                             <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0 fw-bold">المنهج والجلسات</h5>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-plus-circle me-2"></i>إضافة جلسة
-                                </button>
+                                <h5 class="mb-0 fw-bold">الحلقات والجلسات</h5>
+                                <a href="/system/courses/sessions-list-student.html" class="btn btn-sm btn-light">
+                                    <i class="bi bi-list-ul me-2"></i>عرض جميع الجلسات
+                                </a>
                             </div>
                             <div class="card-body">
                                 <!-- Module 1 -->
@@ -331,7 +323,10 @@
                                                 </div>
                                                 <div>
                                                     <span class="badge badge-success me-2">مكتملة</span>
-                                                    <span class="text-muted small">ساعتان</span>
+                                                    <span class="text-muted small me-3">ساعتان</span>
+                                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-title="الجلسة 1: نظرة عامة على تطوير الويب">
+                                                        <i class="bi bi-play-circle me-1"></i>مشاهدة
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -343,7 +338,10 @@
                                                 </div>
                                                 <div>
                                                     <span class="badge badge-success me-2">مكتملة</span>
-                                                    <span class="text-muted small">ساعتان</span>
+                                                    <span class="text-muted small me-3">ساعتان</span>
+                                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-title="الجلسة 2: أساسيات HTML و CSS">
+                                                        <i class="bi bi-play-circle me-1"></i>مشاهدة
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -355,7 +353,10 @@
                                                 </div>
                                                 <div>
                                                     <span class="badge badge-success me-2">مكتملة</span>
-                                                    <span class="text-muted small">ساعتان</span>
+                                                    <span class="text-muted small me-3">ساعتان</span>
+                                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-title="الجلسة 3: مقدمة في JavaScript">
+                                                        <i class="bi bi-play-circle me-1"></i>مشاهدة
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -426,144 +427,11 @@
                         </div>
                     </div>
 
-                    <!-- Students Tab -->
-                    <div class="tab-pane fade" id="students" role="tabpanel">
-                        <div class="card">
-                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0 fw-bold">قائمة الطلاب المسجلين</h5>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-plus-circle me-2"></i>إضافة طالب
-                                </button>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th>الطالب</th>
-                                                <th>رقم الهاتف</th>
-                                                <th>الحضور</th>
-                                                <th>التقدم</th>
-                                                <th>الدرجة</th>
-                                                <th>الحالة</th>
-                                                <th class="text-center">الإجراءات</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
-                                                            <i class="bi bi-person-fill text-white"></i>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="mb-0 fw-semibold">محمد خالد</h6>
-                                                            <small class="text-muted">ID: #101</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>+966 50 123 4567</td>
-                                                <td>
-                                                    <span class="badge badge-success">95%</span>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="progress flex-grow-1" style="height: 8px; width: 80px;">
-                                                            <div class="progress-bar bg-success" style="width: 85%"></div>
-                                                        </div>
-                                                        <span class="small fw-semibold">85%</span>
-                                                    </div>
-                                                </td>
-                                                <td><span class="fw-semibold">92%</span></td>
-                                                <td><span class="badge badge-success">نشط</span></td>
-                                                <td class="text-center">
-                                                    <div class="d-flex justify-content-center gap-1">
-                                                        <button class="btn btn-sm btn-light" title="عرض"><i class="bi bi-eye"></i></button>
-                                                        <button class="btn btn-sm btn-light" title="تعديل"><i class="bi bi-pencil"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
-                                                            <i class="bi bi-person-fill text-white"></i>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="mb-0 fw-semibold">فاطمة أحمد</h6>
-                                                            <small class="text-muted">ID: #102</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>+966 55 234 5678</td>
-                                                <td>
-                                                    <span class="badge badge-success">92%</span>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="progress flex-grow-1" style="height: 8px; width: 80px;">
-                                                            <div class="progress-bar bg-success" style="width: 78%"></div>
-                                                        </div>
-                                                        <span class="small fw-semibold">78%</span>
-                                                    </div>
-                                                </td>
-                                                <td><span class="fw-semibold">88%</span></td>
-                                                <td><span class="badge badge-success">نشط</span></td>
-                                                <td class="text-center">
-                                                    <div class="d-flex justify-content-center gap-1">
-                                                        <button class="btn btn-sm btn-light" title="عرض"><i class="bi bi-eye"></i></button>
-                                                        <button class="btn btn-sm btn-light" title="تعديل"><i class="bi bi-pencil"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
-                                                            <i class="bi bi-person-fill text-white"></i>
-                                                        </div>
-                                                        <div>
-                                                            <h6 class="mb-0 fw-semibold">عبدالله سعيد</h6>
-                                                            <small class="text-muted">ID: #103</small>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>+966 56 345 6789</td>
-                                                <td>
-                                                    <span class="badge badge-warning">75%</span>
-                                                </td>
-                                                <td>
-                                                    <div class="d-flex align-items-center gap-2">
-                                                        <div class="progress flex-grow-1" style="height: 8px; width: 80px;">
-                                                            <div class="progress-bar bg-warning" style="width: 65%"></div>
-                                                        </div>
-                                                        <span class="small fw-semibold">65%</span>
-                                                    </div>
-                                                </td>
-                                                <td><span class="fw-semibold">70%</span></td>
-                                                <td><span class="badge badge-warning">متأخر</span></td>
-                                                <td class="text-center">
-                                                    <div class="d-flex justify-content-center gap-1">
-                                                        <button class="btn btn-sm btn-light" title="عرض"><i class="bi bi-eye"></i></button>
-                                                        <button class="btn btn-sm btn-light" title="تعديل"><i class="bi bi-pencil"></i></button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Materials Tab -->
                     <div class="tab-pane fade" id="materials" role="tabpanel">
                         <div class="card">
-                            <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <div class="card-header bg-white">
                                 <h5 class="mb-0 fw-bold">المواد التعليمية</h5>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-plus-circle me-2"></i>رفع مادة
-                                </button>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -764,75 +632,145 @@
                         </div>
                     </div>
 
-                    <!-- Settings Tab -->
-                    <div class="tab-pane fade" id="settings" role="tabpanel">
+                    <!-- My Grades Tab -->
+                    <div class="tab-pane fade" id="grades" role="tabpanel">
                         <div class="card">
                             <div class="card-header bg-white">
-                                <h5 class="mb-0 fw-bold">إعدادات الدورة</h5>
+                                <h5 class="mb-0 fw-bold">درجاتي</h5>
                             </div>
                             <div class="card-body">
-                                <form>
-                                    <div class="row g-3">
-                                        <div class="col-md-6">
-                                            <label class="form-label">الحالة</label>
-                                            <select class="form-select">
-                                                <option value="active">نشطة</option>
-                                                <option value="upcoming">قادمة</option>
-                                                <option value="completed">مكتملة</option>
-                                                <option value="draft">مسودة</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">المستوى</label>
-                                            <select class="form-select">
-                                                <option value="beginner">مبتدئ</option>
-                                                <option value="intermediate" selected>متوسط</option>
-                                                <option value="advanced">متقدم</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">عدد الطلاب المسموح</label>
-                                            <input type="number" class="form-control" value="150">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <label class="form-label">طريقة البث</label>
-                                            <select class="form-select">
-                                                <option value="zoom-link">رابط Zoom</option>
-                                                <option value="zoom-embedded" selected>Zoom مضمن</option>
-                                                <option value="mixed">مختلط</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="certificate" checked>
-                                                <label class="form-check-label" for="certificate">
-                                                    إصدار شهادة إتمام
-                                                </label>
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-4">
+                                        <div class="card bg-success-light border-0">
+                                            <div class="card-body text-center">
+                                                <h2 class="fw-bold text-success mb-1">92%</h2>
+                                                <p class="text-muted small mb-0">الدرجة النهائية</p>
                                             </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="attendance" checked>
-                                                <label class="form-check-label" for="attendance">
-                                                    تسجيل الحضور إلزامي
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" id="reviews" checked>
-                                                <label class="form-check-label" for="reviews">
-                                                    السماح بالتقييمات
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <button type="submit" class="btn btn-primary">
-                                                <i class="bi bi-check-circle me-2"></i>حفظ التغييرات
-                                            </button>
                                         </div>
                                     </div>
-                                </form>
+                                    <div class="col-md-4">
+                                        <div class="card bg-primary-light border-0">
+                                            <div class="card-body text-center">
+                                                <h2 class="fw-bold text-primary mb-1">85%</h2>
+                                                <p class="text-muted small mb-0">متوسط الاختبارات</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card bg-warning-light border-0">
+                                            <div class="card-body text-center">
+                                                <h2 class="fw-bold text-warning mb-1">95%</h2>
+                                                <p class="text-muted small mb-0">متوسط الواجبات</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>العنصر</th>
+                                                <th>النوع</th>
+                                                <th>التاريخ</th>
+                                                <th>الدرجة</th>
+                                                <th>الحالة</th>
+                                                <th class="text-center">الإجراءات</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="mb-0 fw-semibold">اختبار الوحدة الأولى</h6>
+                                                    <small class="text-muted">مقدمة في تطوير الويب</small>
+                                                </td>
+                                                <td><span class="badge badge-danger">اختبار</span></td>
+                                                <td>20 يناير 2025</td>
+                                                <td>
+                                                    <span class="fw-semibold text-success">48/50</span>
+                                                    <small class="text-muted">(96%)</small>
+                                                </td>
+                                                <td><span class="badge badge-success">مُصحّح</span></td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="mb-0 fw-semibold">واجب HTML & CSS</h6>
+                                                    <small class="text-muted">أساسيات HTML و CSS</small>
+                                                </td>
+                                                <td><span class="badge badge-primary">واجب</span></td>
+                                                <td>18 يناير 2025</td>
+                                                <td>
+                                                    <span class="fw-semibold text-success">28/30</span>
+                                                    <small class="text-muted">(93%)</small>
+                                                </td>
+                                                <td><span class="badge badge-success">مُصحّح</span></td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="mb-0 fw-semibold">مشروع JavaScript</h6>
+                                                    <small class="text-muted">مقدمة في JavaScript</small>
+                                                </td>
+                                                <td><span class="badge badge-warning">مشروع</span></td>
+                                                <td>28 يناير 2025</td>
+                                                <td>
+                                                    <span class="fw-semibold text-success">95/100</span>
+                                                    <small class="text-muted">(95%)</small>
+                                                </td>
+                                                <td><span class="badge badge-success">مُصحّح</span></td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="mb-0 fw-semibold">اختبار منتصف الدورة</h6>
+                                                    <small class="text-muted">الوحدات 1-3</small>
+                                                </td>
+                                                <td><span class="badge badge-danger">اختبار</span></td>
+                                                <td>5 فبراير 2025</td>
+                                                <td>
+                                                    <span class="fw-semibold text-warning">70/100</span>
+                                                    <small class="text-muted">(70%)</small>
+                                                </td>
+                                                <td><span class="badge badge-success">مُصحّح</span></td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light" title="عرض التفاصيل">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <h6 class="mb-0 fw-semibold">واجب صفحة ويب تفاعلية</h6>
+                                                    <small class="text-muted">بناء صفحة ويب تفاعلية</small>
+                                                </td>
+                                                <td><span class="badge badge-primary">واجب</span></td>
+                                                <td>في الانتظار</td>
+                                                <td>
+                                                    <span class="text-muted">-</span>
+                                                </td>
+                                                <td><span class="badge badge-secondary">قيد التصحيح</span></td>
+                                                <td class="text-center">
+                                                    <button class="btn btn-sm btn-light disabled" title="قيد التصحيح">
+                                                        <i class="bi bi-clock"></i>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -843,6 +781,43 @@
             <footer class="mt-auto py-3 text-center text-muted small">
                 <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
             </footer>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="videoModalLabel">الجلسة المسجلة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- Video Player -->
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <video id="videoPlayer" controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                            متصفحك لا يدعم تشغيل الفيديو.
+                        </video>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div>
+                            <button class="btn btn-light me-2" id="playbackSpeed">
+                                <i class="bi bi-speedometer2 me-1"></i>سرعة التشغيل: 1x
+                            </button>
+                            <button class="btn btn-light" id="pictureInPicture">
+                                <i class="bi bi-pip me-1"></i>صورة في صورة
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle me-1"></i>إغلاق
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -865,6 +840,47 @@
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             });
+
+        // Video Modal Handler
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoModalLabel = document.getElementById('videoModalLabel');
+        let currentSpeed = 1;
+        const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
+        let currentSpeedIndex = 2;
+
+        videoModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const videoTitle = button.getAttribute('data-video-title');
+            videoModalLabel.textContent = videoTitle;
+            videoPlayer.currentTime = 0;
+        });
+
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        });
+
+        // Playback speed control
+        document.getElementById('playbackSpeed').addEventListener('click', function() {
+            currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+            currentSpeed = speeds[currentSpeedIndex];
+            videoPlayer.playbackRate = currentSpeed;
+            this.innerHTML = `<i class="bi bi-speedometer2 me-1"></i>سرعة التشغيل: ${currentSpeed}x`;
+        });
+
+        // Picture-in-Picture mode
+        document.getElementById('pictureInPicture').addEventListener('click', function() {
+            if (document.pictureInPictureEnabled) {
+                if (document.pictureInPictureElement) {
+                    document.exitPictureInPicture();
+                } else {
+                    videoPlayer.requestPictureInPicture();
+                }
+            } else {
+                alert('المتصفح لا يدعم وضع صورة في صورة');
+            }
+        });
     </script>
 </body>
 </html>

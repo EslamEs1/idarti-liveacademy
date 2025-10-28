@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراجعة كشف الحضور - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/supervisor.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/attendance/list-supervisor.html">مراقبة الحضور</a></li>
+                        <li class="breadcrumb-item active">مراجعة كشف الحضور</li>
+                    </ol>
+                </nav>
+
+                <!-- Session Info Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-start gap-3">
+                                    <span class="badge badge-success-light">معتمد</span>
+                                    <div>
+                                        <h5 class="mb-2 fw-bold">كشف حضور: تطوير الويب المتقدم - الجلسة 5</h5>
+                                        <div class="d-flex gap-3 flex-wrap">
+                                            <span class="text-muted">
+                                                <i class="bi bi-person-badge me-1"></i>د. أحمد محمد
+                                            </span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-calendar me-1"></i>السبت، 2 مارس 2025
+                                            </span>
+                                            <span class="text-muted">
+                                                <i class="bi bi-clock me-1"></i>10:00 ص - 12:00 م
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                                <button class="btn btn-success me-2">
+                                    <i class="bi bi-file-earmark-excel me-2"></i>تصدير
+                                </button>
+                                <button class="btn btn-light">
+                                    <i class="bi bi-printer"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality Metrics -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2 small">نسبة الحضور</p>
+                                        <h3 class="mb-0 fw-bold text-success">88%</h3>
+                                    </div>
+                                    <div class="stat-icon bg-success-light" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2 small">حاضر</p>
+                                        <h3 class="mb-0 fw-bold text-primary">22</h3>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-people text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2 small">غائب</p>
+                                        <h3 class="mb-0 fw-bold text-danger">3</h3>
+                                    </div>
+                                    <div class="stat-icon bg-danger-light" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-x-circle text-danger"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2 small">معدل الجودة</p>
+                                        <h3 class="mb-0 fw-bold text-warning">4.5</h3>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light" style="width: 50px; height: 50px;">
+                                        <i class="bi bi-star text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Sheet (Read-Only View) -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">سجل الحضور (25 طالب)</h6>
+                            <div class="input-group" style="width: 300px;">
+                                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                <input type="text" class="form-control" placeholder="بحث...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>الطالب</th>
+                                        <th>رقم الهاتف</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th>وقت التسجيل</th>
+                                        <th>ملاحظات المعلم</th>
+                                        <th>التقييم</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">محمد خالد</h6>
+                                                    <small class="text-muted">ID: #101</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+966 50 123 4567</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">حاضر</span>
+                                        </td>
+                                        <td>10:05 ص</td>
+                                        <td>-</td>
+                                        <td>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">فاطمة أحمد</h6>
+                                                    <small class="text-muted">ID: #102</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+966 55 234 5678</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">حاضر</span>
+                                        </td>
+                                        <td>10:02 ص</td>
+                                        <td>-</td>
+                                        <td>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star text-muted"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">عبدالله سعيد</h6>
+                                                    <small class="text-muted">ID: #103</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+966 56 345 6789</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">متأخر</span>
+                                        </td>
+                                        <td>10:15 ص</td>
+                                        <td>تأخر بسبب الزحام</td>
+                                        <td>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star text-muted"></i>
+                                            <i class="bi bi-star text-muted"></i>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-danger">
+                                        <td>4</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                    <i class="bi bi-person-fill text-white"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-semibold">سارة محمود</h6>
+                                                    <small class="text-muted">ID: #104</small>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>+966 54 567 8901</td>
+                                        <td class="text-center">
+                                            <span class="badge badge-danger">غائب</span>
+                                        </td>
+                                        <td>-</td>
+                                        <td>لم يتم تسجيل عذر</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <button class="btn btn-light" onclick="window.history.back()">
+                                <i class="bi bi-arrow-right me-2"></i>رجوع
+                            </button>
+                            <div>
+                                <button class="btn btn-warning me-2">
+                                    <i class="bi bi-flag me-2"></i>الإبلاغ عن مشكلة
+                                </button>
+                                <button class="btn btn-success">
+                                    <i class="bi bi-check-circle me-2"></i>اعتماد الحضور
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes Section -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h6 class="mb-0">ملاحظات المشرف</h6>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">تقييم جودة الجلسة</label>
+                                <select class="form-select">
+                                    <option>ممتاز</option>
+                                    <option>جيد جداً</option>
+                                    <option>جيد</option>
+                                    <option>مقبول</option>
+                                    <option>يحتاج تحسين</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">ملاحظات وتوصيات</label>
+                                <textarea class="form-control" rows="3" placeholder="أضف ملاحظاتك حول جودة الجلسة وأداء المعلم والطلاب..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save me-2"></i>حفظ الملاحظات
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_supervisor.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

@@ -248,6 +248,31 @@ body {
     color: white;
 }
 
+/* Ensure buttons in card headers are visible */
+.card-header .btn-light {
+    background: white;
+    color: var(--main-color);
+    border: 1px solid white;
+}
+
+.card-header .btn-light:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--main-color-dark);
+    transform: translateY(-2px);
+}
+
+.card-header .btn-primary {
+    background: white;
+    color: var(--main-color);
+    border: 1px solid white;
+}
+
+.card-header .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--main-color-dark);
+    transform: translateY(-2px);
+}
+
 .card-body {
     padding: var(--spacing-lg);
 }

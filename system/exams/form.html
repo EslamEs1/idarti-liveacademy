@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء اختبار - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/exams/list-admin.html">الاختبارات</a></li>
+                        <li class="breadcrumb-item active" id="breadcrumb-title">اختبار جديد</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold" id="page-title">إنشاء اختبار جديد</h4>
+                        <p class="text-muted mb-0">أنشئ اختباراً إلكترونياً بأسئلة متنوعة</p>
+                    </div>
+                    <a href="/system/exams/list-admin.html" class="btn btn-light">
+                        <i class="bi bi-arrow-right me-2"></i>العودة
+                    </a>
+                </div>
+
+                <form id="examForm" class="needs-validation" novalidate>
+                    <div class="row">
+                        <!-- Main Form -->
+                        <div class="col-lg-8">
+                            <!-- Basic Info -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h6 class="mb-0">المعلومات الأساسية</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-12">
+                                            <label class="form-label">عنوان الاختبار <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="title" placeholder="مثال: الاختبار النهائي - JavaScript" required>
+                                            <div class="invalid-feedback">الرجاء إدخال عنوان الاختبار</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">الدورة <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="course" required>
+                                                <option value="">-- اختر الدورة --</option>
+                                                <option value="1">تطوير الويب المتقدم</option>
+                                                <option value="2">أساسيات البرمجة</option>
+                                                <option value="3">قواعد البيانات</option>
+                                                <option value="4">تصميم واجهات المستخدم</option>
+                                            </select>
+                                            <div class="invalid-feedback">الرجاء اختيار الدورة</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">نوع الاختبار <span class="text-danger">*</span></label>
+                                            <select class="form-select" name="type" required>
+                                                <option value="">-- اختر النوع --</option>
+                                                <option value="quiz">اختبار قصير</option>
+                                                <option value="midterm">منتصف فصل</option>
+                                                <option value="final">اختبار نهائي</option>
+                                                <option value="practice">اختبار تدريبي</option>
+                                            </select>
+                                            <div class="invalid-feedback">الرجاء اختيار نوع الاختبار</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label">الوصف</label>
+                                            <textarea class="form-control" name="description" rows="3" placeholder="وصف مختصر عن محتوى الاختبار..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Timing & Scheduling -->
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h6 class="mb-0">التوقيت والجدولة</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label">تاريخ البدء <span class="text-danger">*</span></label>
+                                            <input type="datetime-local" class="form-control" name="start_date" required>
+                                            <div class="invalid-feedback">الرجاء تحديد تاريخ البدء</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">تاريخ الانتهاء <span class="text-danger">*</span></label>
+                                            <input type="datetime-local" class="form-control" name="end_date" required>
+                                            <div class="invalid-feedback">الرجاء تحديد تاريخ الانتهاء</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">مدة الاختبار (بالدقائق) <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="duration" placeholder="90" min="5" required>
+                                            <small class="text-muted">المدة المسموحة للطالب لإكمال الاختبار</small>
+                                            <div class="invalid-feedback">الرجاء تحديد المدة</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">عدد المحاولات المسموحة <span class="text-danger">*</span></label>
+                                            <input type="number" class="form-control" name="attempts" placeholder="1" min="1" max="5" required>
+                                            <small class="text-muted">عدد المرات التي يمكن للطالب إعادة الاختبار</small>
+                                            <div class="invalid-feedback">الرجاء تحديد عدد المحاولات</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Questions Section -->
+                            <div class="card mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="mb-0">الأسئلة</h6>
+                                    <div class="btn-group btn-group-sm">
+                                        <button type="button" class="btn btn-primary" onclick="addQuestion('mcq')">
+                                            <i class="bi bi-plus-circle me-1"></i>اختيار من متعدد
+                                        </button>
+                                        <button type="button" class="btn btn-primary" onclick="addQuestion('tf')">
+                                            <i class="bi bi-plus-circle me-1"></i>صح/خطأ
+                                        </button>
+                                        <button type="button" class="btn btn-primary" onclick="addQuestion('essay')">
+                                            <i class="bi bi-plus-circle me-1"></i>مقالي
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="card-body" id="questionsContainer">
+                                    <div class="text-center text-muted py-5">
+                                        <i class="bi bi-question-circle display-1 mb-3"></i>
+                                        <p>لم تتم إضافة أسئلة بعد</p>
+                                        <p class="small">استخدم الأزرار أعلاه لإضافة أسئلة</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="col-lg-4">
+                            <!-- Settings Card -->
+                            <div class="card mb-4 sticky-top" style="top: 20px;">
+                                <div class="card-header">
+                                    <h6 class="mb-0">الإعدادات</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">الحالة</label>
+                                        <select class="form-select" name="status">
+                                            <option value="draft">مسودة</option>
+                                            <option value="scheduled">مجدول</option>
+                                            <option value="active" selected>نشط</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">درجة النجاح (%)</label>
+                                        <input type="number" class="form-control" name="pass_score" value="50" min="0" max="100">
+                                    </div>
+
+                                    <hr>
+
+                                    <h6 class="mb-3">خيارات متقدمة</h6>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="randomize_questions" id="randomizeQ">
+                                        <label class="form-check-label" for="randomizeQ">
+                                            ترتيب عشوائي للأسئلة
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="randomize_choices" id="randomizeC">
+                                        <label class="form-check-label" for="randomizeC">
+                                            ترتيب عشوائي للخيارات
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="show_results" id="showResults" checked>
+                                        <label class="form-check-label" for="showResults">
+                                            إظهار النتيجة فوراً
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="allow_review" id="allowReview" checked>
+                                        <label class="form-check-label" for="allowReview">
+                                            السماح بمراجعة الإجابات
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" name="require_webcam" id="requireWebcam">
+                                        <label class="form-check-label" for="requireWebcam">
+                                            يتطلب كاميرا (مراقبة)
+                                        </label>
+                                    </div>
+
+                                    <hr>
+
+                                    <!-- Summary -->
+                                    <div class="bg-light p-3 rounded">
+                                        <h6 class="mb-3">ملخص الاختبار</h6>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">عدد الأسئلة:</span>
+                                            <span class="fw-bold" id="totalQuestions">0</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">إجمالي النقاط:</span>
+                                            <span class="fw-bold" id="totalPoints">0</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">المدة:</span>
+                                            <span class="fw-bold" id="durationSummary">-</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="bi bi-check-circle me-2"></i>حفظ الاختبار
+                                        </button>
+                                        <button type="button" class="btn btn-light" onclick="saveDraft()">
+                                            <i class="bi bi-save me-2"></i>حفظ كمسودة
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Question Templates (Hidden) -->
+    <template id="mcq-template">
+        <div class="question-card card mb-3" data-type="mcq">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span class="badge bg-primary">اختيار من متعدد</span>
+                <button type="button" class="btn btn-sm btn-danger" onclick="removeQuestion(this)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">نص السؤال <span class="text-danger">*</span></label>
+                    <textarea class="form-control" rows="2" placeholder="أدخل السؤال..." required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">الخيارات</label>
+                    <div class="choices-container">
+                        <div class="input-group mb-2">
+                            <div class="input-group-text">
+                                <input class="form-check-input mt-0" type="radio" name="correct_{{QNUM}}" value="0">
+                            </div>
+                            <input type="text" class="form-control" placeholder="الخيار 1">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-text">
+                                <input class="form-check-input mt-0" type="radio" name="correct_{{QNUM}}" value="1">
+                            </div>
+                            <input type="text" class="form-control" placeholder="الخيار 2">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-text">
+                                <input class="form-check-input mt-0" type="radio" name="correct_{{QNUM}}" value="2">
+                            </div>
+                            <input type="text" class="form-control" placeholder="الخيار 3">
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-text">
+                                <input class="form-check-input mt-0" type="radio" name="correct_{{QNUM}}" value="3">
+                            </div>
+                            <input type="text" class="form-control" placeholder="الخيار 4">
+                        </div>
+                    </div>
+                    <small class="text-muted">حدد الدائرة بجانب الإجابة الصحيحة</small>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">النقاط</label>
+                        <input type="number" class="form-control question-points" value="1" min="1" onchange="updateSummary()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="tf-template">
+        <div class="question-card card mb-3" data-type="tf">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span class="badge bg-info">صح/خطأ</span>
+                <button type="button" class="btn btn-sm btn-danger" onclick="removeQuestion(this)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">نص السؤال <span class="text-danger">*</span></label>
+                    <textarea class="form-control" rows="2" placeholder="أدخل السؤال..." required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">الإجابة الصحيحة</label>
+                    <div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tf_{{QNUM}}" value="true" checked>
+                            <label class="form-check-label">صح</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="tf_{{QNUM}}" value="false">
+                            <label class="form-check-label">خطأ</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">النقاط</label>
+                        <input type="number" class="form-control question-points" value="1" min="1" onchange="updateSummary()">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="essay-template">
+        <div class="question-card card mb-3" data-type="essay">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span class="badge bg-warning">سؤال مقالي</span>
+                <button type="button" class="btn btn-sm btn-danger" onclick="removeQuestion(this)">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">نص السؤال <span class="text-danger">*</span></label>
+                    <textarea class="form-control" rows="2" placeholder="أدخل السؤال..." required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">إرشادات الإجابة (اختياري)</label>
+                    <textarea class="form-control" rows="2" placeholder="أضف معايير التقييم أو إرشادات..."></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">النقاط</label>
+                        <input type="number" class="form-control question-points" value="5" min="1" onchange="updateSummary()">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">الحد الأدنى للكلمات</label>
+                        <input type="number" class="form-control" value="50" min="10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_admin.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+
+    <!-- Custom Form Logic -->
+    <script>
+        let questionCounter = 0;
+
+        // Check if editing
+        const urlParams = new URLSearchParams(window.location.search);
+        const editId = urlParams.get('edit');
+        if (editId) {
+            document.getElementById('page-title').textContent = 'تعديل الاختبار';
+            document.getElementById('breadcrumb-title').textContent = 'تعديل الاختبار';
+        }
+
+        function addQuestion(type) {
+            questionCounter++;
+            const container = document.getElementById('questionsContainer');
+            const template = document.getElementById(type + '-template');
+            const clone = template.content.cloneNode(true);
+            
+            // Replace placeholder with unique number
+            const html = clone.querySelector('.question-card').outerHTML.replace(/{{QNUM}}/g, questionCounter);
+            
+            // Remove empty state if exists
+            if (container.querySelector('.text-center')) {
+                container.innerHTML = '';
+            }
+            
+            container.insertAdjacentHTML('beforeend', html);
+            updateSummary();
+        }
+
+        function removeQuestion(btn) {
+            btn.closest('.question-card').remove();
+            updateSummary();
+            
+            // Show empty state if no questions
+            const container = document.getElementById('questionsContainer');
+            if (container.children.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center text-muted py-5">
+                        <i class="bi bi-question-circle display-1 mb-3"></i>
+                        <p>لم تتم إضافة أسئلة بعد</p>
+                        <p class="small">استخدم الأزرار أعلاه لإضافة أسئلة</p>
+                    </div>
+                `;
+            }
+        }
+
+        function updateSummary() {
+            const questions = document.querySelectorAll('.question-card');
+            const totalQuestions = questions.length;
+            let totalPoints = 0;
+            
+            questions.forEach(q => {
+                const points = parseInt(q.querySelector('.question-points').value || 0);
+                totalPoints += points;
+            });
+            
+            document.getElementById('totalQuestions').textContent = totalQuestions;
+            document.getElementById('totalPoints').textContent = totalPoints;
+            
+            const duration = document.querySelector('[name="duration"]').value;
+            if (duration) {
+                document.getElementById('durationSummary').textContent = duration + ' دقيقة';
+            }
+        }
+
+        function saveDraft() {
+            document.querySelector('[name="status"]').value = 'draft';
+            document.getElementById('examForm').submit();
+        }
+
+        // Update summary when duration changes
+        document.querySelector('[name="duration"]').addEventListener('input', updateSummary);
+
+        // Form validation
+        document.getElementById('examForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+            
+            const questions = document.querySelectorAll('.question-card');
+            if (questions.length === 0) {
+                alert('الرجاء إضافة سؤال واحد على الأقل');
+                return;
+            }
+            
+            alert('تم حفظ الاختبار بنجاح!');
+            // window.location.href = '/system/exams/list-admin.html';
+        });
+    </script>
+</body>
+</html>

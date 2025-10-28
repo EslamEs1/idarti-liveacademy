@@ -80,25 +80,22 @@
 
                 <!-- Action Buttons -->
                 <div class="d-flex gap-2 mb-4 flex-wrap">
-                    <a href="/system/courses/form.html?id=1" class="btn btn-primary">
-                        <i class="bi bi-pencil me-2"></i>تعديل الدورة
-                    </a>
-                    <button class="btn btn-light">
-                        <i class="bi bi-people me-2"></i>إدارة الطلاب
+                    <button class="btn btn-primary">
+                        <i class="bi bi-calendar-event me-2"></i>إدارة الجلسات
                     </button>
                     <button class="btn btn-light">
-                        <i class="bi bi-calendar-event me-2"></i>الجلسات
+                        <i class="bi bi-people me-2"></i>طلابي
                     </button>
                     <button class="btn btn-light">
-                        <i class="bi bi-file-earmark-text me-2"></i>المواد
+                        <i class="bi bi-file-earmark-text me-2"></i>رفع مواد
+                    </button>
+                    <button class="btn btn-light">
+                        <i class="bi bi-clipboard-check me-2"></i>تسجيل الحضور
                     </button>
                     <button class="btn btn-light">
                         <i class="bi bi-file-earmark-bar-graph me-2"></i>التقارير
                     </button>
-                    <button class="btn btn-outline-danger ms-auto">
-                        <i class="bi bi-trash me-2"></i>حذف
-                    </button>
-                    <a href="/system/courses/list-admin.html" class="btn btn-light">
+                    <a href="/system/courses/list-teacher.html" class="btn btn-light ms-auto">
                         <i class="bi bi-arrow-right me-2"></i>رجوع
                     </a>
                 </div>
@@ -112,7 +109,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="curriculum-tab" data-bs-toggle="tab" data-bs-target="#curriculum" type="button" role="tab">
-                            <i class="bi bi-book me-2"></i>المنهج والجلسات
+                            <i class="bi bi-camera-video me-2"></i>الحلقات والجلسات
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
@@ -308,10 +305,15 @@
                     <div class="tab-pane fade" id="curriculum" role="tabpanel">
                         <div class="card">
                             <div class="card-header bg-white d-flex justify-content-between align-items-center">
-                                <h5 class="mb-0 fw-bold">المنهج والجلسات</h5>
-                                <button class="btn btn-sm btn-primary">
-                                    <i class="bi bi-plus-circle me-2"></i>إضافة جلسة
-                                </button>
+                                <h5 class="mb-0 fw-bold">الحلقات والجلسات</h5>
+                                <div>
+                                    <a href="/system/courses/sessions-list-teacher.html" class="btn btn-sm btn-light me-2">
+                                        <i class="bi bi-list-ul me-2"></i>عرض جميع الجلسات
+                                    </a>
+                                    <a href="/system/courses/session-form.html" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-plus-circle me-2"></i>إضافة جلسة
+                                    </a>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <!-- Module 1 -->
@@ -329,9 +331,15 @@
                                                     <i class="bi bi-play-circle text-success me-2"></i>
                                                     <span class="fw-semibold">الجلسة 1: نظرة عامة على تطوير الويب</span>
                                                 </div>
-                                                <div>
-                                                    <span class="badge badge-success me-2">مكتملة</span>
+                                                <div class="d-flex gap-2">
+                                                    <span class="badge badge-success">مكتملة</span>
                                                     <span class="text-muted small">ساعتان</span>
+                                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-title="الجلسة 1: نظرة عامة على تطوير الويب">
+                                                        <i class="bi bi-play-circle me-1"></i>مشاهدة
+                                                    </button>
+                                                    <button class="btn btn-sm btn-light" title="تعديل">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -341,9 +349,15 @@
                                                     <i class="bi bi-play-circle text-success me-2"></i>
                                                     <span class="fw-semibold">الجلسة 2: أساسيات HTML و CSS</span>
                                                 </div>
-                                                <div>
-                                                    <span class="badge badge-success me-2">مكتملة</span>
+                                                <div class="d-flex gap-2">
+                                                    <span class="badge badge-success">مكتملة</span>
                                                     <span class="text-muted small">ساعتان</span>
+                                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-title="الجلسة 2: أساسيات HTML و CSS">
+                                                        <i class="bi bi-play-circle me-1"></i>مشاهدة
+                                                    </button>
+                                                    <button class="btn btn-sm btn-light" title="تعديل">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,9 +367,15 @@
                                                     <i class="bi bi-play-circle text-success me-2"></i>
                                                     <span class="fw-semibold">الجلسة 3: مقدمة في JavaScript</span>
                                                 </div>
-                                                <div>
-                                                    <span class="badge badge-success me-2">مكتملة</span>
+                                                <div class="d-flex gap-2">
+                                                    <span class="badge badge-success">مكتملة</span>
                                                     <span class="text-muted small">ساعتان</span>
+                                                    <button class="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-title="الجلسة 3: مقدمة في JavaScript">
+                                                        <i class="bi bi-play-circle me-1"></i>مشاهدة
+                                                    </button>
+                                                    <button class="btn btn-sm btn-light" title="تعديل">
+                                                        <i class="bi bi-pencil"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -846,6 +866,43 @@
         </div>
     </div>
 
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="videoModalLabel">الجلسة المسجلة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <!-- Video Player -->
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <video id="videoPlayer" controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                            متصفحك لا يدعم تشغيل الفيديو.
+                        </video>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <div>
+                            <button class="btn btn-light me-2" id="playbackSpeed">
+                                <i class="bi bi-speedometer2 me-1"></i>سرعة التشغيل: 1x
+                            </button>
+                            <button class="btn btn-light" id="pictureInPicture">
+                                <i class="bi bi-pip me-1"></i>صورة في صورة
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="bi bi-x-circle me-1"></i>إغلاق
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="../../assets/js/popper.min.js"></script>
     <script src="../../assets/js/bootstrap.min.js"></script>
@@ -865,6 +922,47 @@
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             });
+
+        // Video Modal Handler
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const videoModalLabel = document.getElementById('videoModalLabel');
+        let currentSpeed = 1;
+        const speeds = [0.5, 0.75, 1, 1.25, 1.5, 2];
+        let currentSpeedIndex = 2;
+
+        videoModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const videoTitle = button.getAttribute('data-video-title');
+            videoModalLabel.textContent = videoTitle;
+            videoPlayer.currentTime = 0;
+        });
+
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        });
+
+        // Playback speed control
+        document.getElementById('playbackSpeed').addEventListener('click', function() {
+            currentSpeedIndex = (currentSpeedIndex + 1) % speeds.length;
+            currentSpeed = speeds[currentSpeedIndex];
+            videoPlayer.playbackRate = currentSpeed;
+            this.innerHTML = `<i class="bi bi-speedometer2 me-1"></i>سرعة التشغيل: ${currentSpeed}x`;
+        });
+
+        // Picture-in-Picture mode
+        document.getElementById('pictureInPicture').addEventListener('click', function() {
+            if (document.pictureInPictureEnabled) {
+                if (document.pictureInPictureElement) {
+                    document.exitPictureInPicture();
+                } else {
+                    videoPlayer.requestPictureInPicture();
+                }
+            } else {
+                alert('المتصفح لا يدعم وضع صورة في صورة');
+            }
+        });
     </script>
 </body>
 </html>

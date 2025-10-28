@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مراقبة الاختبارات - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar-container"></div>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Navbar -->
+            <div id="navbar-container"></div>
+
+            <!-- Page Content -->
+            <div class="container-fluid px-4 py-4">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/supervisor.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item active">مراقبة الاختبارات</li>
+                    </ol>
+                </nav>
+
+                <!-- Page Header -->
+                <div class="mb-4">
+                    <h4 class="mb-1 fw-bold">مراقبة جودة الاختبارات</h4>
+                    <p class="text-muted mb-0">متابعة جودة الاختبارات ونزاهتها</p>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="row g-3 mb-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">معدل الجودة</p>
+                                        <h3 class="mb-0 fw-bold">4.3/5</h3>
+                                        <small class="text-success">
+                                            <i class="bi bi-star-fill me-1"></i>جودة عالية
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-success-light">
+                                        <i class="bi bi-star text-success"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">معدل الإكمال</p>
+                                        <h3 class="mb-0 fw-bold">89%</h3>
+                                        <small class="text-primary">
+                                            <i class="bi bi-check-circle me-1"></i>ممتاز
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-primary-light">
+                                        <i class="bi bi-check-circle text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">يحتاج مراجعة</p>
+                                        <h3 class="mb-0 fw-bold">7</h3>
+                                        <small class="text-warning">
+                                            <i class="bi bi-exclamation-triangle me-1"></i>اختبارات
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-warning-light">
+                                        <i class="bi bi-exclamation-triangle text-warning"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <p class="text-muted mb-2">معدل العدالة</p>
+                                        <h3 class="mb-0 fw-bold">92%</h3>
+                                        <small class="text-info">
+                                            <i class="bi bi-balance-scale me-1"></i>عادل
+                                        </small>
+                                    </div>
+                                    <div class="stat-icon bg-info-light">
+                                        <i class="bi bi-balance-scale text-info"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <form class="row g-3">
+                            <div class="col-md-3">
+                                <label class="form-label">الدورة</label>
+                                <select class="form-select">
+                                    <option selected>جميع الدورات</option>
+                                    <option>تطوير الويب المتقدم</option>
+                                    <option>أساسيات البرمجة</option>
+                                    <option>قواعد البيانات</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">المعلم</label>
+                                <select class="form-select">
+                                    <option selected>جميع المعلمين</option>
+                                    <option>أحمد محمد</option>
+                                    <option>سارة علي</option>
+                                    <option>محمد حسن</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">تقييم الجودة</label>
+                                <select class="form-select">
+                                    <option selected>جميع التقييمات</option>
+                                    <option>ممتاز (5 نجوم)</option>
+                                    <option>جيد جداً (4 نجوم)</option>
+                                    <option>جيد (3 نجوم)</option>
+                                    <option>يحتاج تحسين (أقل من 3)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">&nbsp;</label>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-search me-2"></i>بحث
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Quality Monitoring Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0">مراقبة جودة الاختبارات</h6>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>الاختبار</th>
+                                        <th>الدورة / المعلم</th>
+                                        <th class="text-center">الطلاب</th>
+                                        <th class="text-center">معدل الإكمال</th>
+                                        <th class="text-center">معدل النجاح</th>
+                                        <th class="text-center">تقييم الجودة</th>
+                                        <th class="text-center">الحالة</th>
+                                        <th class="text-center">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- High Quality Exam -->
+                                    <tr class="table-success">
+                                        <td>
+                                            <span class="fw-semibold">اختبار JavaScript المتقدم</span>
+                                            <br>
+                                            <small class="text-muted">25 سؤال | نهائي</small>
+                                        </td>
+                                        <td>
+                                            تطوير الويب المتقدم
+                                            <br>
+                                            <small class="text-muted">أ. أحمد محمد</small>
+                                        </td>
+                                        <td class="text-center">45</td>
+                                        <td class="text-center">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-success" style="width: 96%"></div>
+                                            </div>
+                                            <small class="text-muted">96%</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-success">82%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <small class="ms-2">5.0</small>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">معتمد</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/exams/detail-supervisor.html?id=1" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="تقرير جودة">
+                                                    <i class="bi bi-file-text"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Needs Review -->
+                                    <tr class="table-warning">
+                                        <td>
+                                            <span class="fw-semibold">اختبار SQL Basics</span>
+                                            <br>
+                                            <small class="text-muted">12 سؤال | منتصف فصل</small>
+                                        </td>
+                                        <td>
+                                            قواعد البيانات
+                                            <br>
+                                            <small class="text-muted">أ. محمد حسن</small>
+                                        </td>
+                                        <td class="text-center">25</td>
+                                        <td class="text-center">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 68%"></div>
+                                            </div>
+                                            <small class="text-muted">68%</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-warning">54%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star text-muted"></i>
+                                                <i class="bi bi-star text-muted"></i>
+                                                <small class="ms-2">2.8</small>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-warning">يحتاج مراجعة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/exams/detail-supervisor.html?id=2" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-warning" title="مراجعة عاجلة">
+                                                    <i class="bi bi-exclamation-triangle text-white"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Under Review -->
+                                    <tr>
+                                        <td>
+                                            <span class="fw-semibold">اختبار React Hooks</span>
+                                            <br>
+                                            <small class="text-muted">18 سؤال | منتصف فصل</small>
+                                        </td>
+                                        <td>
+                                            تطوير الويب المتقدم
+                                            <br>
+                                            <small class="text-muted">أ. سارة علي</small>
+                                        </td>
+                                        <td class="text-center">32</td>
+                                        <td class="text-center">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" style="width: 87%"></div>
+                                            </div>
+                                            <small class="text-muted">87%</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-primary">75%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star text-muted"></i>
+                                                <small class="ms-2">4.2</small>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-info">قيد المراجعة</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/exams/detail-supervisor.html?id=3" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-success" title="اعتماد">
+                                                    <i class="bi bi-check-lg text-white"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <!-- Good Quality -->
+                                    <tr>
+                                        <td>
+                                            <span class="fw-semibold">اختبار Python OOP</span>
+                                            <br>
+                                            <small class="text-muted">22 سؤال | نهائي</small>
+                                        </td>
+                                        <td>
+                                            أساسيات البرمجة
+                                            <br>
+                                            <small class="text-muted">أ. خالد عمر</small>
+                                        </td>
+                                        <td class="text-center">38</td>
+                                        <td class="text-center">
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar bg-success" style="width: 92%"></div>
+                                            </div>
+                                            <small class="text-muted">92%</small>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-success">78%</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-half text-warning"></i>
+                                                <small class="ms-2">4.5</small>
+                                            </div>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge badge-success">معتمد</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <div class="btn-group btn-group-sm">
+                                                <a href="/system/exams/detail-supervisor.html?id=4" class="btn btn-light" title="عرض">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <button class="btn btn-light" title="تقرير جودة">
+                                                    <i class="bi bi-file-text"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-muted">عرض 4 من أصل 35 اختبار</small>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-file-earmark-excel me-1"></i>تصدير Excel
+                                </button>
+                                <button class="btn btn-sm btn-light">
+                                    <i class="bi bi-printer me-1"></i>طباعة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="mt-auto py-3 text-center text-muted small">
+                <p class="mb-0">&copy; 2025 IDARTI Live Academy. جميع الحقوق محفوظة.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <!-- Load Partials -->
+    <script>
+        fetch('../partials/sidebar_supervisor.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('sidebar-container').innerHTML = data;
+            });
+
+        fetch('../partials/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
+

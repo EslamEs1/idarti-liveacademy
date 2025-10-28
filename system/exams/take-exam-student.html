@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أداء الاختبار - IDARTI Live Academy</title>
+    
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom System CSS -->
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+    <style>
+        .exam-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .timer-card {
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+        .timer-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto;
+        }
+        .question-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .question-nav-btn {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .question-nav-btn.answered {
+            background: #198754;
+            color: white;
+            border-color: #198754;
+        }
+        .question-nav-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        .question-card {
+            display: none;
+        }
+        .question-card.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="exam-container py-4">
+        <!-- Exam Header -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h5 class="fw-bold mb-1">اختبار JavaScript المتقدم</h5>
+                        <p class="text-muted mb-0 small">تطوير الويب المتقدم | اختبار نهائي</p>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <div class="timer-badge bg-warning text-white px-3 py-2 rounded">
+                            <i class="bi bi-clock me-2"></i>
+                            <span id="timer">90:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Main Exam Area -->
+            <div class="col-lg-8">
+                <!-- Instructions (shown first) -->
+                <div id="instructionsCard" class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h6 class="mb-0">
+                            <i class="bi bi-info-circle me-2"></i>تعليمات الاختبار
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-warning">
+                            <i class="bi bi-exclamation-triangle me-2"></i>
+                            <strong>مهم:</strong> لديك محاولة واحدة فقط لهذا الاختبار
+                        </div>
+                        
+                        <h6 class="fw-bold mb-3">قبل البدء، يرجى قراءة التعليمات التالية:</h6>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                عدد الأسئلة: <strong>25 سؤال</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                الوقت المتاح: <strong>90 دقيقة</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                إجمالي النقاط: <strong>100 نقطة</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                درجة النجاح: <strong>50 نقطة (50%)</strong>
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                يتم حفظ إجاباتك تلقائياً
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                يمكنك التنقل بين الأسئلة بحرية
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle text-success me-2"></i>
+                                تأكد من إجابة جميع الأسئلة قبل التسليم
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info mt-4">
+                            <i class="bi bi-lightbulb me-2"></i>
+                            <strong>نصيحة:</strong> خذ وقتك في قراءة كل سؤال بعناية قبل الإجابة
+                        </div>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                            <label class="form-check-label" for="agreeTerms">
+                                أوافق على التعليمات وأتعهد بالالتزام بقواعد النزاهة الأكاديمية
+                            </label>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg" onclick="startExam()">
+                                <i class="bi bi-play-circle me-2"></i>ابدأ الاختبار
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Questions Container (hidden initially) -->
+                <div id="questionsArea" style="display: none;">
+                    <!-- Question 1: MCQ -->
+                    <div class="question-card card mb-4 active" data-question="1">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary">اختيار من متعدد</span>
+                                <span class="text-muted">4 نقاط</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-4">
+                                السؤال 1: ما هو الفرق بين <code>let</code> و <code>var</code> في JavaScript؟
+                            </h6>
+                            
+                            <div class="form-check mb-3 p-3 border rounded">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_a" value="a">
+                                <label class="form-check-label w-100" for="q1_a">
+                                    <code>let</code> يمكن إعادة تعريفه بينما <code>var</code> لا يمكن
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3 p-3 border rounded">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_b" value="b">
+                                <label class="form-check-label w-100" for="q1_b">
+                                    <code>let</code> له نطاق بلوك بينما <code>var</code> له نطاق دالة
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3 p-3 border rounded">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_c" value="c">
+                                <label class="form-check-label w-100" for="q1_c">
+                                    لا يوجد فرق بينهما
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3 p-3 border rounded">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_d" value="d">
+                                <label class="form-check-label w-100" for="q1_d">
+                                    <code>var</code> أسرع في التنفيذ من <code>let</code>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2: True/False -->
+                    <div class="question-card card mb-4" data-question="2">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info">صح/خطأ</span>
+                                <span class="text-muted">2 نقطة</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-4">
+                                السؤال 2: JavaScript هي لغة برمجة مترجمة فقط (Compiled Only)
+                            </h6>
+                            
+                            <div class="form-check mb-3 p-3 border rounded">
+                                <input class="form-check-input" type="radio" name="q2" id="q2_true" value="true">
+                                <label class="form-check-label w-100" for="q2_true">
+                                    <i class="bi bi-check-circle text-success me-2"></i>صح
+                                </label>
+                            </div>
+                            
+                            <div class="form-check mb-3 p-3 border rounded">
+                                <input class="form-check-input" type="radio" name="q2" id="q2_false" value="false">
+                                <label class="form-check-label w-100" for="q2_false">
+                                    <i class="bi bi-x-circle text-danger me-2"></i>خطأ
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3: Essay -->
+                    <div class="question-card card mb-4" data-question="3">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-warning">سؤال مقالي</span>
+                                <span class="text-muted">10 نقاط</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="fw-bold mb-4">
+                                السؤال 3: اشرح مفهوم Closure في JavaScript مع مثال عملي
+                            </h6>
+                            
+                            <textarea class="form-control" name="q3" rows="8" placeholder="اكتب إجابتك هنا... (الحد الأدنى 50 كلمة)"></textarea>
+                            <small class="text-muted">عدد الكلمات: <span id="wordCount">0</span></small>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="d-flex justify-content-between mb-4">
+                        <button class="btn btn-light" onclick="previousQuestion()">
+                            <i class="bi bi-arrow-right me-2"></i>السؤال السابق
+                        </button>
+                        <button class="btn btn-primary" onclick="nextQuestion()">
+                            السؤال التالي<i class="bi bi-arrow-left ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="timer-card card mb-4">
+                    <div class="card-body text-center">
+                        <h6 class="mb-3">الوقت المتبقي</h6>
+                        <div class="timer-circle" id="timerCircle">
+                            <span id="timerDisplay">90:00</span>
+                        </div>
+                        <p class="text-muted mt-3 mb-0 small">
+                            <i class="bi bi-info-circle me-1"></i>يتم الحفظ تلقائياً
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card mb-4" id="navCard" style="display: none;">
+                    <div class="card-header">
+                        <h6 class="mb-0">خريطة الأسئلة</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="question-nav" id="questionNav">
+                            <!-- Will be generated by JS -->
+                        </div>
+                        
+                        <hr>
+                        
+                        <div class="d-flex justify-content-between mb-2">
+                            <span><i class="bi bi-circle-fill text-success"></i> مُجاب</span>
+                            <span id="answeredCount">0/25</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span><i class="bi bi-circle text-muted"></i> غير مُجاب</span>
+                            <span id="unansweredCount">25/25</span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-success" onclick="submitExam()">
+                                <i class="bi bi-check-circle me-2"></i>تسليم الاختبار
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Submit Confirmation Modal -->
+    <div class="modal fade" id="submitModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">تأكيد التسليم</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        لديك <strong id="unansweredModal">0</strong> سؤال لم يتم الإجابة عليه
+                    </div>
+                    <p>هل أنت متأكد من تسليم الاختبار؟</p>
+                    <p class="text-muted small">لن تتمكن من العودة بعد التسليم</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">المراجعة</button>
+                    <button type="button" class="btn btn-success" onclick="confirmSubmit()">تأكيد التسليم</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="../../assets/js/popper.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <script>
+        let currentQuestion = 1;
+        const totalQuestions = 3; // In real app, this would be dynamic
+        let timeRemaining = 90 * 60; // 90 minutes in seconds
+        let timerInterval;
+
+        function startExam() {
+            const agreed = document.getElementById('agreeTerms').checked;
+            if (!agreed) {
+                alert('يرجى الموافقة على التعليمات');
+                return;
+            }
+
+            document.getElementById('instructionsCard').style.display = 'none';
+            document.getElementById('questionsArea').style.display = 'block';
+            document.getElementById('navCard').style.display = 'block';
+
+            // Generate question navigation
+            generateQuestionNav();
+
+            // Start timer
+            startTimer();
+        }
+
+        function generateQuestionNav() {
+            const nav = document.getElementById('questionNav');
+            nav.innerHTML = '';
+            for (let i = 1; i <= totalQuestions; i++) {
+                const btn = document.createElement('div');
+                btn.className = 'question-nav-btn';
+                if (i === 1) btn.classList.add('active');
+                btn.textContent = i;
+                btn.onclick = () => goToQuestion(i);
+                nav.appendChild(btn);
+            }
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert('انتهى الوقت! سيتم تسليم الاختبار تلقائياً');
+                    confirmSubmit();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const display = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timerDisplay').textContent = display;
+            document.getElementById('timer').textContent = display;
+
+            // Change color if less than 5 minutes
+            if (timeRemaining < 300) {
+                document.getElementById('timerCircle').style.background = 'linear-gradient(135deg, #dc3545, #fd7e14)';
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                goToQuestion(currentQuestion + 1);
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                goToQuestion(currentQuestion - 1);
+            }
+        }
+
+        function goToQuestion(num) {
+            // Hide all questions
+            document.querySelectorAll('.question-card').forEach(q => q.classList.remove('active'));
+            document.querySelectorAll('.question-nav-btn').forEach(b => b.classList.remove('active'));
+
+            // Show selected question
+            document.querySelector(`[data-question="${num}"]`).classList.add('active');
+            document.querySelectorAll('.question-nav-btn')[num - 1].classList.add('active');
+
+            currentQuestion = num;
+        }
+
+        function submitExam() {
+            // Count unanswered
+            const unanswered = totalQuestions; // In real app, check actual answers
+            document.getElementById('unansweredModal').textContent = unanswered;
+
+            const modal = new bootstrap.Modal(document.getElementById('submitModal'));
+            modal.show();
+        }
+
+        function confirmSubmit() {
+            clearInterval(timerInterval);
+            alert('تم تسليم الاختبار بنجاح!\n\nسيتم إظهار النتيجة قريباً...');
+            window.location.href = '/system/exams/list-student.html';
+        }
+
+        // Word counter for essay question
+        const essayTextarea = document.querySelector('[name="q3"]');
+        if (essayTextarea) {
+            essayTextarea.addEventListener('input', function() {
+                const words = this.value.trim().split(/\s+/).filter(w => w.length > 0).length;
+                document.getElementById('wordCount').textContent = words;
+            });
+        }
+
+        // Auto-save simulation
+        setInterval(() => {
+            // In real app, save answers to backend
+            console.log('Auto-saved...');
+        }, 30000); // Every 30 seconds
+    </script>
+</body>
+</html>
