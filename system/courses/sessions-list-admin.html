@@ -29,7 +29,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
                         <li class="breadcrumb-item"><a href="/system/courses/list-admin.html">الدورات</a></li>
-                        <li class="breadcrumb-item"><a href="/system/courses/detail-admin.html">تطوير الويب المتقدم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/detail-admin.html">الرياضيات المتقدمة</a></li>
                         <li class="breadcrumb-item active">الجلسات</li>
                     </ol>
                 </nav>
@@ -37,7 +37,7 @@
                 <!-- Page Header -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div>
-                        <h4 class="mb-1 fw-bold">إدارة الجلسات - تطوير الويب المتقدم</h4>
+                        <h4 class="mb-1 fw-bold">إدارة الجلسات - الرياضيات المتقدمة</h4>
                         <p class="text-muted mb-0">إدارة وجدولة جميع جلسات الدورة</p>
                     </div>
                     <div>
@@ -187,7 +187,7 @@
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50px;">
+                                        <th class="w-50px">
                                             <input type="checkbox" class="form-check-input">
                                         </th>
                                         <th>#</th>
@@ -231,13 +231,13 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="عرض">
+                                                <a href="/system/courses/detail-admin.html?session_id=1" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="تعديل">
+                                                </a>
+                                                <a href="/system/courses/session-form.html?id=1" class="btn btn-light" title="تعديل">
                                                     <i class="bi bi-pencil"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="حذف">
+                                                </a>
+                                                <button class="btn btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteSessionModal" data-session-id="1" data-session-title="الجلسة 1: نظرة عامة على تطوير الويب">
                                                     <i class="bi bi-trash text-danger"></i>
                                                 </button>
                                             </div>
@@ -276,15 +276,15 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="عرض">
+                                                <a href="/system/courses/detail-admin.html?session_id=2" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
-                                                </button>
-                                                <a href="/system/attendance/session-sheet-admin.html" class="btn btn-light" title="الحضور">
+                                                </a>
+                                                <a href="/system/attendance/session-sheet-admin.html?id=2" class="btn btn-light" title="الحضور">
                                                     <i class="bi bi-clipboard-check"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="التقرير">
+                                                <a href="/system/attendance/reports-admin.html?session_id=2" class="btn btn-light" title="التقرير">
                                                     <i class="bi bi-file-earmark-bar-graph"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -318,13 +318,13 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="عرض">
+                                                <a href="/system/courses/detail-admin.html?session_id=3" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
-                                                </button>
+                                                </a>
                                                 <a href="/system/courses/session-form.html?edit=26" class="btn btn-light" title="تعديل">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="إلغاء">
+                                                <button class="btn btn-light" title="إلغاء" data-bs-toggle="modal" data-bs-target="#cancelSessionModal" data-session-id="3" data-session-title="الجلسة 3: مقدمة في JavaScript">
                                                     <i class="bi bi-x-circle text-warning"></i>
                                                 </button>
                                             </div>
@@ -360,13 +360,13 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="عرض">
+                                                <a href="/system/courses/detail-admin.html?session_id=4" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
-                                                </button>
+                                                </a>
                                                 <a href="/system/courses/session-form.html?edit=27" class="btn btn-light" title="تعديل">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="حذف">
+                                                <button class="btn btn-light" title="حذف" data-bs-toggle="modal" data-bs-target="#deleteSessionModal" data-session-id="4" data-session-title="الجلسة 4: التعامل مع DOM">
                                                     <i class="bi bi-trash text-danger"></i>
                                                 </button>
                                             </div>
@@ -402,10 +402,10 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <button class="btn btn-light" title="عرض">
+                                                <a href="/system/courses/detail-admin.html?session_id=5" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="إعادة جدولة">
+                                                </a>
+                                                <button class="btn btn-light" title="إعادة جدولة" data-bs-toggle="modal" data-bs-target="#rescheduleSessionModal" data-session-id="5" data-session-title="الجلسة 5: تطوير واجهات المستخدم">
                                                     <i class="bi bi-arrow-clockwise"></i>
                                                 </button>
                                             </div>
@@ -418,23 +418,23 @@
                     <div class="card-footer bg-white">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <button class="btn btn-light btn-sm">
+                                <a href="/system/courses/export-sessions.html?course_id=1" class="btn btn-light btn-sm">
                                     <i class="bi bi-file-earmark-excel me-1"></i>تصدير
-                                </button>
-                                <button class="btn btn-light btn-sm">
+                                </a>
+                                <a href="/system/courses/print-sessions.html?course_id=1" class="btn btn-light btn-sm">
                                     <i class="bi bi-printer me-1"></i>طباعة
-                                </button>
+                                </a>
                             </div>
                             <nav>
                                 <ul class="pagination pagination-sm mb-0">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#">السابق</a>
+                                        <a class="page-link" href="/system/courses/sessions-list-admin.html?page=1">السابق</a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item active"><a class="page-link" href="/system/courses/sessions-list-admin.html?page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/courses/sessions-list-admin.html?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/courses/sessions-list-admin.html?page=3">3</a></li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#">التالي</a>
+                                        <a class="page-link" href="/system/courses/sessions-list-admin.html?page=2">التالي</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -451,16 +451,16 @@
                             </div>
                             <div class="card-body">
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-light text-start">
+                                    <a href="/system/courses/session-form.html?course_id=1" class="btn btn-light text-start">
                                         <i class="bi bi-calendar-plus me-2"></i>جدولة جلسة جديدة
-                                    </button>
-                                    <button class="btn btn-light text-start">
+                                    </a>
+                                    <button class="btn btn-light text-start" data-bs-toggle="modal" data-bs-target="#bulkRescheduleModal">
                                         <i class="bi bi-arrow-repeat me-2"></i>إعادة جدولة جلسات متعددة
                                     </button>
-                                    <button class="btn btn-light text-start">
+                                    <a href="/system/courses/reports-admin.html?course_id=1" class="btn btn-light text-start">
                                         <i class="bi bi-file-earmark-bar-graph me-2"></i>عرض تقرير شامل
-                                    </button>
-                                    <button class="btn btn-light text-start">
+                                    </a>
+                                    <button class="btn btn-light text-start" data-bs-toggle="modal" data-bs-target="#notifyStudentsModal">
                                         <i class="bi bi-envelope me-2"></i>إرسال إشعارات للطلاب
                                     </button>
                                 </div>
@@ -478,8 +478,8 @@
                                         <span class="text-muted">نسبة الحضور</span>
                                         <span class="fw-bold text-success">89%</span>
                                     </div>
-                                    <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-success" style="width: 89%"></div>
+                                    <div class="progress" class="progress-md">
+                                        <div class="progress-bar bg-success" class="w-89"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -487,8 +487,8 @@
                                         <span class="text-muted">معدل الإنجاز</span>
                                         <span class="fw-bold text-primary">75%</span>
                                     </div>
-                                    <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-primary" style="width: 75%"></div>
+                                    <div class="progress" class="progress-md">
+                                        <div class="progress-bar bg-primary" class="w-75"></div>
                                     </div>
                                 </div>
                                 <div>
@@ -496,8 +496,8 @@
                                         <span class="text-muted">رضا الطلاب</span>
                                         <span class="fw-bold text-warning">4.8/5.0</span>
                                     </div>
-                                    <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar bg-warning" style="width: 96%"></div>
+                                    <div class="progress" class="progress-md">
+                                        <div class="progress-bar bg-warning" class="w-96"></div>
                                     </div>
                                 </div>
                             </div>
@@ -531,6 +531,375 @@
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             });
+    </script>
+    
+    <!-- Delete Session Modal -->
+    <div class="modal fade" id="deleteSessionModal" tabindex="-1" aria-labelledby="deleteSessionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="deleteSessionModalLabel"><i class="bi bi-exclamation-triangle me-2"></i>تأكيد حذف الجلسة</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <p>هل أنت متأكد من رغبتك في حذف الجلسة <strong id="sessionTitleToDelete">الجلسة 1: نظرة عامة على تطوير الويب</strong>؟</p>
+                        <p class="mb-0 text-danger">هذا الإجراء لا يمكن التراجع عنه وسيؤدي إلى حذف جميع البيانات المرتبطة بالجلسة.</p>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifySessionDelete" checked>
+                        <label class="form-check-label" for="notifySessionDelete">
+                            إرسال إشعار للطلاب المسجلين
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger">تأكيد الحذف</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cancel Session Modal -->
+    <div class="modal fade" id="cancelSessionModal" tabindex="-1" aria-labelledby="cancelSessionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="cancelSessionModalLabel"><i class="bi bi-exclamation-triangle me-2"></i>تأكيد إلغاء الجلسة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <p>هل أنت متأكد من رغبتك في إلغاء الجلسة <strong id="sessionTitleToCancel">الجلسة 3: مقدمة في JavaScript</strong>؟</p>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">سبب الإلغاء</label>
+                        <select class="form-select">
+                            <option>عدم توفر المدرس</option>
+                            <option>أسباب فنية</option>
+                            <option>إعادة جدولة</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات إضافية</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول سبب إلغاء الجلسة..."></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="scheduleNewSession">
+                        <label class="form-check-label" for="scheduleNewSession">
+                            جدولة جلسة بديلة
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifySessionCancel" checked>
+                        <label class="form-check-label" for="notifySessionCancel">
+                            إرسال إشعار للطلاب المسجلين
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">تراجع</button>
+                    <button type="button" class="btn btn-warning">تأكيد الإلغاء</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reschedule Session Modal -->
+    <div class="modal fade" id="rescheduleSessionModal" tabindex="-1" aria-labelledby="rescheduleSessionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="rescheduleSessionModalLabel"><i class="bi bi-arrow-clockwise me-2"></i>إعادة جدولة الجلسة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>إعادة جدولة الجلسة: <strong id="sessionTitleToReschedule">الجلسة 5: تطوير واجهات المستخدم</strong></p>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">التاريخ الجديد</label>
+                        <input type="date" class="form-control" value="2024-11-15">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">وقت البدء</label>
+                        <input type="time" class="form-control" value="18:00">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">وقت الانتهاء</label>
+                        <input type="time" class="form-control" value="20:00">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">المدرس</label>
+                        <select class="form-select">
+                            <option selected>د. أحمد محمد</option>
+                            <option>د. سارة أحمد</option>
+                            <option>د. محمد علي</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول إعادة الجدولة..."></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyReschedule" checked>
+                        <label class="form-check-label" for="notifyReschedule">
+                            إرسال إشعار للطلاب المسجلين
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تأكيد إعادة الجدولة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bulk Reschedule Modal -->
+    <div class="modal fade" id="bulkRescheduleModal" tabindex="-1" aria-labelledby="bulkRescheduleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="bulkRescheduleModalLabel"><i class="bi bi-arrow-repeat me-2"></i>إعادة جدولة جلسات متعددة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        يمكنك إعادة جدولة جميع الجلسات القادمة أو تحديد جلسات معينة.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">نطاق إعادة الجدولة</label>
+                        <select class="form-select" id="rescheduleScope">
+                            <option value="all">جميع الجلسات القادمة</option>
+                            <option value="selected">جلسات محددة</option>
+                        </select>
+                    </div>
+                    
+                    <div id="sessionSelection" class="mb-3 d-none">
+                        <label class="form-label">اختر الجلسات</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="session3" checked>
+                            <label class="form-check-label" for="session3">
+                                الجلسة 3: مقدمة في JavaScript
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="session4" checked>
+                            <label class="form-check-label" for="session4">
+                                الجلسة 4: التعامل مع DOM
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">نوع التغيير</label>
+                        <select class="form-select" id="rescheduleType">
+                            <option value="shift">تأجيل بعدد أيام</option>
+                            <option value="day">تغيير يوم الأسبوع</option>
+                            <option value="time">تغيير وقت الجلسات</option>
+                        </select>
+                    </div>
+                    
+                    <div id="shiftDays" class="mb-3">
+                        <label class="form-label">عدد أيام التأجيل</label>
+                        <input type="number" class="form-control" value="7">
+                    </div>
+                    
+                    <div id="newDayTime" class="mb-3 d-none">
+                        <label class="form-label">اليوم الجديد</label>
+                        <select class="form-select">
+                            <option>السبت</option>
+                            <option>الأحد</option>
+                            <option>الاثنين</option>
+                            <option>الثلاثاء</option>
+                            <option>الأربعاء</option>
+                            <option>الخميس</option>
+                            <option>الجمعة</option>
+                        </select>
+                    </div>
+                    
+                    <div id="newTime" class="mb-3 d-none">
+                        <label class="form-label">الوقت الجديد</label>
+                        <input type="time" class="form-control" value="18:00">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول إعادة الجدولة..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyBulkReschedule" checked>
+                        <label class="form-check-label" for="notifyBulkReschedule">
+                            إرسال إشعار للطلاب المسجلين
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تأكيد إعادة الجدولة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notify Students Modal -->
+    <div class="modal fade" id="notifyStudentsModal" tabindex="-1" aria-labelledby="notifyStudentsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notifyStudentsModalLabel"><i class="bi bi-envelope me-2"></i>إرسال إشعارات للطلاب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">نوع الإشعار</label>
+                        <select class="form-select">
+                            <option>تذكير بالجلسة القادمة</option>
+                            <option>تغيير في موعد الجلسة</option>
+                            <option>واجب جديد</option>
+                            <option>مواد تعليمية جديدة</option>
+                            <option>إشعار عام</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">المستلمون</label>
+                        <select class="form-select">
+                            <option>جميع الطلاب</option>
+                            <option>الطلاب النشطين فقط</option>
+                            <option>الطلاب المتأخرين</option>
+                            <option>طلاب محددين</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">طريقة الإرسال</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="emailNotify" checked>
+                            <label class="form-check-label" for="emailNotify">
+                                بريد إلكتروني
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="smsNotify" checked>
+                            <label class="form-check-label" for="smsNotify">
+                                رسالة نصية
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="pushNotify" checked>
+                            <label class="form-check-label" for="pushNotify">
+                                إشعار تطبيق
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">عنوان الإشعار</label>
+                        <input type="text" class="form-control" value="تذكير بالجلسة القادمة - الرياضيات المتقدمة">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">نص الإشعار</label>
+                        <textarea class="form-control" rows="4">نود تذكيركم بالجلسة القادمة لدورة الرياضيات المتقدمة والتي ستعقد يوم الثلاثاء الموافق 15 نوفمبر 2024 من الساعة 6:00 مساءً إلى 8:00 مساءً. نرجو الحضور قبل موعد الجلسة بـ 10 دقائق.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">إرسال الإشعارات</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Handle session deletion
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the modal
+            var deleteSessionModal = document.getElementById('deleteSessionModal');
+            
+            // When the modal is about to be shown
+            deleteSessionModal.addEventListener('show.bs.modal', function(event) {
+                // Button that triggered the modal
+                var button = event.relatedTarget;
+                
+                // Extract info from data attributes
+                var sessionId = button.getAttribute('data-session-id');
+                var sessionTitle = button.getAttribute('data-session-title');
+                
+                // Update the modal's content
+                var sessionTitleElement = document.getElementById('sessionTitleToDelete');
+                sessionTitleElement.textContent = sessionTitle;
+            });
+            
+            // Handle session cancellation
+            var cancelSessionModal = document.getElementById('cancelSessionModal');
+            
+            // When the modal is about to be shown
+            cancelSessionModal.addEventListener('show.bs.modal', function(event) {
+                // Button that triggered the modal
+                var button = event.relatedTarget;
+                
+                // Extract info from data attributes
+                var sessionId = button.getAttribute('data-session-id');
+                var sessionTitle = button.getAttribute('data-session-title');
+                
+                // Update the modal's content
+                var sessionTitleElement = document.getElementById('sessionTitleToCancel');
+                sessionTitleElement.textContent = sessionTitle;
+            });
+            
+            // Handle session rescheduling
+            var rescheduleSessionModal = document.getElementById('rescheduleSessionModal');
+            
+            // When the modal is about to be shown
+            rescheduleSessionModal.addEventListener('show.bs.modal', function(event) {
+                // Button that triggered the modal
+                var button = event.relatedTarget;
+                
+                // Extract info from data attributes
+                var sessionId = button.getAttribute('data-session-id');
+                var sessionTitle = button.getAttribute('data-session-title');
+                
+                // Update the modal's content
+                var sessionTitleElement = document.getElementById('sessionTitleToReschedule');
+                sessionTitleElement.textContent = sessionTitle;
+            });
+            
+            // Handle bulk rescheduling options
+            var rescheduleScope = document.getElementById('rescheduleScope');
+            var sessionSelection = document.getElementById('sessionSelection');
+            
+            rescheduleScope.addEventListener('change', function() {
+                if (this.value === 'selected') {
+                    sessionSelection.classList.remove('d-none');
+                } else {
+                    sessionSelection.classList.add('d-none');
+                }
+            });
+            
+            var rescheduleType = document.getElementById('rescheduleType');
+            var shiftDays = document.getElementById('shiftDays');
+            var newDayTime = document.getElementById('newDayTime');
+            var newTime = document.getElementById('newTime');
+            
+            rescheduleType.addEventListener('change', function() {
+                if (this.value === 'shift') {
+                    shiftDays.classList.remove('d-none');
+                    newDayTime.classList.add('d-none');
+                    newTime.classList.add('d-none');
+                } else if (this.value === 'day') {
+                    shiftDays.classList.add('d-none');
+                    newDayTime.classList.remove('d-none');
+                    newTime.classList.remove('d-none');
+                } else if (this.value === 'time') {
+                    shiftDays.classList.add('d-none');
+                    newDayTime.classList.add('d-none');
+                    newTime.classList.remove('d-none');
+                }
+            });
+        });
     </script>
 </body>
 </html>

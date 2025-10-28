@@ -40,12 +40,12 @@
                         <p class="text-muted mb-0">تقارير مفصلة لحضور الطلاب في دوراتي</p>
                     </div>
                     <div>
-                        <button class="btn btn-success me-2">
+                        <a href="/system/attendance/export-excel.html" class="btn btn-success me-2">
                             <i class="bi bi-file-earmark-excel me-2"></i>تصدير Excel
-                        </button>
-                        <button class="btn btn-light">
+                        </a>
+                        <a href="/system/attendance/print-report.html" class="btn btn-light">
                             <i class="bi bi-printer me-2"></i>طباعة
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                                 <label class="form-label">الدورة</label>
                                 <select class="form-select">
                                     <option selected>جميع دوراتي</option>
-                                    <option>تطوير الويب المتقدم</option>
+                                    <option>الرياضيات المتقدمة</option>
                                     <option>البرمجة بلغة Python</option>
                                 </select>
                             </div>
@@ -164,7 +164,7 @@
                                 <h6 class="mb-0">معدل حضور طلابي - آخر 6 أسابيع</h6>
                             </div>
                             <div class="card-body">
-                                <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                                <div class="chart-bg-cool">
                                     <p class="text-muted">مخطط معدل الحضور (سيتم تنفيذه باستخدام Chart.js)</p>
                                 </div>
                             </div>
@@ -178,11 +178,11 @@
                             <div class="card-body">
                                 <div class="mb-3">
                                     <div class="d-flex justify-content-between mb-2">
-                                        <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                        <span class="fw-semibold">الرياضيات المتقدمة</span>
                                         <span class="text-success fw-bold">92%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
-                                        <div class="progress-bar bg-success" style="width: 92%"></div>
+                                    <div class="progress" class="progress-lg">
+                                        <div class="progress-bar bg-success" class="w-92"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -190,8 +190,8 @@
                                         <span class="fw-semibold">البرمجة بلغة Python</span>
                                         <span class="text-success fw-bold">88%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
-                                        <div class="progress-bar bg-success" style="width: 88%"></div>
+                                    <div class="progress" class="progress-lg">
+                                        <div class="progress-bar bg-success" class="w-88"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -199,8 +199,8 @@
                                         <span class="fw-semibold">أساسيات JavaScript</span>
                                         <span class="text-warning fw-bold">85%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
-                                        <div class="progress-bar bg-warning" style="width: 85%"></div>
+                                    <div class="progress" class="progress-lg">
+                                        <div class="progress-bar bg-warning" class="w-85"></div>
                                     </div>
                                 </div>
                             </div>
@@ -230,7 +230,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="fw-semibold">تطوير الويب المتقدم</td>
+                                        <td class="fw-semibold">الرياضيات المتقدمة</td>
                                         <td class="text-center">24/32</td>
                                         <td class="text-center">45</td>
                                         <td class="text-center">
@@ -240,9 +240,9 @@
                                         <td class="text-center">7%</td>
                                         <td class="text-center">5%</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-light" title="تفاصيل">
+                                            <a href="/system/attendance/student-details.html" class="btn btn-sm btn-light" title="تفاصيل">
                                                 <i class="bi bi-eye"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -256,9 +256,9 @@
                                         <td class="text-center">8%</td>
                                         <td class="text-center">7%</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-light" title="تفاصيل">
+                                            <a href="/system/attendance/student-details.html" class="btn btn-sm btn-light" title="تفاصيل">
                                                 <i class="bi bi-eye"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -272,9 +272,9 @@
                                         <td class="text-center">9%</td>
                                         <td class="text-center">9%</td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-light" title="تفاصيل">
+                                            <a href="/system/attendance/student-details.html" class="btn btn-sm btn-light" title="تفاصيل">
                                                 <i class="bi bi-eye"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -295,12 +295,12 @@
                                     <div class="list-group-item border-0 px-0">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-success">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
                                                     <h6 class="mb-0 fw-semibold">محمد خالد</h6>
-                                                    <small class="text-muted">تطوير الويب المتقدم</small>
+                                                    <small class="text-muted">الرياضيات المتقدمة</small>
                                                 </div>
                                             </div>
                                             <span class="badge badge-success">100%</span>
@@ -309,7 +309,7 @@
                                     <div class="list-group-item border-0 px-0">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-success">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -334,17 +334,17 @@
                                     <div class="list-group-item border-0 px-0">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--danger-gradient-start), var(--danger-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-danger">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
                                                     <h6 class="mb-0 fw-semibold">سارة محمود</h6>
-                                                    <small class="text-muted">تطوير الويب المتقدم</small>
+                                                    <small class="text-muted">الرياضيات المتقدمة</small>
                                                 </div>
                                             </div>
                                             <div class="text-end">
                                                 <span class="badge badge-danger d-block mb-1">68%</span>
-                                                <button class="btn btn-sm btn-warning">
+                                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#sendAlertModal">
                                                     <i class="bi bi-envelope-fill"></i>
                                                 </button>
                                             </div>
@@ -353,7 +353,7 @@
                                     <div class="list-group-item border-0 px-0">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--warning-gradient-start), var(--warning-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-warning">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -363,7 +363,7 @@
                                             </div>
                                             <div class="text-end">
                                                 <span class="badge badge-warning d-block mb-1">73%</span>
-                                                <button class="btn btn-sm btn-warning">
+                                                <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#sendAlertModal">
                                                     <i class="bi bi-envelope-fill"></i>
                                                 </button>
                                             </div>
@@ -402,6 +402,52 @@
                 document.getElementById('navbar-container').innerHTML = data;
             });
     </script>
+    
+    <!-- Send Alert Modal -->
+    <div class="modal fade" id="sendAlertModal" tabindex="-1" aria-labelledby="sendAlertModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendAlertModalLabel">إرسال تنبيه للطالب</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">نوع التنبيه</label>
+                        <select class="form-select">
+                            <option>تذكير بالحضور</option>
+                            <option selected>تنبيه بالغياب</option>
+                            <option>تنبيه بالتأخر</option>
+                            <option>إشعار عام</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">طريقة الإرسال</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                            <label class="form-check-label" for="emailNotif">بريد إلكتروني</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="smsNotif" checked>
+                            <label class="form-check-label" for="smsNotif">رسالة نصية</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="pushNotif" checked>
+                            <label class="form-check-label" for="pushNotif">إشعار تطبيق</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">نص الرسالة</label>
+                        <textarea class="form-control" rows="3" placeholder="نص التنبيه...">نود تذكيرك بأهمية الالتزام بحضور الجلسات التعليمية لدورة الرياضيات المتقدمة. نسبة غيابك الحالية تتجاوز الحد المسموح به.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">إرسال التنبيه</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

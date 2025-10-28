@@ -34,9 +34,9 @@
                                         <label class="form-label">الدورة <span class="text-danger">*</span></label>
                                         <select class="form-select" required>
                                             <option value="">-- اختر الدورة --</option>
-                                            <option value="1">تطوير الويب المتقدم (تم إكمالها)</option>
-                                            <option value="2">أساسيات البرمجة (تم إكمالها)</option>
-                                            <option value="3">React Components (75% مكتملة)</option>
+                                            <option value="1">الرياضيات المتقدمة (تم إكمالها)</option>
+                                            <option value="2">اللغة العربية (تم إكمالها)</option>
+                                            <option value="3">الفيزياء التطبيقية (75% مكتملة)</option>
                                         </select>
                                         <small class="text-muted">يمكنك إضافة مراجعة للدورات المكتملة أو في نهايتها</small>
                                         <div class="invalid-feedback">الرجاء اختيار الدورة</div>
@@ -217,24 +217,6 @@
             this.classList.add('was-validated');
         });
     </script>
-    <style>
-        .star-rating {
-            display: flex;
-            flex-direction: row-reverse;
-        }
-        .star-rating input {
-            display: none;
-        }
-        .star-label {
-            font-size: 2rem;
-            color: #dee2e6;
-            cursor: pointer;
-        }
-        .star-label:hover,
-        .star-label:hover ~ .star-label {
-            color: #ffc107 !important;
-        }
-    </style>
 </body>
 </html>
 

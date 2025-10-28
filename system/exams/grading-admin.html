@@ -39,9 +39,9 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h5 class="fw-bold mb-1">تصحيح: اختبار JavaScript المتقدم</h5>
+                                <h5 class="fw-bold mb-1">تصحيح: اختبار الجغرافيا</h5>
                                 <p class="text-muted mb-0">
-                                    <i class="bi bi-journal-richtext me-2"></i>تطوير الويب المتقدم
+                                    <i class="bi bi-journal-richtext me-2"></i>الرياضيات المتقدمة
                                     <span class="mx-2">|</span>
                                     <i class="bi bi-hourglass me-2"></i>بانتظار التصحيح: 8 محاولات
                                 </p>
@@ -59,7 +59,7 @@
                         <div class="row align-items-center">
                             <div class="col-md-8">
                                 <h6 class="mb-2">تقدم التصحيح</h6>
-                                <div class="progress" style="height: 25px;">
+                                <div class="progress" class="h-25px">
                                     <div class="progress-bar bg-success" style="width: 25%">
                                         2 / 8
                                     </div>
@@ -107,13 +107,13 @@
                                             </div>
                                         </div>
 
-                                        <div class="answer-content p-4 border rounded mb-3" style="background: #f8f9fa;">
+                                        <div class="answer-content p-4 border rounded mb-3" class="bg-light-gray">
                                             <h6 class="text-muted mb-3">إجابة الطالب:</h6>
-                                            <p style="line-height: 1.8;">
+                                            <p class="lh-18">
                                                 Closure في JavaScript هو مفهوم قوي يسمح للدالة بالوصول إلى المتغيرات من النطاق الخارجي حتى بعد انتهاء تنفيذ الدالة الخارجية. 
                                                 Closure يتكون عندما تقوم دالة داخلية بالإشارة إلى متغيرات من دالة خارجية.
                                             </p>
-                                            <p style="line-height: 1.8;">
+                                            <p class="lh-18">
                                                 مثال عملي:
                                             </p>
                                             <pre class="bg-white p-3 rounded"><code>function createCounter() {
@@ -128,7 +128,7 @@ const counter = createCounter();
 console.log(counter()); // 1
 console.log(counter()); // 2
 console.log(counter()); // 3</code></pre>
-                                            <p style="line-height: 1.8;">
+                                            <p class="lh-18">
                                                 في هذا المثال، الدالة الداخلية لديها closure على المتغير count، مما يسمح لها بتذكر قيمته بين الاستدعاءات المتعددة.
                                                 هذا يعتبر من أهم استخدامات Closure في إنشاء private variables.
                                             </p>
@@ -180,19 +180,19 @@ console.log(counter()); // 3</code></pre>
                                             </div>
                                         </div>
 
-                                        <div class="answer-content p-4 border rounded mb-3" style="background: #f8f9fa;">
+                                        <div class="answer-content p-4 border rounded mb-3" class="bg-light-gray">
                                             <h6 class="text-muted mb-3">إجابة الطالب:</h6>
-                                            <p style="line-height: 1.8;">
+                                            <p class="lh-18">
                                                 كلاهما يستخدم للتعامل مع العمليات غير المتزامنة في JavaScript. Promise هو كائن يمثل اكتمال أو فشل عملية غير متزامنة،
                                                 بينما async/await هو syntactic sugar يجعل كتابة Promise أسهل وأكثر وضوحاً.
                                             </p>
-                                            <p style="line-height: 1.8;">
+                                            <p class="lh-18">
                                                 مثال Promise:
                                             </p>
                                             <pre class="bg-white p-3 rounded"><code>fetchData()
   .then(data => console.log(data))
   .catch(error => console.error(error));</code></pre>
-                                            <p style="line-height: 1.8;">
+                                            <p class="lh-18">
                                                 نفس المثال مع async/await:
                                             </p>
                                             <pre class="bg-white p-3 rounded"><code>async function getData() {
@@ -258,9 +258,9 @@ console.log(counter()); // 3</code></pre>
                         </div>
 
                         <!-- Completion Message (hidden initially) -->
-                        <div id="completionMsg" class="card" style="display: none;">
+                        <div id="completionMsg" class="card" class="d-none">
                             <div class="card-body text-center py-5">
-                                <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+                                <i class="bi bi-check-circle-fill text-success" class="fs-4rem"></i>
                                 <h4 class="mt-3 fw-bold">أحسنت!</h4>
                                 <p class="text-muted mb-4">تم الانتهاء من تصحيح جميع المحاولات</p>
                                 <div class="d-flex gap-2 justify-content-center">

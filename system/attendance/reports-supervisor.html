@@ -40,12 +40,12 @@
                         <p class="text-muted mb-0">تقارير الجودة والحضور للدورات تحت إشرافي</p>
                     </div>
                     <div>
-                        <button class="btn btn-success me-2">
+                        <a href="/system/attendance/export-excel.html" class="btn btn-success me-2">
                             <i class="bi bi-file-earmark-excel me-2"></i>تصدير Excel
-                        </button>
-                        <button class="btn btn-light">
+                        </a>
+                        <a href="/system/attendance/print-report.html" class="btn btn-light">
                             <i class="bi bi-printer me-2"></i>طباعة
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
                                 <label class="form-label">الدورة</label>
                                 <select class="form-select">
                                     <option selected>جميع الدورات</option>
-                                    <option>تطوير الويب المتقدم</option>
+                                    <option>الرياضيات المتقدمة</option>
                                     <option>البرمجة بلغة Python</option>
                                 </select>
                             </div>
@@ -172,7 +172,7 @@
                                 <h6 class="mb-0">معدل الحضور والجودة - آخر 3 أشهر</h6>
                             </div>
                             <div class="card-body">
-                                <div style="height: 300px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                                <div class="chart-bg-cool">
                                     <p class="text-muted">مخطط الحضور والجودة (سيتم تنفيذه باستخدام Chart.js)</p>
                                 </div>
                             </div>
@@ -189,8 +189,8 @@
                                         <span>ممتاز</span>
                                         <span class="text-success fw-bold">45%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
-                                        <div class="progress-bar bg-success" style="width: 45%"></div>
+                                    <div class="progress" class="progress-lg">
+                                        <div class="progress-bar bg-success" class="w-45"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -198,8 +198,8 @@
                                         <span>جيد جداً</span>
                                         <span class="text-primary fw-bold">35%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
-                                        <div class="progress-bar bg-primary" style="width: 35%"></div>
+                                    <div class="progress" class="progress-lg">
+                                        <div class="progress-bar bg-primary" class="w-35"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
@@ -207,8 +207,8 @@
                                         <span>جيد</span>
                                         <span class="text-warning fw-bold">15%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
-                                        <div class="progress-bar bg-warning" style="width: 15%"></div>
+                                    <div class="progress" class="progress-lg">
+                                        <div class="progress-bar bg-warning" class="w-15"></div>
                                     </div>
                                 </div>
                                 <div>
@@ -216,7 +216,7 @@
                                         <span>يحتاج تحسين</span>
                                         <span class="text-danger fw-bold">5%</span>
                                     </div>
-                                    <div class="progress" style="height: 10px;">
+                                    <div class="progress" class="progress-lg">
                                         <div class="progress-bar bg-danger" style="width: 5%"></div>
                                     </div>
                                 </div>
@@ -247,7 +247,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class="fw-semibold">تطوير الويب المتقدم</td>
+                                        <td class="fw-semibold">الرياضيات المتقدمة</td>
                                         <td>د. أحمد محمد</td>
                                         <td class="text-center">
                                             <span class="badge badge-success">92%</span>
@@ -261,9 +261,9 @@
                                             <span class="badge badge-success">ممتاز</span>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-light" title="تفاصيل">
+                                            <a href="/system/attendance/teacher-details.html" class="btn btn-sm btn-light" title="تفاصيل">
                                                 <i class="bi bi-eye"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -281,9 +281,9 @@
                                             <span class="badge badge-success">جيد جداً</span>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-light" title="تفاصيل">
+                                            <a href="/system/attendance/teacher-details.html" class="btn btn-sm btn-light" title="تفاصيل">
                                                 <i class="bi bi-eye"></i>
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr class="table-warning">
@@ -301,7 +301,7 @@
                                             <span class="badge badge-warning">يحتاج متابعة</span>
                                         </td>
                                         <td class="text-center">
-                                            <button class="btn btn-sm btn-warning" title="متابعة">
+                                            <button class="btn btn-sm btn-warning" title="متابعة" data-bs-toggle="modal" data-bs-target="#followUpModal">
                                                 <i class="bi bi-flag-fill"></i>
                                             </button>
                                         </td>
@@ -331,9 +331,9 @@
                                             <i class="bi bi-calendar me-1"></i>تم الإبلاغ: منذ 3 أيام
                                         </small>
                                     </div>
-                                    <button class="btn btn-sm btn-primary">
+                                    <a href="/system/attendance/review-report.html" class="btn btn-sm btn-primary">
                                         <i class="bi bi-eye me-1"></i>مراجعة
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="list-group-item">
@@ -348,7 +348,7 @@
                                             <i class="bi bi-calendar me-1"></i>تم الإبلاغ: منذ أسبوع
                                         </small>
                                     </div>
-                                    <button class="btn btn-sm btn-primary">
+                                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#approveModal">
                                         <i class="bi bi-check-circle me-1"></i>اعتماد
                                     </button>
                                 </div>
@@ -384,6 +384,80 @@
                 document.getElementById('navbar-container').innerHTML = data;
             });
     </script>
+    
+    <!-- Follow Up Modal -->
+    <div class="modal fade" id="followUpModal" tabindex="-1" aria-labelledby="followUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="followUpModalLabel">متابعة المعلم</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">نوع المتابعة</label>
+                        <select class="form-select">
+                            <option>تنبيه</option>
+                            <option selected>متابعة</option>
+                            <option>مراجعة</option>
+                            <option>إجراء تصحيحي</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">الأولوية</label>
+                        <select class="form-select">
+                            <option>منخفضة</option>
+                            <option selected>متوسطة</option>
+                            <option>عالية</option>
+                            <option>عاجلة</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3">يجب متابعة أداء المعلم في تسجيل الحضور بشكل منتظم. هناك تأخير متكرر في تحديث سجلات الحضور.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">حفظ المتابعة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="approveModalLabel">اعتماد سجلات الحضور</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        أنت على وشك اعتماد سجلات الحضور للمعلم <strong>د. أحمد محمد</strong> للفترة من <strong>1 أكتوبر</strong> إلى <strong>15 أكتوبر</strong>.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات الاعتماد</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظاتك هنا..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyTeacher" checked>
+                        <label class="form-check-label" for="notifyTeacher">
+                            إرسال إشعار للمعلم بالاعتماد
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success">اعتماد السجلات</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

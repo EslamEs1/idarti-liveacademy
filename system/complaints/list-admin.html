@@ -170,12 +170,12 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">قائمة الشكاوى والاقتراحات</h6>
                             <div>
-                                <button class="btn btn-sm btn-light me-2">
+                                <a href="/system/complaints/export-excel.html" class="btn btn-sm btn-light me-2">
                                     <i class="bi bi-file-earmark-excel me-1"></i>تصدير
-                                </button>
-                                <button class="btn btn-sm btn-light">
+                                </a>
+                                <a href="/system/complaints/print-list.html" class="btn btn-sm btn-light">
                                     <i class="bi bi-printer me-1"></i>طباعة
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50px;">
+                                        <th class="w-50px">
                                             <input type="checkbox" class="form-check-input">
                                         </th>
                                         <th>#</th>
@@ -204,7 +204,7 @@
                                         <td>#C-1045</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-35 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -227,10 +227,10 @@
                                                 <a href="/system/complaints/detail-admin.html?id=1045" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-success" title="رد">
+                                                <button class="btn btn-success" title="رد" data-bs-toggle="modal" data-bs-target="#replyModal">
                                                     <i class="bi bi-reply"></i>
                                                 </button>
-                                                <button class="btn btn-light" title="تعيين">
+                                                <button class="btn btn-light" title="تعيين" data-bs-toggle="modal" data-bs-target="#assignModal">
                                                     <i class="bi bi-person-plus"></i>
                                                 </button>
                                             </div>
@@ -243,7 +243,7 @@
                                         <td>#C-1044</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-35 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -266,10 +266,10 @@
                                                 <a href="/system/complaints/detail-admin.html?id=1044" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-success" title="حل">
+                                                <button class="btn btn-success" title="حل" data-bs-toggle="modal" data-bs-target="#resolveModal">
                                                     <i class="bi bi-check-lg"></i>
                                                 </button>
-                                                <button class="btn btn-light" title="متابعة">
+                                                <button class="btn btn-light" title="متابعة" data-bs-toggle="modal" data-bs-target="#followUpModal">
                                                     <i class="bi bi-arrow-repeat"></i>
                                                 </button>
                                             </div>
@@ -282,7 +282,7 @@
                                         <td>#C-1043</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-35 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -305,10 +305,10 @@
                                                 <a href="/system/complaints/detail-admin.html?id=1043" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-primary" title="قبول">
+                                                <button class="btn btn-primary" title="قبول" data-bs-toggle="modal" data-bs-target="#approveModal">
                                                     <i class="bi bi-hand-thumbs-up"></i>
                                                 </button>
-                                                <button class="btn btn-light" title="رفض">
+                                                <button class="btn btn-light" title="رفض" data-bs-toggle="modal" data-bs-target="#rejectModal">
                                                     <i class="bi bi-hand-thumbs-down"></i>
                                                 </button>
                                             </div>
@@ -321,7 +321,7 @@
                                         <td>#C-1042</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 35px; height: 35px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-35 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -344,7 +344,7 @@
                                                 <a href="/system/complaints/detail-admin.html?id=1042" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="إغلاق">
+                                                <button class="btn btn-light" title="إغلاق" data-bs-toggle="modal" data-bs-target="#closeModal">
                                                     <i class="bi bi-x-circle"></i>
                                                 </button>
                                             </div>
@@ -380,7 +380,7 @@
                                                 <a href="/system/complaints/detail-admin.html?id=1041" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="تصعيد">
+                                                <button class="btn btn-light" title="تصعيد" data-bs-toggle="modal" data-bs-target="#escalateModal">
                                                     <i class="bi bi-arrow-up-circle"></i>
                                                 </button>
                                             </div>
@@ -396,13 +396,13 @@
                             <nav>
                                 <ul class="pagination pagination-sm mb-0">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#">السابق</a>
+                                        <a class="page-link" href="/system/complaints/list-admin.html?page=1">السابق</a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item active"><a class="page-link" href="/system/complaints/list-admin.html?page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/complaints/list-admin.html?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/complaints/list-admin.html?page=3">3</a></li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#">التالي</a>
+                                        <a class="page-link" href="/system/complaints/list-admin.html?page=2">التالي</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -437,6 +437,339 @@
                 document.getElementById('navbar-container').innerHTML = data;
             });
     </script>
+    
+    <!-- Reply Modal -->
+    <div class="modal fade" id="replyModal" tabindex="-1" aria-labelledby="replyModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="replyModalLabel">الرد على الشكوى</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">نص الرد</label>
+                        <textarea class="form-control" rows="5" placeholder="اكتب ردك هنا..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">الحالة بعد الرد</label>
+                        <select class="form-select">
+                            <option>قيد المعالجة</option>
+                            <option>تم الحل</option>
+                            <option>مغلقة</option>
+                            <option>بانتظار رد العميل</option>
+                        </select>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCustomer" checked>
+                        <label class="form-check-label" for="notifyCustomer">
+                            إرسال إشعار للعميل
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success">إرسال الرد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Assign Modal -->
+    <div class="modal fade" id="assignModal" tabindex="-1" aria-labelledby="assignModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="assignModalLabel">تعيين مسؤول للشكوى</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">اختر المسؤول</label>
+                        <select class="form-select">
+                            <option>أحمد محمد - قسم خدمة العملاء</option>
+                            <option>سارة أحمد - قسم الجودة</option>
+                            <option>محمد علي - قسم الدعم الفني</option>
+                            <option>فاطمة حسن - قسم الشكاوى</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">أولوية المهمة</label>
+                        <select class="form-select">
+                            <option>منخفضة</option>
+                            <option selected>متوسطة</option>
+                            <option>عالية</option>
+                            <option>عاجلة</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات للمسؤول..."></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyAssignee" checked>
+                        <label class="form-check-label" for="notifyAssignee">
+                            إرسال إشعار للمسؤول المعين
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تعيين</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resolve Modal -->
+    <div class="modal fade" id="resolveModal" tabindex="-1" aria-labelledby="resolveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resolveModalLabel">حل الشكوى</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success">
+                        <i class="bi bi-check-circle me-2"></i>
+                        أنت على وشك تحديد هذه الشكوى كـ "تم الحل".
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات الحل</label>
+                        <textarea class="form-control" rows="4" placeholder="اكتب تفاصيل الحل هنا..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">الإجراءات المتخذة</label>
+                        <select class="form-select">
+                            <option>تم تقديم حل</option>
+                            <option>تم تقديم تعويض</option>
+                            <option>تم تصحيح الخطأ</option>
+                            <option>أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCustomerResolve" checked>
+                        <label class="form-check-label" for="notifyCustomerResolve">
+                            إرسال إشعار للعميل بحل الشكوى
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success">تأكيد الحل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Follow Up Modal -->
+    <div class="modal fade" id="followUpModal" tabindex="-1" aria-labelledby="followUpModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="followUpModalLabel">متابعة الشكوى</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات المتابعة</label>
+                        <textarea class="form-control" rows="4" placeholder="اكتب ملاحظات المتابعة هنا..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">الإجراء التالي</label>
+                        <select class="form-select">
+                            <option>متابعة مع العميل</option>
+                            <option>متابعة مع القسم المختص</option>
+                            <option>تحديث حالة الشكوى</option>
+                            <option>أخرى</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">تاريخ المتابعة التالية</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">حفظ المتابعة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Approve Modal -->
+    <div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="approveModalLabel">قبول الاقتراح</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        أنت على وشك قبول هذا الاقتراح.
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات القبول</label>
+                        <textarea class="form-control" rows="3" placeholder="اكتب ملاحظات حول قبول الاقتراح..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">الخطوات التالية</label>
+                        <select class="form-select">
+                            <option>تنفيذ الاقتراح</option>
+                            <option>دراسة الاقتراح بشكل أعمق</option>
+                            <option>تحويل الاقتراح لقسم التطوير</option>
+                            <option>أخرى</option>
+                        </select>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCustomerApprove" checked>
+                        <label class="form-check-label" for="notifyCustomerApprove">
+                            إرسال إشعار للعميل بقبول الاقتراح
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تأكيد القبول</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reject Modal -->
+    <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="rejectModalLabel">رفض الاقتراح</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        أنت على وشك رفض هذا الاقتراح.
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">سبب الرفض</label>
+                        <select class="form-select">
+                            <option>غير قابل للتطبيق</option>
+                            <option>تكلفة مرتفعة</option>
+                            <option>لا يتوافق مع سياسة المنصة</option>
+                            <option>تم تنفيذه سابقاً</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات الرفض</label>
+                        <textarea class="form-control" rows="3" placeholder="اكتب ملاحظات حول رفض الاقتراح..."></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCustomerReject" checked>
+                        <label class="form-check-label" for="notifyCustomerReject">
+                            إرسال إشعار للعميل برفض الاقتراح
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger">تأكيد الرفض</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Close Modal -->
+    <div class="modal fade" id="closeModal" tabindex="-1" aria-labelledby="closeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="closeModalLabel">إغلاق الشكوى</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        أنت على وشك إغلاق هذه الشكوى. هل أنت متأكد؟
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">سبب الإغلاق</label>
+                        <select class="form-select">
+                            <option>تم حلها</option>
+                            <option>لم يتم التواصل مع العميل</option>
+                            <option>شكوى مكررة</option>
+                            <option>غير قابلة للحل</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات الإغلاق</label>
+                        <textarea class="form-control" rows="3" placeholder="اكتب ملاحظات حول إغلاق الشكوى..."></textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCustomerClose" checked>
+                        <label class="form-check-label" for="notifyCustomerClose">
+                            إرسال إشعار للعميل بإغلاق الشكوى
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger">تأكيد الإغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Escalate Modal -->
+    <div class="modal fade" id="escalateModal" tabindex="-1" aria-labelledby="escalateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="escalateModalLabel">تصعيد الشكوى</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">تصعيد إلى</label>
+                        <select class="form-select">
+                            <option>مدير خدمة العملاء</option>
+                            <option>مدير الجودة</option>
+                            <option>المدير التنفيذي</option>
+                            <option>قسم الشؤون القانونية</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">سبب التصعيد</label>
+                        <select class="form-select">
+                            <option>شكوى معقدة</option>
+                            <option>تأخر في الحل</option>
+                            <option>عميل مهم</option>
+                            <option>تكرار المشكلة</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات التصعيد</label>
+                        <textarea class="form-control" rows="3" placeholder="اكتب ملاحظات حول تصعيد الشكوى..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">أولوية التصعيد</label>
+                        <select class="form-select">
+                            <option>عادية</option>
+                            <option selected>عالية</option>
+                            <option>عاجلة</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-warning">تأكيد التصعيد</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

@@ -14,6 +14,16 @@
     --background-gradient-end: #ffffff;
     --main-gradient-start: #6366f1;
     --main-gradient-end: #8b5cf6;
+    --primary-gradient-start: #6366f1;
+    --primary-gradient-end: #8b5cf6;
+    --success-gradient-start: #10b981;
+    --success-gradient-end: #059669;
+    --warning-gradient-start: #f59e0b;
+    --warning-gradient-end: #d97706;
+    --info-gradient-start: #06b6d4;
+    --info-gradient-end: #0891b2;
+    --danger-gradient-start: #ef4444;
+    --danger-gradient-end: #dc2626;
     
     /* Card & UI Elements */
     --card-bg: #eaeaea;
@@ -214,6 +224,36 @@ body {
     font-size: 0.85rem;
     color: var(--text-muted);
     text-align: center;
+}
+
+/* Sidebar Submenu Styles */
+.sidebar-submenu {
+    list-style: none;
+    padding: 0;
+    padding-right: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-submenu-link {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: var(--text-secondary);
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    font-size: 0.9rem;
+}
+
+.sidebar-submenu-link:hover {
+    background: rgba(108, 99, 255, 0.05);
+    color: var(--main-color);
+    transform: translateX(-3px);
+}
+
+.sidebar-submenu-link.active {
+    background: rgba(108, 99, 255, 0.1);
+    color: var(--main-color);
 }
 
 /* Navbar Styling */
@@ -1395,4 +1435,346 @@ input:checked + .slider:before {
         width: 200px;
         height: 200px;
     }
+}
+
+/* ============================================
+   UTILITY CLASSES - Moved from inline styles
+   ============================================ */
+
+/* Progress Heights */
+.progress-xs { height: 4px !important; }
+.progress-sm { height: 6px !important; }
+.progress-md { height: 8px !important; }
+.progress-lg { height: 10px !important; }
+
+/* Width Utilities */
+.w-1 { width: 1% !important; }
+.w-2 { width: 2% !important; }
+.w-7 { width: 7% !important; }
+.w-15 { width: 15% !important; }
+.w-20 { width: 20% !important; }
+.w-30 { width: 30% !important; }
+.w-35 { width: 35% !important; }
+.w-40 { width: 40% !important; }
+.w-40px { width: 40px !important; }
+.w-45 { width: 45% !important; }
+.w-50 { width: 50% !important; }
+.w-50px { width: 50px !important; }
+.w-60 { width: 60% !important; }
+.w-60px { width: 60px !important; }
+.w-65 { width: 65% !important; }
+.w-68 { width: 68% !important; }
+.w-75 { width: 75% !important; }
+.w-78 { width: 78% !important; }
+.w-80 { width: 80% !important; }
+.w-80px { width: 80px !important; }
+.w-85 { width: 85% !important; }
+.w-87 { width: 87% !important; }
+.w-88 { width: 88% !important; }
+.w-89 { width: 89% !important; }
+.w-90 { width: 90% !important; }
+.w-92 { width: 92% !important; }
+.w-93 { width: 93% !important; }
+.w-94 { width: 94% !important; }
+.w-96 { width: 96% !important; }
+.w-150px { width: 150px !important; }
+
+/* Height Utilities */
+.h-40px { height: 40px !important; }
+.h-60px { height: 60px !important; }
+.h-100px { height: 100px !important; }
+.h-150px { height: 150px !important; }
+
+/* Size Utilities */
+.size-35 { width: 35px !important; height: 35px !important; }
+.size-40 { width: 40px !important; height: 40px !important; }
+.size-50 { width: 50px !important; height: 50px !important; }
+.size-60 { width: 60px !important; height: 60px !important; }
+.size-80 { width: 80px !important; height: 80px !important; }
+.size-100 { width: 100px !important; height: 100px !important; }
+.size-120 { width: 120px !important; height: 120px !important; }
+
+/* Avatar/Icon with Gradient Background */
+.avatar-gradient-primary, .avatar-gradient-primary-alt {
+    background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end)) !important;
+}
+
+.avatar-gradient-info {
+    background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end)) !important;
+}
+
+.avatar-gradient-success {
+    background: linear-gradient(135deg, var(--success-gradient-start), var(--success-gradient-end)) !important;
+}
+
+.avatar-gradient-warning {
+    background: linear-gradient(135deg, var(--warning-gradient-start), var(--warning-gradient-end)) !important;
+}
+
+.avatar-gradient-danger {
+    background: linear-gradient(135deg, var(--danger-gradient-start), var(--danger-gradient-end)) !important;
+}
+
+/* Additional gradient colors */
+.bg-gradient-sunset {
+    background: linear-gradient(135deg, #FF6B6B, #FFE66D) !important;
+}
+
+/* Special Background Colors */
+.bg-danger-light-custom {
+    background: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* Course/Icon Card */
+.course-icon-box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+}
+
+.course-icon-lg {
+    width: 100px;
+    height: 100px;
+}
+
+/* Font Sizes */
+.fs-4rem { font-size: 4rem !important; }
+.fs-3-5rem { font-size: 3.5rem !important; }
+.fs-3rem { font-size: 3rem !important; }
+.fs-2-5rem { font-size: 2.5rem !important; }
+
+/* Line Height */
+.lh-18 { line-height: 1.8 !important; }
+
+/* Display Utilities */
+.d-none-custom { display: none !important; }
+
+/* User Avatar Circle */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--main-gradient-start), var(--main-gradient-end));
+    color: white;
+}
+
+.user-avatar-sm {
+    width: 35px;
+    height: 35px;
+}
+
+.user-avatar-lg {
+    width: 60px;
+    height: 60px;
+}
+
+/* Icon Circle */
+.icon-circle {
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle-sm { width: 35px; height: 35px; }
+.icon-circle-md { width: 40px; height: 40px; }
+.icon-circle-lg { width: 60px; height: 60px; }
+.icon-circle-xl { width: 100px; height: 100px; }
+
+/* Stat Icon Background */
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+}
+
+/* Positioning Utilities */
+.pos-decorative {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.pos-decorative-bottom {
+    position: absolute;
+    bottom: 50px;
+    right: -100px;
+}
+
+/* Video Embed Container */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Logo Size */
+.logo-sm {
+    max-width: 140px;
+    height: auto;
+}
+
+/* Additional Height Utilities */
+.h-12px { height: 12px !important; }
+.h-20px { height: 20px !important; }
+.h-25px { height: 25px !important; }
+.h-50px { height: 50px !important; }
+.h-200px { height: 200px !important; }
+.h-300px { height: 300px !important; }
+.min-h-100px { min-height: 100px !important; }
+
+/* Max Width/Height Utilities */
+.mw-100px { max-width: 100px !important; }
+.mh-360px { max-height: 360px !important; overflow-y: auto; }
+
+/* Font Size Small */
+.fs-75 { font-size: 0.75rem !important; }
+.fs-90 { font-size: 0.9rem !important; }
+
+/* Display Block Full Width */
+.d-block-full { display: block !important; width: 100% !important; }
+
+/* Transform Utilities */
+.rotate-90 { transform: rotate(90deg) !important; }
+.rotate-neg-90 { transform: rotate(-90deg) !important; }
+
+/* Decorative Circle Positioning */
+.decorative-circle-top {
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+}
+
+.decorative-circle-top-right {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+}
+
+.decorative-circle-top-left {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+}
+
+.decorative-circle-bottom {
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 400px;
+    height: 400px;
+}
+
+/* Chart Bar Styles */
+.chart-bar {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 4px 4px 0 0;
+}
+
+.chart-bar-sm {
+    height: 50px;
+    background-color: rgba(108, 99, 255, 0.2);
+}
+
+.chart-bar-md {
+    height: 100px;
+    background-color: rgba(108, 99, 255, 0.3);
+}
+
+.chart-bar-lg {
+    height: 130px;
+    background-color: rgba(108, 99, 255, 0.4);
+}
+
+.chart-bar-xl {
+    height: 150px;
+    background-color: rgba(108, 99, 255, 0.6);
+}
+
+.chart-bar-xxl {
+    height: 100px;
+    background-color: rgba(108, 99, 255, 0.8);
+}
+
+/* Gradient Bar Variations */
+.gradient-bar {
+    background: linear-gradient(135deg, var(--main-color), var(--main-color-light));
+    border-radius: 4px 4px 0 0;
+}
+
+.gradient-bar-140 { height: 140px; }
+.gradient-bar-152 { height: 152px; }
+.gradient-bar-160 { height: 160px; }
+.gradient-bar-168 { height: 168px; }
+.gradient-bar-172 { height: 172px; }
+.gradient-bar-180 { height: 180px; }
+
+/* Progress Ring/Circle */
+.progress-ring {
+    background: conic-gradient(var(--main-color) 89%, #e9ecef 0);
+    transform: rotate(-90deg);
+}
+
+/* Background Utilities */
+.bg-light-gray { background: #f8f9fa !important; }
+.bg-gradient-purple {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+}
+
+/* Chart Container Backgrounds */
+.chart-bg-cool {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.chart-bg-pastel {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+/* Width with Height for specific elements */
+.w-60px-h-8px {
+    width: 60px !important;
+    height: 8px !important;
+}
+
+/* Margin with Transform */
+.m-10-rotate-90 {
+    margin: 10px !important;
+    transform: rotate(90deg) !important;
 }

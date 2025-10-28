@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل الدفعة - IDARTI Live Academy</title>
+    
+    <link rel="stylesheet" href="../../assets/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/css/custom_system.css">
+</head>
+<body>
+    <div class="d-flex">
+        <div id="sidebar-container"></div>
+
+        <div class="content-wrapper">
+            <div id="navbar-container"></div>
+
+            <div class="container-fluid px-4 py-4">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/billing/payments-admin.html">المدفوعات</a></li>
+                        <li class="breadcrumb-item active">تفاصيل الدفعة #PAY-2024-001</li>
+                    </ol>
+                </nav>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <h4 class="mb-1 fw-bold">تفاصيل الدفعة #PAY-2024-001</h4>
+                        <p class="text-muted mb-0">معلومات كاملة عن الدفعة والمعاملة</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                            <i class="bi bi-check-circle me-2"></i>تأكيد الدفعة
+                        </button>
+                        <a href="/system/billing/print-receipt.html?id=1" class="btn btn-primary me-2">
+                            <i class="bi bi-printer me-2"></i>طباعة إيصال
+                        </a>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#refundModal">
+                            <i class="bi bi-arrow-counterclockwise me-2"></i>إرجاع المبلغ
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Payment Status Card -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-info-circle me-2"></i>حالة الدفعة</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="text-center p-4 bg-light rounded-3">
+                                            <div class="size-80 avatar-gradient-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                                                <i class="bi bi-check-circle text-white fs-1"></i>
+                                            </div>
+                                            <h3 class="mb-2 fw-bold text-success">دفعة مكتملة</h3>
+                                            <p class="text-muted mb-0">تمت المعالجة بنجاح</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="mb-3">
+                                            <label class="text-muted small">رقم الدفعة</label>
+                                            <h5 class="fw-bold">PAY-2024-001</h5>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-muted small">المبلغ المدفوع</label>
+                                            <h4 class="fw-bold text-primary mb-0">1,000 ر.س</h4>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="text-muted small">تاريخ الدفع</label>
+                                            <p class="mb-0">2024-10-20 - 02:35 م</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Details -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-receipt me-2"></i>تفاصيل الدفعة</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="size-60 avatar-gradient-info rounded-circle d-flex align-items-center justify-content-center me-3">
+                                                <i class="bi bi-person-fill text-white fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">محمد أحمد علي</h6>
+                                                <small class="text-muted">طالب</small>
+                                            </div>
+                                        </div>
+                                        <div class="small text-muted">
+                                            <p class="mb-1"><i class="bi bi-envelope me-2"></i>mohamed.ahmed@example.com</p>
+                                            <p class="mb-0"><i class="bi bi-phone me-2"></i>+966 50 123 4567</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <table class="table table-sm table-borderless">
+                                            <tr>
+                                                <td class="text-muted">الفاتورة المرتبطة:</td>
+                                                <td class="text-end">
+                                                    <a href="/system/billing/invoice-detail-admin.html?id=1" class="fw-bold">
+                                                        INV-2024-001
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">طريقة الدفع:</td>
+                                                <td class="text-end">
+                                                    <span class="badge badge-info">
+                                                        <i class="bi bi-credit-card me-1"></i>بطاقة ائتمان
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">رقم المرجع:</td>
+                                                <td class="text-end fw-bold">REF-789456123</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-muted">رقم المعاملة:</td>
+                                                <td class="text-end"><code>TXN-20241020023545</code></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Method Details -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-credit-card me-2"></i>تفاصيل طريقة الدفع</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-3 bg-light rounded-3">
+                                            <div class="d-flex align-items-center mb-3">
+                                                <div class="size-50 avatar-gradient-info rounded-3 d-flex align-items-center justify-content-center me-3">
+                                                    <i class="bi bi-credit-card text-white fs-4"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Visa</h6>
+                                                    <small class="text-muted">**** **** **** 4532</small>
+                                                </div>
+                                            </div>
+                                            <div class="small">
+                                                <p class="mb-1"><strong>اسم حامل البطاقة:</strong> محمد أحمد علي</p>
+                                                <p class="mb-1"><strong>تاريخ الانتهاء:</strong> 12/2026</p>
+                                                <p class="mb-0"><strong>البنك المصدر:</strong> البنك الأهلي السعودي</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="p-3 bg-light rounded-3">
+                                            <h6 class="fw-bold mb-3">معلومات المعاملة</h6>
+                                            <div class="small">
+                                                <p class="mb-2">
+                                                    <span class="text-muted">رمز التفويض:</span>
+                                                    <code class="ms-2">AUTH-987654</code>
+                                                </p>
+                                                <p class="mb-2">
+                                                    <span class="text-muted">عنوان IP:</span>
+                                                    <span class="ms-2">192.168.1.100</span>
+                                                </p>
+                                                <p class="mb-2">
+                                                    <span class="text-muted">الجهاز:</span>
+                                                    <span class="ms-2">Desktop (Chrome)</span>
+                                                </p>
+                                                <p class="mb-0">
+                                                    <span class="text-muted">الموقع:</span>
+                                                    <span class="ms-2">الرياض، السعودية</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Amount Breakdown -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-calculator me-2"></i>تفاصيل المبلغ</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>المبلغ الأساسي:</td>
+                                            <td class="text-end fw-bold">1,000 ر.س</td>
+                                        </tr>
+                                        <tr>
+                                            <td>رسوم المعالجة (2%):</td>
+                                            <td class="text-end">20 ر.س</td>
+                                        </tr>
+                                        <tr class="border-top">
+                                            <td class="fw-bold">إجمالي المبلغ المدفوع:</td>
+                                            <td class="text-end fw-bold fs-5 text-primary">1,020 ر.س</td>
+                                        </tr>
+                                        <tr>
+                                            <td>صافي المبلغ المستلم:</td>
+                                            <td class="text-end fw-bold text-success">1,000 ر.س</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Activity Timeline -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>سجل النشاط</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <strong>دفعة مكتملة</strong>
+                                                <small class="text-muted">2024-10-20 02:35 م</small>
+                                            </div>
+                                            <p class="mb-0 small text-muted">تم تأكيد استلام المبلغ بنجاح</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <strong>معالجة الدفعة</strong>
+                                                <small class="text-muted">2024-10-20 02:34 م</small>
+                                            </div>
+                                            <p class="mb-0 small text-muted">جاري التحقق من البطاقة والمعاملة</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-content">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <strong>طلب دفعة جديد</strong>
+                                                <small class="text-muted">2024-10-20 02:33 م</small>
+                                            </div>
+                                            <p class="mb-0 small text-muted">تم بدء عملية الدفع من قبل الطالب</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="col-lg-4">
+                        <!-- Quick Actions -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-lightning-fill me-2"></i>إجراءات سريعة</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#confirmModal">
+                                        <i class="bi bi-check-circle me-2"></i>تأكيد الدفعة
+                                    </button>
+                                    <a href="/system/billing/print-receipt.html?id=1" class="btn btn-primary">
+                                        <i class="bi bi-printer me-2"></i>طباعة إيصال
+                                    </a>
+                                    <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#emailModal">
+                                        <i class="bi bi-envelope me-2"></i>إرسال إيصال بالبريد
+                                    </button>
+                                    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#refundModal">
+                                        <i class="bi bi-arrow-counterclockwise me-2"></i>طلب إرجاع
+                                    </button>
+                                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                                        <i class="bi bi-x-circle me-2"></i>إلغاء المعاملة
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Status -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-shield-check me-2"></i>حالة الأمان</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">معاملة آمنة</div>
+                                        <small class="text-muted">تم التحقق من جميع البيانات</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">3D Secure مفعل</div>
+                                        <small class="text-muted">حماية إضافية للمعاملة</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-check-circle-fill text-success fs-4 me-2"></i>
+                                    <div>
+                                        <div class="fw-bold">معتمد من البنك</div>
+                                        <small class="text-muted">تم التأكيد من البنك المصدر</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Related Invoice -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-file-text me-2"></i>الفاتورة المرتبطة</h5>
+                            </div>
+                            <div class="card-body">
+                                <a href="/system/billing/invoice-detail-admin.html?id=1" class="text-decoration-none">
+                                    <div class="p-3 bg-light rounded-3 hover-shadow">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="size-50 avatar-gradient-primary rounded-3 d-flex align-items-center justify-content-center me-3">
+                                                <i class="bi bi-receipt text-white fs-4"></i>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold">INV-2024-001</h6>
+                                                <small class="text-muted">فاتورة رقم 1</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="small text-muted">إجمالي الفاتورة</span>
+                                            <span class="fw-bold">2,794.50 ر.س</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="small text-muted">المدفوع</span>
+                                            <span class="text-success">1,000 ر.س</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <span class="small text-muted">المتبقي</span>
+                                            <span class="text-danger">1,794.50 ر.س</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0"><i class="bi bi-sticky me-2"></i>ملاحظات</h5>
+                            </div>
+                            <div class="card-body">
+                                <textarea class="form-control mb-2" rows="4" placeholder="إضافة ملاحظة على الدفعة..."></textarea>
+                                <button class="btn btn-sm btn-primary w-100" id="saveNoteBtn">
+                                    <i class="bi bi-plus-circle me-2"></i>حفظ الملاحظة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Payment Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="confirmModalLabel"><i class="bi bi-check-circle me-2"></i>تأكيد الدفعة</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        أنت على وشك تأكيد دفعة بمبلغ <strong>1,500.00 ر.س</strong>. سيتم تحديث حالة الدفعة إلى "مؤكدة".
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">تاريخ التأكيد</label>
+                        <input type="date" class="form-control" value="2024-10-28">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات التأكيد</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات التأكيد هنا..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyPaymentConfirm" checked>
+                        <label class="form-check-label" for="notifyPaymentConfirm">
+                            إرسال إشعار للعميل بتأكيد الدفعة
+                        </label>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="sendReceipt" checked>
+                        <label class="form-check-label" for="sendReceipt">
+                            إرسال إيصال بالبريد الإلكتروني
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success">تأكيد الدفعة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Receipt Modal -->
+    <div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="emailModalLabel"><i class="bi bi-envelope me-2"></i>إرسال إيصال بالبريد</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">البريد الإلكتروني</label>
+                        <input type="email" class="form-control" value="student@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">عنوان الرسالة</label>
+                        <input type="text" class="form-control" value="إيصال دفع - IDARTI Live Academy">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">نص الرسالة</label>
+                        <textarea class="form-control" rows="4">عزيزي العميل،
+
+مرفق إيصال الدفع الخاص بالفاتورة رقم INV-2024-001 بمبلغ 1,500.00 ر.س.
+
+شكراً لتعاملكم معنا.
+فريق IDARTI Live Academy</textarea>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="attachPDF" checked>
+                        <label class="form-check-label" for="attachPDF">
+                            إرفاق نسخة PDF من الإيصال
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">إرسال الإيصال</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Refund Modal -->
+    <div class="modal fade" id="refundModal" tabindex="-1" aria-labelledby="refundModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="refundModalLabel"><i class="bi bi-arrow-counterclockwise me-2"></i>طلب إرجاع المبلغ</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        أنت على وشك طلب إرجاع مبلغ <strong>1,500.00 ر.س</strong>.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">المبلغ المراد إرجاعه</label>
+                        <input type="number" class="form-control" value="1500.00" step="0.01">
+                        <small class="text-muted">المبلغ الكلي: 1,500.00 ر.س</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">طريقة الإرجاع</label>
+                        <select class="form-select">
+                            <option>نفس طريقة الدفع الأصلية</option>
+                            <option>تحويل بنكي</option>
+                            <option>رصيد في الحساب</option>
+                            <option>نقدي</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سبب الإرجاع</label>
+                        <select class="form-select">
+                            <option>إلغاء الخدمة</option>
+                            <option>عدم الرضا عن الخدمة</option>
+                            <option>خطأ في الدفع</option>
+                            <option>دفع مكرر</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف تفاصيل إضافية هنا..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyRefund" checked>
+                        <label class="form-check-label" for="notifyRefund">
+                            إرسال إشعار للعميل بطلب الإرجاع
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-warning">تأكيد طلب الإرجاع</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel Payment Modal -->
+    <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="cancelModalLabel"><i class="bi bi-x-circle me-2"></i>إلغاء المعاملة</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        هذا الإجراء لا يمكن التراجع عنه. سيتم إلغاء معاملة الدفع بشكل نهائي.
+                    </div>
+                    
+                    <p>هل أنت متأكد من رغبتك في إلغاء معاملة الدفع رقم <strong>PAY-2024-001</strong>؟</p>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سبب الإلغاء</label>
+                        <select class="form-select">
+                            <option>خطأ في البيانات</option>
+                            <option>دفع مكرر</option>
+                            <option>معاملة احتيالية</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات إضافية</label>
+                        <textarea class="form-control" rows="3" placeholder="اكتب سبب الإلغاء هنا..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCustomerCancel">
+                        <label class="form-check-label" for="notifyCustomerCancel">
+                            إرسال إشعار للعميل بإلغاء المعاملة
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">تراجع</button>
+                    <button type="button" class="btn btn-danger">تأكيد الإلغاء</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/custom.js"></script>
+    
+    <script>
+        // Add note functionality
+        document.getElementById('saveNoteBtn').addEventListener('click', function() {
+            const noteText = document.querySelector('textarea[placeholder="إضافة ملاحظة على الدفعة..."]').value;
+            if (noteText.trim() !== '') {
+                alert('تم حفظ الملاحظة بنجاح');
+                document.querySelector('textarea[placeholder="إضافة ملاحظة على الدفعة..."]').value = '';
+            } else {
+                alert('الرجاء كتابة ملاحظة قبل الحفظ');
+            }
+        });
+    </script>
+</body>
+</html>
+

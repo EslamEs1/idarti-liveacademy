@@ -11,63 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- Custom System CSS -->
     <link rel="stylesheet" href="../../assets/css/custom_system.css">
-    <style>
-        .exam-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .timer-card {
-            position: sticky;
-            top: 20px;
-            z-index: 1000;
-        }
-        .timer-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto;
-        }
-        .question-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .question-nav-btn {
-            width: 40px;
-            height: 40px;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        .question-nav-btn.answered {
-            background: #198754;
-            color: white;
-            border-color: #198754;
-        }
-        .question-nav-btn.active {
-            background: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-        .question-card {
-            display: none;
-        }
-        .question-card.active {
-            display: block;
-        }
-    </style>
 </head>
 <body>
     <div class="exam-container py-4">
@@ -76,8 +19,8 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h5 class="fw-bold mb-1">اختبار JavaScript المتقدم</h5>
-                        <p class="text-muted mb-0 small">تطوير الويب المتقدم | اختبار نهائي</p>
+                        <h5 class="fw-bold mb-1">اختبار الجغرافيا</h5>
+                        <p class="text-muted mb-0 small">الرياضيات المتقدمة | اختبار نهائي</p>
                     </div>
                     <div class="col-md-4 text-end">
                         <div class="timer-badge bg-warning text-white px-3 py-2 rounded">
@@ -158,7 +101,7 @@
                 </div>
 
                 <!-- Questions Container (hidden initially) -->
-                <div id="questionsArea" style="display: none;">
+                <div id="questionsArea" class="d-none">
                     <!-- Question 1: MCQ -->
                     <div class="question-card card mb-4 active" data-question="1">
                         <div class="card-header">
@@ -275,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="card mb-4" id="navCard" style="display: none;">
+                <div class="card mb-4" id="navCard" class="d-none">
                     <div class="card-header">
                         <h6 class="mb-0">خريطة الأسئلة</h6>
                     </div>

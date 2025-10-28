@@ -86,11 +86,11 @@
                                             <label class="form-label">الدورة <span class="text-danger">*</span></label>
                                             <select class="form-select" name="course_id" id="courseSelect" required>
                                                 <option value="">اختر الدورة...</option>
-                                                <option value="1" data-price="2500" data-duration="16">تطوير الويب المتقدم</option>
-                                                <option value="2" data-price="3000" data-duration="12">تصميم واجهات المستخدم</option>
+                                                <option value="1" data-price="2500" data-duration="16">الرياضيات المتقدمة</option>
+                                                <option value="2" data-price="3000" data-duration="12">التاريخ الإسلامي</option>
                                                 <option value="3" data-price="3500" data-duration="14">برمجة تطبيقات الجوال</option>
-                                                <option value="4" data-price="1800" data-duration="8">أساسيات البرمجة</option>
-                                                <option value="5" data-price="2200" data-duration="10">قواعد البيانات</option>
+                                                <option value="4" data-price="1800" data-duration="8">اللغة العربية</option>
+                                                <option value="5" data-price="2200" data-duration="10">الأحياء</option>
                                             </select>
                                             <div class="invalid-feedback">
                                                 يرجى اختيار الدورة
@@ -146,7 +146,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6" id="installmentsField" style="display: none;">
+                                        <div class="col-md-6" id="installmentsField" class="d-none">
                                             <label class="form-label">عدد الأقساط</label>
                                             <select class="form-select" name="installments">
                                                 <option value="2">قسطان</option>
@@ -289,7 +289,7 @@
                                     <i class="bi bi-x-circle me-2"></i>إلغاء
                                 </a>
                                 <div>
-                                    <button type="button" class="btn btn-light me-2">
+                                    <button type="button" class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#previewEnrollmentModal">
                                         <i class="bi bi-eye me-2"></i>معاينة
                                     </button>
                                     <button type="submit" class="btn btn-primary">
@@ -384,6 +384,101 @@
                 form.classList.add('was-validated')
             }, false)
         })()
+    </script>
+    
+    <!-- Preview Enrollment Modal -->
+    <div class="modal fade" id="previewEnrollmentModal" tabindex="-1" aria-labelledby="previewEnrollmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewEnrollmentModalLabel"><i class="bi bi-eye me-2"></i>معاينة الالتحاق</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">معلومات الالتحاق</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>الطالب:</strong> <span id="previewStudentName">أحمد محمد</span></p>
+                                    <p><strong>الدورة:</strong> <span id="previewCourseName">الرياضيات المتقدمة</span></p>
+                                    <p><strong>تاريخ الالتحاق:</strong> <span id="previewEnrollmentDate">28 أكتوبر 2024</span></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>المبلغ:</strong> <span id="previewAmount">1,500 ر.س</span></p>
+                                    <p><strong>طريقة الدفع:</strong> <span id="previewPaymentMethod">دفع بالتقسيط</span></p>
+                                    <p><strong>الحالة:</strong> <span class="badge bg-warning" id="previewStatus">بانتظار الموافقة</span></p>
+                                </div>
+                            </div>
+                            
+                            <hr>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6>ملاحظات</h6>
+                                    <p id="previewNotes">يرغب الطالب في الالتحاق بالدورة مع إمكانية الدفع بالتقسيط.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        هذه معاينة فقط. لحفظ الالتحاق، اضغط على زر "حفظ الالتحاق".
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إغلاق</button>
+                    <button type="button" class="btn btn-primary" id="saveFromPreview">حفظ الالتحاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Handle preview modal
+        document.addEventListener('DOMContentLoaded', function() {
+            const previewModal = document.getElementById('previewEnrollmentModal');
+            
+            previewModal?.addEventListener('show.bs.modal', function() {
+                // Get form values
+                const studentSelect = document.getElementById('studentSelect');
+                const studentName = studentSelect.options[studentSelect.selectedIndex]?.text || 'غير محدد';
+                
+                const courseSelect = document.getElementById('courseSelect');
+                const courseName = courseSelect.options[courseSelect.selectedIndex]?.text || 'غير محدد';
+                
+                const enrollmentDate = document.getElementById('enrollmentDate').value || 'غير محدد';
+                const formattedDate = enrollmentDate ? new Date(enrollmentDate).toLocaleDateString('ar-SA') : 'غير محدد';
+                
+                const coursePrice = document.getElementById('coursePrice').value || '0 ر.س';
+                
+                const paymentType = document.getElementById('paymentType');
+                const paymentMethod = paymentType.options[paymentType.selectedIndex]?.text || 'غير محدد';
+                
+                const notes = document.getElementById('notes').value || 'لا توجد ملاحظات';
+                
+                // Update preview
+                document.getElementById('previewStudentName').textContent = studentName;
+                document.getElementById('previewCourseName').textContent = courseName;
+                document.getElementById('previewEnrollmentDate').textContent = formattedDate;
+                document.getElementById('previewAmount').textContent = coursePrice;
+                document.getElementById('previewPaymentMethod').textContent = paymentMethod;
+                document.getElementById('previewNotes').textContent = notes;
+            });
+            
+            // Handle save from preview
+            document.getElementById('saveFromPreview')?.addEventListener('click', function() {
+                // Close modal
+                const modal = bootstrap.Modal.getInstance(previewModal);
+                modal.hide();
+                
+                // Submit form
+                document.getElementById('enrollmentForm').submit();
+            });
+        });
     </script>
 </body>
 </html>

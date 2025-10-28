@@ -136,8 +136,8 @@
                                 <label class="form-label">الدورة</label>
                                 <select class="form-select">
                                     <option selected>جميع الدورات</option>
-                                    <option>تطوير الويب المتقدم</option>
-                                    <option>تصميم واجهات المستخدم</option>
+                                    <option>الرياضيات المتقدمة</option>
+                                    <option>التاريخ الإسلامي</option>
                                     <option>برمجة تطبيقات الجوال</option>
                                 </select>
                             </div>
@@ -182,12 +182,12 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">قائمة الالتحاقات</h6>
                             <div>
-                                <button class="btn btn-sm btn-light me-2">
+                                <a href="/system/enrollments/export-excel.html" class="btn btn-sm btn-light me-2">
                                     <i class="bi bi-file-earmark-excel me-1"></i>تصدير
-                                </button>
-                                <button class="btn btn-sm btn-light">
+                                </a>
+                                <a href="/system/enrollments/print-list.html" class="btn btn-sm btn-light">
                                     <i class="bi bi-printer me-1"></i>طباعة
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -196,7 +196,7 @@
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50px;">
+                                        <th class="w-50px">
                                             <input type="checkbox" class="form-check-input">
                                         </th>
                                         <th>#</th>
@@ -217,7 +217,7 @@
                                         <td>EN-1025</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -227,7 +227,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                            <span class="fw-semibold">الرياضيات المتقدمة</span>
                                         </td>
                                         <td>8 مارس 2025</td>
                                         <td>
@@ -245,10 +245,10 @@
                                                 <a href="/system/enrollments/detail-admin.html?id=1025" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-success" title="الموافقة">
+                                                <button class="btn btn-success" title="الموافقة" data-bs-toggle="modal" data-bs-target="#approveEnrollmentModal" data-enrollment-id="1" data-student-name="أحمد محمد">
                                                     <i class="bi bi-check-lg"></i>
                                                 </button>
-                                                <button class="btn btn-danger" title="رفض">
+                                                <button class="btn btn-danger" title="رفض" data-bs-toggle="modal" data-bs-target="#rejectEnrollmentModal" data-enrollment-id="1" data-student-name="أحمد محمد">
                                                     <i class="bi bi-x-lg"></i>
                                                 </button>
                                             </div>
@@ -261,7 +261,7 @@
                                         <td>EN-1024</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -271,7 +271,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="fw-semibold">تطوير الويب المتقدم</span>
+                                            <span class="fw-semibold">الرياضيات المتقدمة</span>
                                         </td>
                                         <td>15 يناير 2025</td>
                                         <td>
@@ -280,8 +280,8 @@
                                         <td>2,500 ر.س</td>
                                         <td class="text-center">
                                             <div class="d-flex align-items-center justify-content-center gap-2">
-                                                <div class="progress" style="width: 60px; height: 8px;">
-                                                    <div class="progress-bar bg-success" style="width: 75%"></div>
+                                                <div class="progress" class="w-60px progress-md">
+                                                    <div class="progress-bar bg-success" class="w-75"></div>
                                                 </div>
                                                 <span class="small fw-semibold">75%</span>
                                             </div>
@@ -297,7 +297,7 @@
                                                 <a href="/system/enrollments/form.html?edit=1024" class="btn btn-light" title="تعديل">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="تجميد">
+                                                <button class="btn btn-light" title="تجميد" data-bs-toggle="modal" data-bs-target="#freezeEnrollmentModal" data-enrollment-id="2" data-student-name="سارة أحمد">
                                                     <i class="bi bi-pause-circle text-warning"></i>
                                                 </button>
                                             </div>
@@ -310,7 +310,7 @@
                                         <td>EN-1023</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -320,7 +320,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="fw-semibold">تصميم واجهات المستخدم</span>
+                                            <span class="fw-semibold">التاريخ الإسلامي</span>
                                         </td>
                                         <td>10 فبراير 2025</td>
                                         <td>
@@ -329,8 +329,8 @@
                                         <td>1,500 / 3,000 ر.س</td>
                                         <td class="text-center">
                                             <div class="d-flex align-items-center justify-content-center gap-2">
-                                                <div class="progress" style="width: 60px; height: 8px;">
-                                                    <div class="progress-bar bg-primary" style="width: 45%"></div>
+                                                <div class="progress" class="w-60px progress-md">
+                                                    <div class="progress-bar bg-primary" class="w-45"></div>
                                                 </div>
                                                 <span class="small fw-semibold">45%</span>
                                             </div>
@@ -346,7 +346,7 @@
                                                 <a href="/system/enrollments/form.html?edit=1023" class="btn btn-light" title="تعديل">
                                                     <i class="bi bi-pencil"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="متابعة الدفع">
+                                                <button class="btn btn-light" title="متابعة الدفع" data-bs-toggle="modal" data-bs-target="#paymentFollowupModal" data-enrollment-id="3" data-student-name="محمد علي">
                                                     <i class="bi bi-cash text-success"></i>
                                                 </button>
                                             </div>
@@ -359,7 +359,7 @@
                                         <td>EN-1022</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -378,8 +378,8 @@
                                         <td>3,500 ر.س</td>
                                         <td class="text-center">
                                             <div class="d-flex align-items-center justify-content-center gap-2">
-                                                <div class="progress" style="width: 60px; height: 8px;">
-                                                    <div class="progress-bar bg-secondary" style="width: 30%"></div>
+                                                <div class="progress" class="w-60px progress-md">
+                                                    <div class="progress-bar bg-secondary" class="w-30"></div>
                                                 </div>
                                                 <span class="small fw-semibold text-muted">30%</span>
                                             </div>
@@ -392,10 +392,10 @@
                                                 <a href="/system/enrollments/detail-admin.html?id=1022" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="تنشيط">
+                                                <button class="btn btn-light" title="تنشيط" data-bs-toggle="modal" data-bs-target="#activateEnrollmentModal" data-enrollment-id="4" data-student-name="فاطمة حسن">
                                                     <i class="bi bi-play-circle text-success"></i>
                                                 </button>
-                                                <button class="btn btn-light" title="إلغاء">
+                                                <button class="btn btn-light" title="إلغاء" data-bs-toggle="modal" data-bs-target="#cancelEnrollmentModal" data-enrollment-id="4" data-student-name="فاطمة حسن">
                                                     <i class="bi bi-x-circle text-danger"></i>
                                                 </button>
                                             </div>
@@ -408,7 +408,7 @@
                                         <td>EN-1021</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -418,7 +418,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="fw-semibold">أساسيات البرمجة</span>
+                                            <span class="fw-semibold">اللغة العربية</span>
                                         </td>
                                         <td>1 نوفمبر 2024</td>
                                         <td>
@@ -427,8 +427,8 @@
                                         <td>1,800 ر.س</td>
                                         <td class="text-center">
                                             <div class="d-flex align-items-center justify-content-center gap-2">
-                                                <div class="progress" style="width: 60px; height: 8px;">
-                                                    <div class="progress-bar bg-success" style="width: 100%"></div>
+                                                <div class="progress" class="w-60px progress-md">
+                                                    <div class="progress-bar bg-success" class="w-100"></div>
                                                 </div>
                                                 <span class="small fw-semibold">100%</span>
                                             </div>
@@ -441,9 +441,9 @@
                                                 <a href="/system/enrollments/detail-admin.html?id=1021" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="إصدار شهادة">
+                                                <a href="/system/enrollments/certificate.html?id=5" class="btn btn-light" title="إصدار شهادة">
                                                     <i class="bi bi-award text-warning"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -457,14 +457,14 @@
                             <nav>
                                 <ul class="pagination pagination-sm mb-0">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#">السابق</a>
+                                        <a class="page-link" href="/system/enrollments/list-admin.html?page=1">السابق</a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                    <li class="page-item active"><a class="page-link" href="/system/enrollments/list-admin.html?page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/enrollments/list-admin.html?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/enrollments/list-admin.html?page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/enrollments/list-admin.html?page=4">4</a></li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#">التالي</a>
+                                        <a class="page-link" href="/system/enrollments/list-admin.html?page=2">التالي</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -498,6 +498,443 @@
             .then(data => {
                 document.getElementById('navbar-container').innerHTML = data;
             });
+    </script>
+    
+    <!-- Approve Enrollment Modal -->
+    <div class="modal fade" id="approveEnrollmentModal" tabindex="-1" aria-labelledby="approveEnrollmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="approveEnrollmentModalLabel"><i class="bi bi-check-circle me-2"></i>الموافقة على الالتحاق</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>أنت على وشك الموافقة على التحاق الطالب <strong id="approveStudentName">أحمد محمد</strong> في الدورة.</p>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">تاريخ بدء الالتحاق</label>
+                        <input type="date" class="form-control" value="2024-10-28">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">حالة الدفع</label>
+                        <select class="form-select">
+                            <option>لم يتم الدفع</option>
+                            <option selected>دفعة أولى</option>
+                            <option>مدفوع بالكامل</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول الموافقة..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyApproval" checked>
+                        <label class="form-check-label" for="notifyApproval">
+                            إرسال إشعار للطالب
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success">تأكيد الموافقة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Reject Enrollment Modal -->
+    <div class="modal fade" id="rejectEnrollmentModal" tabindex="-1" aria-labelledby="rejectEnrollmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="rejectEnrollmentModalLabel"><i class="bi bi-x-circle me-2"></i>رفض الالتحاق</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        أنت على وشك رفض التحاق الطالب <strong id="rejectStudentName">أحمد محمد</strong> في الدورة.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سبب الرفض</label>
+                        <select class="form-select">
+                            <option>عدم استيفاء الشروط</option>
+                            <option>اكتمال العدد</option>
+                            <option>مشكلة في الدفع</option>
+                            <option>طلب الطالب</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات إضافية</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول سبب الرفض..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyRejection" checked>
+                        <label class="form-check-label" for="notifyRejection">
+                            إرسال إشعار للطالب
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-danger">تأكيد الرفض</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Freeze Enrollment Modal -->
+    <div class="modal fade" id="freezeEnrollmentModal" tabindex="-1" aria-labelledby="freezeEnrollmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title" id="freezeEnrollmentModalLabel"><i class="bi bi-pause-circle me-2"></i>تجميد الالتحاق</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>أنت على وشك تجميد التحاق الطالب <strong id="freezeStudentName">سارة أحمد</strong> في الدورة.</p>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">تاريخ بدء التجميد</label>
+                        <input type="date" class="form-control" value="2024-10-28">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">تاريخ انتهاء التجميد (اختياري)</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سبب التجميد</label>
+                        <select class="form-select">
+                            <option>طلب الطالب</option>
+                            <option>مشكلة في الدفع</option>
+                            <option>ظروف صحية</option>
+                            <option>سفر</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول التجميد..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyFreeze" checked>
+                        <label class="form-check-label" for="notifyFreeze">
+                            إرسال إشعار للطالب
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-warning">تأكيد التجميد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Payment Followup Modal -->
+    <div class="modal fade" id="paymentFollowupModal" tabindex="-1" aria-labelledby="paymentFollowupModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentFollowupModalLabel"><i class="bi bi-cash me-2"></i>متابعة الدفع</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>متابعة دفعات الطالب <strong id="paymentStudentName">محمد علي</strong>.</p>
+                    
+                    <div class="alert alert-info">
+                        <p><strong>إجمالي المبلغ:</strong> 1,500 ر.س</p>
+                        <p><strong>المدفوع:</strong> 500 ر.س</p>
+                        <p><strong>المتبقي:</strong> 1,000 ر.س</p>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">إجراء</label>
+                        <select class="form-select" id="paymentAction">
+                            <option value="record">تسجيل دفعة</option>
+                            <option value="remind">إرسال تذكير</option>
+                            <option value="schedule">جدولة دفعة</option>
+                        </select>
+                    </div>
+                    
+                    <div id="recordPaymentFields">
+                        <div class="mb-3">
+                            <label class="form-label">المبلغ</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="500">
+                                <span class="input-group-text">ر.س</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">تاريخ الدفع</label>
+                            <input type="date" class="form-control" value="2024-10-28">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">طريقة الدفع</label>
+                            <select class="form-select">
+                                <option>تحويل بنكي</option>
+                                <option>بطاقة ائتمان</option>
+                                <option>نقدي</option>
+                                <option>أخرى</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div id="reminderFields" class="d-none">
+                        <div class="mb-3">
+                            <label class="form-label">نوع التذكير</label>
+                            <select class="form-select">
+                                <option>بريد إلكتروني</option>
+                                <option>رسالة نصية</option>
+                                <option>مكالمة هاتفية</option>
+                                <option>كل ما سبق</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">نص التذكير</label>
+                            <textarea class="form-control" rows="3">نود تذكيركم بموعد الدفعة المستحقة بقيمة 500 ر.س. نرجو سداد المبلغ في أقرب وقت ممكن.</textarea>
+                        </div>
+                    </div>
+                    
+                    <div id="scheduleFields" class="d-none">
+                        <div class="mb-3">
+                            <label class="form-label">تاريخ الدفعة القادمة</label>
+                            <input type="date" class="form-control" value="2024-11-15">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">المبلغ</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" placeholder="500">
+                                <span class="input-group-text">ر.س</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول الدفع..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary">تأكيد</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Activate Enrollment Modal -->
+    <div class="modal fade" id="activateEnrollmentModal" tabindex="-1" aria-labelledby="activateEnrollmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="activateEnrollmentModalLabel"><i class="bi bi-play-circle me-2"></i>تنشيط الالتحاق</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>أنت على وشك تنشيط التحاق الطالب <strong id="activateStudentName">فاطمة حسن</strong> بعد التجميد.</p>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">تاريخ إعادة التنشيط</label>
+                        <input type="date" class="form-control" value="2024-10-28">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سبب إعادة التنشيط</label>
+                        <select class="form-select">
+                            <option>انتهاء فترة التجميد</option>
+                            <option>طلب الطالب</option>
+                            <option>تسوية الدفع</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول إعادة التنشيط..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyActivation" checked>
+                        <label class="form-check-label" for="notifyActivation">
+                            إرسال إشعار للطالب
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-success">تأكيد التنشيط</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cancel Enrollment Modal -->
+    <div class="modal fade" id="cancelEnrollmentModal" tabindex="-1" aria-labelledby="cancelEnrollmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="cancelEnrollmentModalLabel"><i class="bi bi-x-circle me-2"></i>إلغاء الالتحاق</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        أنت على وشك إلغاء التحاق الطالب <strong id="cancelStudentName">فاطمة حسن</strong> في الدورة.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سبب الإلغاء</label>
+                        <select class="form-select">
+                            <option>طلب الطالب</option>
+                            <option>عدم الالتزام بالدفع</option>
+                            <option>عدم الالتزام بالحضور</option>
+                            <option>مشاكل سلوكية</option>
+                            <option>سبب آخر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">سياسة الاسترداد</label>
+                        <select class="form-select" id="refundPolicy">
+                            <option value="none">لا يوجد استرداد</option>
+                            <option value="partial">استرداد جزئي</option>
+                            <option value="full">استرداد كامل</option>
+                        </select>
+                    </div>
+                    
+                    <div id="refundAmountField" class="mb-3 d-none">
+                        <label class="form-label">مبلغ الاسترداد</label>
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="500">
+                            <span class="input-group-text">ر.س</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">ملاحظات إضافية</label>
+                        <textarea class="form-control" rows="3" placeholder="أضف ملاحظات حول سبب الإلغاء..."></textarea>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="notifyCancellation" checked>
+                        <label class="form-check-label" for="notifyCancellation">
+                            إرسال إشعار للطالب
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">تراجع</button>
+                    <button type="button" class="btn btn-danger">تأكيد الإلغاء</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Handle modal data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Approve Enrollment Modal
+            var approveModal = document.getElementById('approveEnrollmentModal');
+            approveModal?.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var enrollmentId = button.getAttribute('data-enrollment-id');
+                var studentName = button.getAttribute('data-student-name');
+                document.getElementById('approveStudentName').textContent = studentName;
+            });
+            
+            // Reject Enrollment Modal
+            var rejectModal = document.getElementById('rejectEnrollmentModal');
+            rejectModal?.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var enrollmentId = button.getAttribute('data-enrollment-id');
+                var studentName = button.getAttribute('data-student-name');
+                document.getElementById('rejectStudentName').textContent = studentName;
+            });
+            
+            // Freeze Enrollment Modal
+            var freezeModal = document.getElementById('freezeEnrollmentModal');
+            freezeModal?.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var enrollmentId = button.getAttribute('data-enrollment-id');
+                var studentName = button.getAttribute('data-student-name');
+                document.getElementById('freezeStudentName').textContent = studentName;
+            });
+            
+            // Payment Followup Modal
+            var paymentModal = document.getElementById('paymentFollowupModal');
+            paymentModal?.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var enrollmentId = button.getAttribute('data-enrollment-id');
+                var studentName = button.getAttribute('data-student-name');
+                document.getElementById('paymentStudentName').textContent = studentName;
+            });
+            
+            // Handle payment action change
+            var paymentAction = document.getElementById('paymentAction');
+            paymentAction?.addEventListener('change', function() {
+                var recordFields = document.getElementById('recordPaymentFields');
+                var reminderFields = document.getElementById('reminderFields');
+                var scheduleFields = document.getElementById('scheduleFields');
+                
+                recordFields.classList.add('d-none');
+                reminderFields.classList.add('d-none');
+                scheduleFields.classList.add('d-none');
+                
+                if (this.value === 'record') {
+                    recordFields.classList.remove('d-none');
+                } else if (this.value === 'remind') {
+                    reminderFields.classList.remove('d-none');
+                } else if (this.value === 'schedule') {
+                    scheduleFields.classList.remove('d-none');
+                }
+            });
+            
+            // Activate Enrollment Modal
+            var activateModal = document.getElementById('activateEnrollmentModal');
+            activateModal?.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var enrollmentId = button.getAttribute('data-enrollment-id');
+                var studentName = button.getAttribute('data-student-name');
+                document.getElementById('activateStudentName').textContent = studentName;
+            });
+            
+            // Cancel Enrollment Modal
+            var cancelModal = document.getElementById('cancelEnrollmentModal');
+            cancelModal?.addEventListener('show.bs.modal', function(event) {
+                var button = event.relatedTarget;
+                var enrollmentId = button.getAttribute('data-enrollment-id');
+                var studentName = button.getAttribute('data-student-name');
+                document.getElementById('cancelStudentName').textContent = studentName;
+            });
+            
+            // Handle refund policy change
+            var refundPolicy = document.getElementById('refundPolicy');
+            refundPolicy?.addEventListener('change', function() {
+                var refundAmountField = document.getElementById('refundAmountField');
+                
+                if (this.value === 'none') {
+                    refundAmountField.classList.add('d-none');
+                } else {
+                    refundAmountField.classList.remove('d-none');
+                }
+            });
+        });
     </script>
 </body>
 </html>

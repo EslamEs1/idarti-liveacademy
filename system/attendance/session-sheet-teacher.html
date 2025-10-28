@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-8">
-                                <h5 class="mb-2 fw-bold">كشف حضور: تطوير الويب المتقدم - الجلسة 5</h5>
+                                <h5 class="mb-2 fw-bold">كشف حضور: الرياضيات المتقدمة - الجلسة 5</h5>
                                 <div class="d-flex gap-3 flex-wrap">
                                     <span class="text-muted">
                                         <i class="bi bi-calendar me-1"></i>السبت، 2 مارس 2025
@@ -55,9 +55,9 @@
                                 <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#attendanceCodeModal">
                                     <i class="bi bi-qr-code me-2"></i>إنشاء كود حضور
                                 </button>
-                                <button class="btn btn-light">
+                                <a href="/system/attendance/print-sheet.html" class="btn btn-light">
                                     <i class="bi bi-printer"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -66,17 +66,17 @@
                 <!-- Quick Actions -->
                 <div class="row g-3 mb-4">
                     <div class="col-auto">
-                        <button class="btn btn-success" onclick="markAllPresent()">
+                        <button class="btn btn-success" onclick="showConfirmModal('markAllPresent')">
                             <i class="bi bi-check-all me-2"></i>تحديد الكل حاضر
                         </button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-danger" onclick="markAllAbsent()">
+                        <button class="btn btn-danger" onclick="showConfirmModal('markAllAbsent')">
                             <i class="bi bi-x-circle me-2"></i>تحديد الكل غائب
                         </button>
                     </div>
                     <div class="col-auto">
-                        <button class="btn btn-light">
+                        <button class="btn btn-light" onclick="resetAttendance()">
                             <i class="bi bi-arrow-clockwise me-2"></i>إعادة تعيين
                         </button>
                     </div>
@@ -92,10 +92,10 @@
                             <table class="table table-hover mb-0">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50px;">#</th>
+                                        <th class="w-50px">#</th>
                                         <th>الطالب</th>
                                         <th>رقم الهاتف</th>
-                                        <th style="width: 150px;" class="text-center">الحالة</th>
+                                        <th class="w-150px" class="text-center">الحالة</th>
                                         <th style="width: 200px;">وقت التسجيل</th>
                                         <th style="width: 300px;">ملاحظات</th>
                                     </tr>
@@ -106,7 +106,7 @@
                                         <td>1</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -137,7 +137,7 @@
                                         <td>2</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -168,7 +168,7 @@
                                         <td>3</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -199,7 +199,7 @@
                                         <td>4</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -230,7 +230,7 @@
                                         <td>5</td>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--info-gradient-start), var(--info-gradient-end));">
+                                                <div class="avatar-sm d-flex align-items-center justify-content-center rounded-circle me-3" class="size-40 avatar-gradient-info">
                                                     <i class="bi bi-person-fill text-white"></i>
                                                 </div>
                                                 <div>
@@ -271,10 +271,10 @@
                                 <span class="text-danger">غائب: 1</span>
                             </div>
                             <div>
-                                <button class="btn btn-light me-2" onclick="window.history.back()">
+                                <a href="/system/attendance/list-teacher.html" class="btn btn-light me-2">
                                     <i class="bi bi-x-circle me-2"></i>إلغاء
-                                </button>
-                                <button class="btn btn-success" onclick="saveAttendance()">
+                                </a>
+                                <button class="btn btn-success" onclick="showConfirmModal('saveAttendance')">
                                     <i class="bi bi-check-circle me-2"></i>حفظ الحضور
                                 </button>
                             </div>
@@ -372,7 +372,71 @@
                     `${minutes}:${seconds.toString().padStart(2, '0')}`;
             }
         }, 1000);
+        
+        // Function to show confirmation modal
+        function showConfirmModal(action) {
+            const modal = new bootstrap.Modal(document.getElementById('confirmActionModal'));
+            const confirmButton = document.getElementById('confirmActionButton');
+            
+            // Configure modal based on action
+            switch(action) {
+                case 'markAllPresent':
+                    document.getElementById('confirmActionText').textContent = 'تحديد جميع الطلاب كحاضرين؟';
+                    document.getElementById('confirmActionDescription').textContent = 'سيتم تحديد جميع الطلاب كحاضرين في هذه الجلسة.';
+                    confirmButton.className = 'btn btn-success';
+                    confirmButton.onclick = function() {
+                        markAllPresent();
+                        modal.hide();
+                    };
+                    break;
+                case 'markAllAbsent':
+                    document.getElementById('confirmActionText').textContent = 'تحديد جميع الطلاب كغائبين؟';
+                    document.getElementById('confirmActionDescription').textContent = 'سيتم تحديد جميع الطلاب كغائبين في هذه الجلسة.';
+                    confirmButton.className = 'btn btn-danger';
+                    confirmButton.onclick = function() {
+                        markAllAbsent();
+                        modal.hide();
+                    };
+                    break;
+                case 'saveAttendance':
+                    document.getElementById('confirmActionText').textContent = 'حفظ سجل الحضور؟';
+                    document.getElementById('confirmActionDescription').textContent = 'سيتم حفظ جميع بيانات الحضور للجلسة الحالية.';
+                    confirmButton.className = 'btn btn-success';
+                    confirmButton.onclick = function() {
+                        saveAttendance();
+                        modal.hide();
+                    };
+                    break;
+            }
+            
+            modal.show();
+        }
     </script>
+    
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmActionModal" tabindex="-1" aria-labelledby="confirmActionModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmActionModalLabel">تأكيد الإجراء</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center mb-4">
+                        <div class="size-80 avatar-gradient-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="bi bi-exclamation-triangle text-white fs-1"></i>
+                        </div>
+                        <h5 class="fw-bold" id="confirmActionText">هل أنت متأكد من تنفيذ هذا الإجراء؟</h5>
+                        <p class="text-muted" id="confirmActionDescription">هذا الإجراء لا يمكن التراجع عنه.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" id="confirmActionButton">تأكيد</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 

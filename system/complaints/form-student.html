@@ -54,7 +54,7 @@
                                         <div class="d-flex justify-content-between align-items-start">
                                             <div>
                                                 <h6 class="mb-1 fw-semibold">تأخر في رفع المواد التعليمية</h6>
-                                                <p class="text-muted small mb-2">تطوير الويب المتقدم</p>
+                                                <p class="text-muted small mb-2">الرياضيات المتقدمة</p>
                                                 <small class="text-muted">
                                                     <i class="bi bi-calendar me-1"></i>5 مارس 2025
                                                 </small>
@@ -72,7 +72,7 @@
                                         <div class="d-flex justify-content-between align-items-start">
                                             <div>
                                                 <h6 class="mb-1 fw-semibold">استفسار عن موعد الاختبار</h6>
-                                                <p class="text-muted small mb-2">تصميم واجهات المستخدم</p>
+                                                <p class="text-muted small mb-2">التاريخ الإسلامي</p>
                                                 <small class="text-muted">
                                                     <i class="bi bi-calendar me-1"></i>28 فبراير 2025
                                                 </small>
@@ -115,8 +115,8 @@
                                             <label class="form-label">الدورة المتعلقة <span class="text-danger">*</span></label>
                                             <select class="form-select" name="course" required>
                                                 <option value="">اختر الدورة...</option>
-                                                <option>تطوير الويب المتقدم</option>
-                                                <option>تصميم واجهات المستخدم</option>
+                                                <option>الرياضيات المتقدمة</option>
+                                                <option>التاريخ الإسلامي</option>
                                                 <option>برمجة تطبيقات الجوال</option>
                                                 <option value="general">عام - غير متعلق بدورة محددة</option>
                                             </select>
@@ -233,10 +233,42 @@
                 if (!form.checkValidity()) {
                     event.preventDefault()
                     event.stopPropagation()
+                } else {
+                    event.preventDefault()
+                    // Show success message
+                    showSuccessModal()
                 }
                 form.classList.add('was-validated')
             }, false)
+            
+            // Function to show success modal
+            function showSuccessModal() {
+                const modal = new bootstrap.Modal(document.getElementById('successModal'))
+                modal.show()
+            }
         })()
     </script>
+    
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="successModalLabel"><i class="bi bi-check-circle me-2"></i>تم إرسال الشكوى بنجاح</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-success">
+                        <p>تم استلام شكواك بنجاح وسيتم مراجعتها في أقرب وقت.</p>
+                        <p>رقم الشكوى: <strong>COMP-2024-1045</strong></p>
+                    </div>
+                    <p>سيتم إرسال إشعار لك عند الرد على الشكوى.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="/system/complaints/list-student.html" class="btn btn-primary">العودة للقائمة</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

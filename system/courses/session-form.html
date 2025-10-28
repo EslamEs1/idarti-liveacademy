@@ -29,7 +29,7 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="/system/dashboard/admin.html">لوحة التحكم</a></li>
                         <li class="breadcrumb-item"><a href="/system/courses/list-admin.html">الدورات</a></li>
-                        <li class="breadcrumb-item"><a href="/system/courses/detail-admin.html">تطوير الويب المتقدم</a></li>
+                        <li class="breadcrumb-item"><a href="/system/courses/detail-admin.html">الرياضيات المتقدمة</a></li>
                         <li class="breadcrumb-item"><a href="/system/courses/sessions-list-admin.html">الجلسات</a></li>
                         <li class="breadcrumb-item active" id="pageMode">إضافة جلسة</li>
                     </ol>
@@ -84,7 +84,7 @@
                                         <option>الوحدة الثانية: تطوير الواجهات الأمامية</option>
                                         <option>الوحدة الثالثة: برمجة الباك إند</option>
                                         <option>الوحدة الرابعة: State Management</option>
-                                        <option selected>الوحدة الخامسة: React المتقدم</option>
+                                        <option selected>الوحدة الخامسة: الكيمياء العضوية</option>
                                         <option>الوحدة السادسة: Performance & Testing</option>
                                     </select>
                                     <div class="invalid-feedback">
@@ -198,7 +198,7 @@
                                     <div class="input-group">
                                         <span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
                                         <input type="url" class="form-control" id="meetingLink" placeholder="https://zoom.us/j/123456789">
-                                        <button class="btn btn-primary" type="button">
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#createZoomModal">
                                             <i class="bi bi-plus-circle me-1"></i>إنشاء رابط Zoom
                                         </button>
                                     </div>
@@ -278,7 +278,7 @@
                                 <!-- Materials -->
                                 <div class="col-md-12">
                                     <label class="form-label">المواد التعليمية</label>
-                                    <div class="border rounded p-3 mb-2" style="min-height: 100px;">
+                                    <div class="border rounded p-3 mb-2" class="min-h-100px">
                                         <p class="text-muted text-center mb-0">
                                             <i class="bi bi-cloud-upload fs-1 d-block mb-2"></i>
                                             اسحب الملفات هنا أو انقر للتحميل
@@ -312,7 +312,7 @@
                                     <i class="bi bi-x-circle me-2"></i>إلغاء
                                 </button>
                                 <div>
-                                    <button type="button" class="btn btn-light me-2">
+                                    <button type="button" class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#previewModal">
                                         <i class="bi bi-eye me-2"></i>معاينة
                                     </button>
                                     <button type="submit" class="btn btn-primary">
@@ -373,6 +373,177 @@
                 }, false);
             });
         })();
+    </script>
+    
+    <!-- Create Zoom Link Modal -->
+    <div class="modal fade" id="createZoomModal" tabindex="-1" aria-labelledby="createZoomModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createZoomModalLabel"><i class="bi bi-camera-video me-2"></i>إنشاء رابط Zoom</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-info">
+                        <i class="bi bi-info-circle me-2"></i>
+                        سيتم إنشاء رابط Zoom جديد لهذه الجلسة باستخدام حساب المنصة.
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">عنوان الاجتماع</label>
+                        <input type="text" class="form-control" value="الجلسة 3: مقدمة في JavaScript - الرياضيات المتقدمة">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">وصف الاجتماع</label>
+                        <textarea class="form-control" rows="3">الجلسة الثالثة من دورة الرياضيات المتقدمة. سيتم شرح مقدمة في JavaScript وتطبيقاتها في الرياضيات.</textarea>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label">التاريخ</label>
+                            <input type="date" class="form-control" value="2024-11-15">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">الوقت</label>
+                            <input type="time" class="form-control" value="18:00">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">مدة الاجتماع (بالدقائق)</label>
+                        <input type="number" class="form-control" value="120">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">كلمة مرور الاجتماع</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" value="123456">
+                            <button class="btn btn-outline-secondary" type="button">
+                                <i class="bi bi-arrow-repeat"></i>
+                            </button>
+                        </div>
+                        <small class="text-muted">اترك فارغًا لإنشاء كلمة مرور تلقائية</small>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">خيارات إضافية</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="waitingRoom" checked>
+                            <label class="form-check-label" for="waitingRoom">
+                                تفعيل غرفة الانتظار
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hostVideo" checked>
+                            <label class="form-check-label" for="hostVideo">
+                                تشغيل فيديو المضيف تلقائيًا
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="participantVideo">
+                            <label class="form-check-label" for="participantVideo">
+                                تشغيل فيديو المشاركين تلقائيًا
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="joinBeforeHost">
+                            <label class="form-check-label" for="joinBeforeHost">
+                                السماح بالانضمام قبل المضيف
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="muteParticipants" checked>
+                            <label class="form-check-label" for="muteParticipants">
+                                كتم صوت المشاركين عند الدخول
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" onclick="createZoomLink()">إنشاء الرابط</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Preview Modal -->
+    <div class="modal fade" id="previewModal" tabindex="-1" aria-labelledby="previewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="previewModalLabel"><i class="bi bi-eye me-2"></i>معاينة الجلسة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">الجلسة 3: مقدمة في JavaScript</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>الدورة:</strong> الرياضيات المتقدمة</p>
+                                    <p><strong>المدرس:</strong> د. أحمد محمد</p>
+                                    <p><strong>النوع:</strong> جلسة مباشرة</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><strong>التاريخ:</strong> الثلاثاء 15 نوفمبر 2024</p>
+                                    <p><strong>الوقت:</strong> 6:00 م - 8:00 م</p>
+                                    <p><strong>المدة:</strong> ساعتان</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <h6>الوصف</h6>
+                            <p>في هذه الجلسة سنتعرف على أساسيات JavaScript وكيفية استخدامها في حل المسائل الرياضية. سنقوم بتطبيق عملي على كيفية كتابة الدوال والمعادلات الرياضية باستخدام JavaScript.</p>
+                            
+                            <h6>المتطلبات</h6>
+                            <ul>
+                                <li>حضور الجلسة السابقة</li>
+                                <li>إكمال الواجب المنزلي</li>
+                                <li>تحضير الأسئلة والاستفسارات</li>
+                            </ul>
+                            
+                            <h6>رابط الاجتماع</h6>
+                            <div class="alert alert-info">
+                                <a href="https://zoom.us/j/123456789" target="_blank">https://zoom.us/j/123456789</a>
+                                <p class="mb-0 mt-2"><small>كلمة المرور: 123456</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <i class="bi bi-exclamation-triangle me-2"></i>
+                        هذه معاينة فقط. لم يتم حفظ البيانات بعد.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function createZoomLink() {
+            // In a real application, this would make an API call to Zoom
+            // For demo purposes, we'll just simulate the creation and update the field
+            
+            // Generate a random meeting ID
+            const meetingId = Math.floor(100000000 + Math.random() * 900000000);
+            const zoomLink = `https://zoom.us/j/${meetingId}`;
+            
+            // Update the meeting link field
+            document.getElementById('meetingLink').value = zoomLink;
+            
+            // Close the modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('createZoomModal'));
+            modal.hide();
+            
+            // Show success message
+            alert('تم إنشاء رابط Zoom بنجاح');
+        }
     </script>
 </body>
 </html>

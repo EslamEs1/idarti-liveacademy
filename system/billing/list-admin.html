@@ -39,12 +39,12 @@
                         <p class="text-muted mb-0">عرض وإدارة جميع الفواتير والمدفوعات</p>
                     </div>
                     <div>
-                        <button class="btn btn-primary me-2">
+                        <a href="/system/billing/create-invoice.html" class="btn btn-primary me-2">
                             <i class="bi bi-plus-circle me-2"></i>إنشاء فاتورة
-                        </button>
-                        <button class="btn btn-light">
+                        </a>
+                        <a href="/system/billing/export-excel.html" class="btn btn-light">
                             <i class="bi bi-file-earmark-excel me-2"></i>تصدير Excel
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -208,7 +208,7 @@
                                                 <span class="fw-semibold">محمد أحمد</span>
                                             </div>
                                         </td>
-                                        <td>تطوير الويب المتقدم</td>
+                                        <td>الرياضيات المتقدمة</td>
                                         <td class="text-center">
                                             <span class="fw-bold">1,500 ريال</span>
                                         </td>
@@ -228,10 +228,10 @@
                                                 <a href="/system/billing/detail-admin.html?id=1" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="إرسال تذكير">
+                                                <button class="btn btn-light" title="إرسال تذكير" data-bs-toggle="modal" data-bs-target="#reminderModal">
                                                     <i class="bi bi-envelope"></i>
                                                 </button>
-                                                <button class="btn btn-success" title="تسجيل دفعة">
+                                                <button class="btn btn-success" title="تسجيل دفعة" data-bs-toggle="modal" data-bs-target="#paymentModal">
                                                     <i class="bi bi-cash-coin text-white"></i>
                                                 </button>
                                             </div>
@@ -250,7 +250,7 @@
                                                 <span class="fw-semibold">فاطمة علي</span>
                                             </div>
                                         </td>
-                                        <td>أساسيات البرمجة</td>
+                                        <td>اللغة العربية</td>
                                         <td class="text-center">
                                             <span class="fw-bold">800 ريال</span>
                                         </td>
@@ -270,12 +270,12 @@
                                                 <a href="/system/billing/detail-admin.html?id=2" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="طباعة">
+                                                <a href="/system/billing/print-invoice.html?id=2" class="btn btn-light" title="طباعة">
                                                     <i class="bi bi-printer"></i>
-                                                </button>
-                                                <button class="btn btn-light" title="تحميل PDF">
+                                                </a>
+                                                <a href="/system/billing/download-pdf.html?id=2" class="btn btn-light" title="تحميل PDF">
                                                     <i class="bi bi-file-pdf"></i>
-                                                </button>
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>
@@ -292,7 +292,7 @@
                                                 <span class="fw-semibold">خالد حسن</span>
                                             </div>
                                         </td>
-                                        <td>React المتقدم</td>
+                                        <td>الكيمياء العضوية</td>
                                         <td class="text-center">
                                             <span class="fw-bold">1,200 ريال</span>
                                         </td>
@@ -312,7 +312,7 @@
                                                 <a href="/system/billing/detail-admin.html?id=3" class="btn btn-light" title="عرض">
                                                     <i class="bi bi-eye"></i>
                                                 </a>
-                                                <button class="btn btn-light" title="تسجيل دفعة">
+                                                <button class="btn btn-light" title="تسجيل دفعة" data-bs-toggle="modal" data-bs-target="#paymentModal">
                                                     <i class="bi bi-cash-coin"></i>
                                                 </button>
                                             </div>
@@ -328,13 +328,13 @@
                             <nav>
                                 <ul class="pagination pagination-sm mb-0">
                                     <li class="page-item disabled">
-                                        <a class="page-link" href="#">السابق</a>
+                                        <a class="page-link" href="/system/billing/list-admin.html?page=1">السابق</a>
                                     </li>
-                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item active"><a class="page-link" href="/system/billing/list-admin.html?page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/billing/list-admin.html?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/system/billing/list-admin.html?page=3">3</a></li>
                                     <li class="page-item">
-                                        <a class="page-link" href="#">التالي</a>
+                                        <a class="page-link" href="/system/billing/list-admin.html?page=2">التالي</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -369,6 +369,100 @@
                 document.getElementById('navbar-container').innerHTML = data;
             });
     </script>
+    
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentModalLabel"><i class="bi bi-cash-stack me-2"></i>تسجيل دفعة جديدة</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">المبلغ المدفوع</label>
+                            <input type="number" class="form-control" value="1500.00" step="0.01">
+                            <small class="text-muted">المتبقي: 1,500.00 ر.س</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">طريقة الدفع</label>
+                            <select class="form-select">
+                                <option>بطاقة ائتمان</option>
+                                <option>تحويل بنكي</option>
+                                <option>نقدي</option>
+                                <option>محفظة إلكترونية</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">تاريخ الدفع</label>
+                            <input type="date" class="form-control" value="2024-10-28">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">رقم المرجع / الإيصال</label>
+                            <input type="text" class="form-control" placeholder="REF-123456">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">ملاحظات</label>
+                            <textarea class="form-control" rows="3" placeholder="ملاحظات إضافية..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <a href="/system/billing/payment-detail-admin.html" class="btn btn-success">
+                        <i class="bi bi-check-circle me-2"></i>تسجيل الدفعة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reminder Modal -->
+    <div class="modal fade" id="reminderModal" tabindex="-1" aria-labelledby="reminderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reminderModalLabel"><i class="bi bi-envelope me-2"></i>إرسال تذكير دفع</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">نوع التذكير</label>
+                        <select class="form-select">
+                            <option>تذكير أول</option>
+                            <option selected>تذكير ثاني</option>
+                            <option>تذكير نهائي</option>
+                            <option>إشعار تأخير</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">طريقة الإرسال</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="emailReminder" checked>
+                            <label class="form-check-label" for="emailReminder">بريد إلكتروني</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="smsReminder" checked>
+                            <label class="form-check-label" for="smsReminder">رسالة نصية</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="pushReminder">
+                            <label class="form-check-label" for="pushReminder">إشعار تطبيق</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">نص الرسالة</label>
+                        <textarea class="form-control" rows="3">تذكير بدفع الفاتورة رقم INV-2024-001 بمبلغ 1,500.00 ر.س. يرجى سداد المبلغ قبل تاريخ 2024-11-15 لتجنب رسوم التأخير. شكراً لتعاونكم.</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">إلغاء</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">إرسال التذكير</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
